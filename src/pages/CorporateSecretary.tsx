@@ -1,4 +1,3 @@
-
 import { Navigate } from "react-router-dom";
 import { Layout } from "@/components/Layout";
 import { motion } from "framer-motion";
@@ -18,55 +17,59 @@ const CorporateSecretaryPage = () => {
   const { country } = useCountry();
 
   // Redirect non-Singapore users to their respective home pages
-  if (country === 'uae') {
+  if (country === "uae") {
     return <Navigate to="/uae" replace />;
   }
 
-  if (country === 'australia') {
+  if (country === "australia") {
     return <Navigate to="/australia" replace />;
   }
 
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": [{
-      "@type": "Question",
-      "name": "What is the scope of services of the company secretary?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "When an individual gets into company secretarial services, he/she needs to manage meetings, facilitate and take care of financial transactions, ensure legal compliance, manage risks and offer legal advice and assistance."
-      }
-    },{
-      "@type": "Question",
-      "name": "How much does a Company Secretary cost in Singapore?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "An in-house company secretary costs between SGD 60,000 to SGD 100,000 annually. On the other hand, if an organization decides to outsource these services, it eventually costs around SGD 300 to SGD 1,500."
-      }
-    },{
-      "@type": "Question",
-      "name": "How do I change my company secretary in Singapore?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "If you want to change your company secretary in Singapore and opt for other company secretarial services in Singapore, the new secretary needs to sign the Form 45B."
-      }
-    }],
-      "areaServed": "Singapore, UAE, Australia",
-      "serviceType": "Corporate Secretary Services",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "What is the scope of services of the company secretary?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "When an individual gets into company secretarial services, he/she needs to manage meetings, facilitate and take care of financial transactions, ensure legal compliance, manage risks and offer legal advice and assistance.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "How much does a Company Secretary cost in Singapore?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "An in-house company secretary costs between SGD 60,000 to SGD 100,000 annually. On the other hand, if an organization decides to outsource these services, it eventually costs around SGD 300 to SGD 1,500.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "How do I change my company secretary in Singapore?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "If you want to change your company secretary in Singapore and opt for other company secretarial services in Singapore, the new secretary needs to sign the Form 45B.",
+        },
+      },
+    ],
+    areaServed: "Singapore, UAE, Australia",
+    serviceType: "Corporate Secretary Services",
     contactPoint: {
       "@type": "ContactPoint",
       email: "jd@growwthpartners.com",
-      telephone: "+65 8893 0720",
+      telephone: "+65 9861 5600",
       contactType: "Business Service",
     },
     address: {
-        "@type": "PostalAddress",
-        streetAddress: "65 Chulia Street",
-        addressLocality: "Singapore",
-        addressRegion: "#46-00 OCBC Centre, Singapore 049513",
-        postalCode: "049513",
-        addressCountry: "SG",
-      },
+      "@type": "PostalAddress",
+      streetAddress: "65 Chulia Street",
+      addressLocality: "Singapore",
+      addressRegion: "#46-00 OCBC Centre, Singapore 049513",
+      postalCode: "049513",
+      addressCountry: "SG",
+    },
   };
 
   return (
@@ -78,7 +81,7 @@ const CorporateSecretaryPage = () => {
         canonicalUrl="https://growwthpartners.com/corporate-secretary-services-in-singapore/"
         structuredData={organizationSchema}
       />
-      
+
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

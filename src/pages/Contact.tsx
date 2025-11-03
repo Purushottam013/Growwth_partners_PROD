@@ -1,4 +1,3 @@
-
 import { Navigate } from "react-router-dom";
 import { Layout } from "@/components/Layout";
 import { motion } from "framer-motion";
@@ -15,35 +14,35 @@ const ContactPage = () => {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "ContactPage",
-    "mainEntity": {
+    mainEntity: {
       "@type": "Organization",
-      "name": "Growwth Partners",
-     contactPoint: {
-      "@type": "ContactPoint",
-      email: "jd@growwthpartners.com",
-      telephone: "+65 8893 0720",
-      contactType: "Business Service",
-    },
-    service: {
-      "@type": "LocalBusiness",
       name: "Growwth Partners",
-      description:
-        "Professional accounting, bookkeeping, Payroll, taxation and compliance,cash flow modeling and CFO services in Singapore",
-      url: "https://growwthpartners.com",
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "65 Chulia Street",
-        addressLocality: "Singapore",
-        addressRegion: "#46-00 OCBC Centre, Singapore 049513",
-        postalCode: "049513",
-        addressCountry: "SG",
+      contactPoint: {
+        "@type": "ContactPoint",
+        email: "jd@growwthpartners.com",
+        telephone: "+65 9861 5600",
+        contactType: "Business Service",
+      },
+      service: {
+        "@type": "LocalBusiness",
+        name: "Growwth Partners",
+        description:
+          "Professional accounting, bookkeeping, Payroll, taxation and compliance,cash flow modeling and CFO services in Singapore",
+        url: "https://growwthpartners.com",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "65 Chulia Street",
+          addressLocality: "Singapore",
+          addressRegion: "#46-00 OCBC Centre, Singapore 049513",
+          postalCode: "049513",
+          addressCountry: "SG",
+        },
       },
     },
-    }
   };
 
   // Redirect non-Singapore users to their respective home pages
-  if (country === 'uae') {
+  if (country === "uae") {
     return (
       <>
         <SEOhelper
@@ -57,7 +56,7 @@ const ContactPage = () => {
     );
   }
 
-  if (country === 'australia') {
+  if (country === "australia") {
     return (
       <>
         <SEOhelper
@@ -79,7 +78,6 @@ const ContactPage = () => {
         keywords="contact singapore, financial expert consultation, accounting advice, business support"
         canonicalUrl={`https://growwthpartners.com/contact-us`}
         structuredData={structuredData}
-
       />
       <motion.div
         initial={{ opacity: 0 }}

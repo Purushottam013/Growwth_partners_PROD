@@ -1,4 +1,3 @@
-
 import { Layout } from "@/components/Layout";
 import { HeroSection } from "@/components/accounting/HeroSection";
 import { TrustedSection } from "@/components/accounting/TrustedSection";
@@ -15,12 +14,15 @@ import SEOhelper from "@/components/SEOhelper";
 
 const AccountingPage = () => {
   const { country } = useCountry();
-  
+
   const getLocationName = () => {
     switch (country) {
-      case 'uae': return 'UAE';
-      case 'australia': return 'Australia';
-      default: return 'Singapore';
+      case "uae":
+        return "UAE";
+      case "australia":
+        return "Australia";
+      default:
+        return "Singapore";
     }
   };
 
@@ -29,29 +31,30 @@ const AccountingPage = () => {
   const accountingSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Accounting Services in Singapore",
-    "description": "Professional accounting and financial reporting services for businesses in Singapore",
-    "provider": {
+    name: "Accounting Services in Singapore",
+    description:
+      "Professional accounting and financial reporting services for businesses in Singapore",
+    provider: {
       "@type": "Organization",
-      "name": "Growwth Partners",
-      "url": "https://growwthpartners.com"
+      name: "Growwth Partners",
+      url: "https://growwthpartners.com",
     },
-    "areaServed": "Singapore, UAE, Australia",
-    "serviceType": "Accounting Services",
+    areaServed: "Singapore, UAE, Australia",
+    serviceType: "Accounting Services",
     contactPoint: {
       "@type": "ContactPoint",
       email: "jd@growwthpartners.com",
-      telephone: "+65 8893 0720",
+      telephone: "+65 9861 5600",
       contactType: "Business Service",
     },
     address: {
-        "@type": "PostalAddress",
-        streetAddress: "65 Chulia Street",
-        addressLocality: "Singapore",
-        addressRegion: "#46-00 OCBC Centre, Singapore 049513",
-        postalCode: "049513",
-        addressCountry: "SG",
-      },
+      "@type": "PostalAddress",
+      streetAddress: "65 Chulia Street",
+      addressLocality: "Singapore",
+      addressRegion: "#46-00 OCBC Centre, Singapore 049513",
+      postalCode: "049513",
+      addressCountry: "SG",
+    },
   };
 
   return (
@@ -63,7 +66,7 @@ const AccountingPage = () => {
         canonicalUrl="https://growwthpartners.com/accounting-services-in-singapore/"
         structuredData={accountingSchema}
       />
-      
+
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

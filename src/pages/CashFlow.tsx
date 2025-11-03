@@ -1,4 +1,3 @@
-
 import { Navigate } from "react-router-dom";
 import { Layout } from "@/components/Layout";
 import { HeroSection } from "@/components/cashflow/HeroSection";
@@ -19,55 +18,59 @@ const CashFlowPage = () => {
   const { country } = useCountry();
 
   // Redirect non-Singapore users to their respective home pages
-  if (country === 'uae') {
+  if (country === "uae") {
     return <Navigate to="/uae" replace />;
   }
 
-  if (country === 'australia') {
+  if (country === "australia") {
     return <Navigate to="/australia" replace />;
   }
 
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": [{
-      "@type": "Question",
-      "name": "What exactly is financial modeling?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Financial modeling is the process of creating a summary of a company's costs and income in the form of a spreadsheet that can be used to calculate the impact of future events or decisions."
-      }
-    },{
-      "@type": "Question",
-      "name": "How much does your financial modeling service cost?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Our financial modeling services are customized to each client's specific needs and business complexity. We offer tailored pricing based on the scope, depth, and timeframe of your project. Contact us for a personalized quote."
-      }
-    },{
-      "@type": "Question",
-      "name": "Can you customize financial models for specific industries?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Absolutely. We specialize in creating industry-specific financial models that reflect the unique dynamics, metrics, and KPIs relevant to your sector. Our team has experience across multiple industries including tech, healthcare, retail, manufacturing, and more."
-      }
-    }],
-     "areaServed": "Singapore, UAE, Australia",
-    "serviceType": "Cash Flow Services",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "What exactly is financial modeling?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Financial modeling is the process of creating a summary of a company's costs and income in the form of a spreadsheet that can be used to calculate the impact of future events or decisions.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "How much does your financial modeling service cost?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Our financial modeling services are customized to each client's specific needs and business complexity. We offer tailored pricing based on the scope, depth, and timeframe of your project. Contact us for a personalized quote.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Can you customize financial models for specific industries?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Absolutely. We specialize in creating industry-specific financial models that reflect the unique dynamics, metrics, and KPIs relevant to your sector. Our team has experience across multiple industries including tech, healthcare, retail, manufacturing, and more.",
+        },
+      },
+    ],
+    areaServed: "Singapore, UAE, Australia",
+    serviceType: "Cash Flow Services",
     contactPoint: {
       "@type": "ContactPoint",
       email: "jd@growwthpartners.com",
-      telephone: "+65 8893 0720",
+      telephone: "+65 9861 5600",
       contactType: "Business Service",
     },
     address: {
-        "@type": "PostalAddress",
-        streetAddress: "65 Chulia Street",
-        addressLocality: "Singapore",
-        addressRegion: "#46-00 OCBC Centre, Singapore 049513",
-        postalCode: "049513",
-        addressCountry: "SG",
-      },
+      "@type": "PostalAddress",
+      streetAddress: "65 Chulia Street",
+      addressLocality: "Singapore",
+      addressRegion: "#46-00 OCBC Centre, Singapore 049513",
+      postalCode: "049513",
+      addressCountry: "SG",
+    },
   };
 
   return (
@@ -79,7 +82,7 @@ const CashFlowPage = () => {
         canonicalUrl="https://growwthpartners.com/cash-flow-services-in-singapore/"
         structuredData={organizationSchema}
       />
-      
+
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

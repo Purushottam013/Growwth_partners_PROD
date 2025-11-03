@@ -1,4 +1,3 @@
-
 import { Layout } from "@/components/Layout";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -23,17 +22,18 @@ const HomeAustralia = () => {
       "https://www.linkedin.com/company/growwth-partners/",
       "https://www.youtube.com/@GrowwthPartners",
     ],
-    description: "Expert financial, accounting, and bookkeeping services for businesses in Singapore, UAE, and Australia.",
-    "areaServed": "Singapore, UAE, Australia",
+    description:
+      "Expert financial, accounting, and bookkeeping services for businesses in Singapore, UAE, and Australia.",
+    areaServed: "Singapore, UAE, Australia",
     contactPoint: {
       "@type": "ContactPoint",
       email: "jd@growwthpartners.com",
-      telephone: "+65 8893 0720",
+      telephone: "+65 9861 5600",
       contactType: "Business Service",
     },
-     address: {
+    address: {
       "@type": "PostalAddress",
-      addressCountry: "UAE"
+      addressCountry: "UAE",
     },
   };
 
@@ -57,9 +57,9 @@ const HomeAustralia = () => {
             <div className="absolute top-1/3 right-1/4 w-72 h-72 bg-green-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
             <div className="absolute bottom-1/4 left-1/3 w-80 h-80 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
           </div>
-          
+
           <div className="relative z-10 max-w-2xl mx-auto">
-            <motion.div 
+            <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.5 }}
@@ -67,24 +67,30 @@ const HomeAustralia = () => {
             >
               Australia Services
             </motion.div>
-            
+
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-brand-orange">
               Growwth Australia: Finance Solutions For Aussie Businesses
             </h1>
             <p className="text-lg text-gray-600 mb-8">
-              From Melbourne to Sydney, Growwth's team specializes in Australian accounting, payroll, and incorporation. We help local businesses stay compliant and profitable as they grow throughout the country.
+              From Melbourne to Sydney, Growwth's team specializes in Australian
+              accounting, payroll, and incorporation. We help local businesses
+              stay compliant and profitable as they grow throughout the country.
             </p>
-            
+
             <div className="relative py-10 px-8 rounded-xl border-2 border-dashed border-blue-300 bg-blue-50/50 mb-10">
               <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-white px-4">
-                <span className="text-brand-blue font-semibold">Coming Soon</span>
+                <span className="text-brand-blue font-semibold">
+                  Coming Soon
+                </span>
               </div>
               <p className="text-gray-600">
-                Our Australia-only service desk opens soon. Curious about early access? Register your interest now and help shape our offerings for your business needs.
+                Our Australia-only service desk opens soon. Curious about early
+                access? Register your interest now and help shape our offerings
+                for your business needs.
               </p>
             </div>
-            
-            <Button 
+
+            <Button
               onClick={handleContactClick}
               className="bg-brand-orange hover:bg-brand-orange/90 text-white font-medium px-6 py-3"
             >

@@ -1,4 +1,3 @@
-
 import { Navigate } from "react-router-dom";
 import { Layout } from "@/components/Layout";
 import { HeroSection } from "@/components/taxation/HeroSection";
@@ -16,59 +15,63 @@ import SEOhelper from "@/components/SEOhelper";
 
 const TaxationPage = () => {
   const { country } = useCountry();
-  
+
   // Redirect non-Singapore users to their respective home pages
-  if (country === 'uae') {
+  if (country === "uae") {
     return <Navigate to="/uae" replace />;
   }
-  
-  if (country === 'australia') {
+
+  if (country === "australia") {
     return <Navigate to="/australia" replace />;
   }
 
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": [{
-      "@type": "Question",
-      "name": "What is tax compliance?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Tax compliance involves ensuring that a company adheres to all tax laws and regulations, including accurate reporting and timely payment of taxes."
-      }
-    },{
-      "@type": "Question",
-      "name": "Why is thorough financial review important for tax compliance?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A thorough financial review ensures all financial statements are accurate, identifying any discrepancies or errors that could affect tax calculations and compliance."
-      }
-    },{
-      "@type": "Question",
-      "name": "How does Growwth Partners ensure transparency in tax calculations?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "We link financials with tax workings, providing a clear trail from income to expenses to tax payable, ensuring you understand how we arrived at each number."
-      }
-    }],
-    "areaServed": "Singapore, UAE, Australia",
-    "serviceType": "taxation compliance Services",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "What is tax compliance?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Tax compliance involves ensuring that a company adheres to all tax laws and regulations, including accurate reporting and timely payment of taxes.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Why is thorough financial review important for tax compliance?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "A thorough financial review ensures all financial statements are accurate, identifying any discrepancies or errors that could affect tax calculations and compliance.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "How does Growwth Partners ensure transparency in tax calculations?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "We link financials with tax workings, providing a clear trail from income to expenses to tax payable, ensuring you understand how we arrived at each number.",
+        },
+      },
+    ],
+    areaServed: "Singapore, UAE, Australia",
+    serviceType: "taxation compliance Services",
     contactPoint: {
       "@type": "ContactPoint",
       email: "jd@growwthpartners.com",
-      telephone: "+65 8893 0720",
+      telephone: "+65 9861 5600",
       contactType: "Business Service",
     },
     address: {
-        "@type": "PostalAddress",
-        streetAddress: "65 Chulia Street",
-        addressLocality: "Singapore",
-        addressRegion: "#46-00 OCBC Centre, Singapore 049513",
-        postalCode: "049513",
-        addressCountry: "SG",
-      },
+      "@type": "PostalAddress",
+      streetAddress: "65 Chulia Street",
+      addressLocality: "Singapore",
+      addressRegion: "#46-00 OCBC Centre, Singapore 049513",
+      postalCode: "049513",
+      addressCountry: "SG",
+    },
   };
-  
+
   return (
     <Layout>
       <SEOhelper

@@ -80,7 +80,7 @@ export const Footer = () => {
             </div>
             <Button 
               className="bg-brand-orange hover:bg-brand-orange/90 w-full sm:w-auto"
-              onClick={() => window.location.href = "tel:+6588930720"}
+              onClick={() => window.location.href = "tel:+65 9861 5600"}
             >
               <Phone className="mr-2 h-4 w-4" /> CALL US TODAY
             </Button>
@@ -91,7 +91,7 @@ export const Footer = () => {
             <ul className="space-y-3 text-gray-300 mt-5">
               <li className="flex items-center">
                 <Phone className="h-4 w-4 mr-2" style={{color: iconColor}} />
-                <a href="tel:+6588930720" className="hover:text-brand-orange transition-colors">+65 8893 0720</a>
+                <a href="tel:+6588930720" className="hover:text-brand-orange transition-colors">+65 9861 5600</a>
               </li>
               <li className="flex items-start">
                 <Mail className="h-4 w-4 mr-2 mt-1" style={{color: iconColor}} />

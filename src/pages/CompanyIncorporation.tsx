@@ -1,4 +1,3 @@
-
 import { Navigate } from "react-router-dom";
 import { Layout } from "@/components/Layout";
 import { motion } from "framer-motion";
@@ -19,55 +18,59 @@ const CompanyIncorporationPage = () => {
   const { country } = useCountry();
 
   // Redirect non-Singapore users to their respective home pages
-  if (country === 'uae') {
+  if (country === "uae") {
     return <Navigate to="/uae" replace />;
   }
 
-  if (country === 'australia') {
+  if (country === "australia") {
     return <Navigate to="/australia" replace />;
   }
 
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": [{
-      "@type": "Question",
-      "name": "What is the price of registering a corporation in Singapore?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The standard fee for registering a corporation in Singapore is nearly $315."
-      }
-    },{
-      "@type": "Question",
-      "name": "Why should your company incorporate in Singapore?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Several individuals choose to incorporate their companies in Singapore because this place has an attractive tax system. Here, no tax on capital gains is levied, which makes Singapore a preferable choice for entrepreneurs and business people."
-      }
-    },{
-      "@type": "Question",
-      "name": "Does a Singaporean business need a director who resides there?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, at least one director who resides in Singapore must be present in a Singaporean business. This is evident according to Singapore's Companies Act."
-      }
-    }],
-     "areaServed": "Singapore, UAE, Australia",
-    "serviceType": "Company Incorporation Services",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "What is the price of registering a corporation in Singapore?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "The standard fee for registering a corporation in Singapore is nearly $315.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Why should your company incorporate in Singapore?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Several individuals choose to incorporate their companies in Singapore because this place has an attractive tax system. Here, no tax on capital gains is levied, which makes Singapore a preferable choice for entrepreneurs and business people.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Does a Singaporean business need a director who resides there?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes, at least one director who resides in Singapore must be present in a Singaporean business. This is evident according to Singapore's Companies Act.",
+        },
+      },
+    ],
+    areaServed: "Singapore, UAE, Australia",
+    serviceType: "Company Incorporation Services",
     contactPoint: {
       "@type": "ContactPoint",
       email: "jd@growwthpartners.com",
-      telephone: "+65 8893 0720",
+      telephone: "+65 9861 5600",
       contactType: "Business Service",
     },
     address: {
-        "@type": "PostalAddress",
-        streetAddress: "65 Chulia Street",
-        addressLocality: "Singapore",
-        addressRegion: "#46-00 OCBC Centre, Singapore 049513",
-        postalCode: "049513",
-        addressCountry: "SG",
-      },
+      "@type": "PostalAddress",
+      streetAddress: "65 Chulia Street",
+      addressLocality: "Singapore",
+      addressRegion: "#46-00 OCBC Centre, Singapore 049513",
+      postalCode: "049513",
+      addressCountry: "SG",
+    },
   };
 
   return (
@@ -79,7 +82,7 @@ const CompanyIncorporationPage = () => {
         canonicalUrl="https://growwthpartners.com/company-incorporation-services-in-singapore/"
         structuredData={organizationSchema}
       />
-      
+
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

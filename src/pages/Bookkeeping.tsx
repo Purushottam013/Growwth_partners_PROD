@@ -1,4 +1,3 @@
-
 import { Layout } from "@/components/Layout";
 import { HeroSection } from "@/components/bookkeeping/HeroSection";
 import { TrustedSection } from "@/components/bookkeeping/TrustedSection";
@@ -12,36 +11,34 @@ import { motion } from "framer-motion";
 import SEOhelper from "@/components/SEOhelper";
 
 const BookkeepingPage = () => {
-
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": `Professional Bookkeeping Services in Singapore`,
-    "serviceType": "Bookkeeping Services",
-    "areaServed": "Singapore, UAE, Australia",
-    "provider": {
+    name: `Professional Bookkeeping Services in Singapore`,
+    serviceType: "Bookkeeping Services",
+    areaServed: "Singapore, UAE, Australia",
+    provider: {
       "@type": "Organization",
-      "name": "Growwth Partners",
-      "url": "https://growwthpartners.com",
-      "description": "Expert financial, accounting, and bookkeeping services. Get started with our CFO, finance and accounting solutions to manage and grow your business efficiently"
+      name: "Growwth Partners",
+      url: "https://growwthpartners.com",
+      description:
+        "Expert financial, accounting, and bookkeeping services. Get started with our CFO, finance and accounting solutions to manage and grow your business efficiently",
     },
     contactPoint: {
       "@type": "ContactPoint",
       email: "jd@growwthpartners.com",
-      telephone: "+65 8893 0720",
+      telephone: "+65 9861 5600",
       contactType: "Business Service",
     },
     address: {
-        "@type": "PostalAddress",
-        streetAddress: "65 Chulia Street",
-        addressLocality: "Singapore",
-        addressRegion: "#46-00 OCBC Centre, Singapore 049513",
-        postalCode: "049513",
-        addressCountry: "SG",
-      },
+      "@type": "PostalAddress",
+      streetAddress: "65 Chulia Street",
+      addressLocality: "Singapore",
+      addressRegion: "#46-00 OCBC Centre, Singapore 049513",
+      postalCode: "049513",
+      addressCountry: "SG",
+    },
   };
-
-
 
   return (
     <Layout>
@@ -52,7 +49,7 @@ const BookkeepingPage = () => {
         canonicalUrl="https://growwthpartners.com/bookkeeping-services-in-singapore/"
         structuredData={structuredData}
       />
-      
+
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
