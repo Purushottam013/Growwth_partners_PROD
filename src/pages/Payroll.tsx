@@ -1,4 +1,3 @@
-
 import { Navigate } from "react-router-dom";
 import { Layout } from "@/components/Layout";
 import { HeroSection } from "@/components/payroll/HeroSection";
@@ -16,45 +15,45 @@ const PayrollPage = () => {
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Payroll Services in Singapore",
-    "description": "Affordable and easy payroll services designed for small businesses",
-    "provider": {
+    name: "Payroll Services in Singapore",
+    description:
+      "Affordable and easy payroll services designed for small businesses",
+    provider: {
       "@type": "Organization",
-      "name": "Growwth Partners",
-      "url": "https://growwthpartners.com"
+      name: "Growwth Partners",
+      url: "https://growwthpartners.com",
     },
-    "areaServed": "Singapore, UAE, Australia",
-    "serviceType": "Payroll Services",
+    areaServed: "Singapore, UAE, Australia",
+    serviceType: "Payroll Services",
 
     contactPoint: {
       "@type": "ContactPoint",
       email: "jd@growwthpartners.com",
-      telephone: "+65 8893 0720",
+      telephone: "+65 9861 5600",
       contactType: "Business Service",
     },
     address: {
-        "@type": "PostalAddress",
-        streetAddress: "65 Chulia Street",
-        addressLocality: "Singapore",
-        addressRegion: "#46-00 OCBC Centre, Singapore 049513",
-        postalCode: "049513",
-        addressCountry: "SG",
-      },
+      "@type": "PostalAddress",
+      streetAddress: "65 Chulia Street",
+      addressLocality: "Singapore",
+      addressRegion: "#46-00 OCBC Centre, Singapore 049513",
+      postalCode: "049513",
+      addressCountry: "SG",
+    },
   };
 
   // Redirect non-Singapore users to their respective home pages
-  if (country === 'uae') {
+  if (country === "uae") {
     return <Navigate to="/uae" replace />;
   }
 
-  if (country === 'australia') {
+  if (country === "australia") {
     return <Navigate to="/australia" replace />;
   }
 
-
   return (
     <Layout>
-       <SEOhelper
+      <SEOhelper
         title="Expert Payroll Services in Singapore for Startups | Growwth Partners"
         description="Affordable and easy payroll services designed for small businesses. Simplify tax compliance and pay your team effortlessly with Growwth partnres."
         keywords="small business payroll, payroll for small business, affordable payroll, small business tax, easy payroll"

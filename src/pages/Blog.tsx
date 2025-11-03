@@ -1,9 +1,15 @@
-
 import { useState, useEffect } from "react";
 import { Layout } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardFooter, CardTitle } from "@/components/ui/card";
-import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from "@/components/ui/pagination";
+import {
+  Pagination,
+  PaginationContent,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from "@/components/ui/pagination";
 import { blogData } from "@/data/blog";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useCountry } from "@/contexts/CountryContext";
@@ -75,7 +81,7 @@ const BlogPage = () => {
     contactPoint: {
       "@type": "ContactPoint",
       email: "jd@growwthpartners.com",
-      telephone: "+65 8893 0720",
+      telephone: "+65 9861 5600",
       contactType: "Business Service",
     },
     service: {
@@ -104,17 +110,25 @@ const BlogPage = () => {
           keywords="business blog, financial insights, singapore business, accounting articles, startup advice"
           canonicalUrl="https://growwthpartners.com/blog"
           structuredData={blogSchema}
-
         />
 
         <div className="container mx-auto px-4 py-12">
           <div className="animate-pulse space-y-8">
             <div className="h-64 bg-gray-200 rounded-xl mb-10"></div>
             <div className="flex flex-wrap gap-2 justify-center">
-              {[1, 2, 3, 4, 5].map(i => <div key={i} className="h-10 w-24 bg-gray-200 rounded mb-2"></div>)}
+              {[1, 2, 3, 4, 5].map((i) => (
+                <div
+                  key={i}
+                  className="h-10 w-24 bg-gray-200 rounded mb-2"
+                ></div>
+              ))}
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {Array(6).fill(0).map((_, i) => <div key={i} className="h-80 bg-gray-200 rounded-lg"></div>)}
+              {Array(6)
+                .fill(0)
+                .map((_, i) => (
+                  <div key={i} className="h-80 bg-gray-200 rounded-lg"></div>
+                ))}
             </div>
           </div>
         </div>
@@ -130,7 +144,7 @@ const BlogPage = () => {
         canonicalUrl="https://growwthpartners.com/blog"
         keywords="business blog, financial insights, singapore business, accounting articles, startup advice"
       />
-      
+
       {error && (
         <div className="container mx-auto px-4 pt-4">
           <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 flex items-center justify-between">
@@ -138,11 +152,7 @@ const BlogPage = () => {
               <span className="text-yellow-600">⚠️</span>
               <p className="text-sm text-yellow-800">{error}</p>
             </div>
-            <Button 
-              onClick={() => refetch()} 
-              variant="outline" 
-              size="sm"
-            >
+            <Button onClick={() => refetch()} variant="outline" size="sm">
               Retry
             </Button>
           </div>
@@ -163,14 +173,16 @@ const BlogPage = () => {
                 fontFamily: `"Suisse Int'l", "Helvetica Neue", Arial, sans-serif`,
               }}
             >
-              Grow Smarter with Insights from <span style={{ color: "#FB8136" }}>Growwth Partners</span>
+              Grow Smarter with Insights from{" "}
+              <span style={{ color: "#FB8136" }}>Growwth Partners</span>
             </h1>
             <p className="text-base md:text-lg max-w-4xl mx-auto font-normal mt-2 text-gray-800">
-              Explore expert articles on financial management, accounting best practices, and business strategy
-                designed to help you make smarter decisions and scale with confidence
+              Explore expert articles on financial management, accounting best
+              practices, and business strategy designed to help you make smarter
+              decisions and scale with confidence
             </p>
           </div>
-          
+
           {/* Overlapping Subscribe Button */}
           <div className="absolute left-1/2 -translate-x-1/2 -bottom-6 z-10">
             <Button
@@ -219,9 +231,7 @@ const BlogPage = () => {
               </div>
               <div className="px-6 pt-4 pb-0 flex flex-row items-center gap-2 text-sm text-gray-600">
                 <Calendar size={16} className="mr-2" />
-                <span>
-                  {post.publishDate}
-                </span>
+                <span>{post.publishDate}</span>
                 <span className="mx-2">|</span>
                 <span className="ml-1">By Jatin Detwani</span>
               </div>
@@ -301,9 +311,9 @@ const BlogPage = () => {
         )}
       </div>
 
-      <ContactModal 
-        open={contactModalOpen} 
-        onOpenChange={setContactModalOpen} 
+      <ContactModal
+        open={contactModalOpen}
+        onOpenChange={setContactModalOpen}
       />
     </Layout>
   );

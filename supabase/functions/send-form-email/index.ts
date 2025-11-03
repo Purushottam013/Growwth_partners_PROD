@@ -8,7 +8,8 @@ const SENDER_EMAIL = Deno.env.get("SENDER_EMAIL");
 // CORS headers for browser requests
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
+  "Access-Control-Allow-Headers":
+    "authorization, x-client-info, apikey, content-type",
 };
 
 // Form submission request structure
@@ -28,21 +29,22 @@ const getAdminEmailTemplate = (data: FormSubmissionRequest): string => {
   const formTypeColors = {
     contact: "#f97316",
     expert: "#2563eb",
-    consultation: "#059669"
+    consultation: "#059669",
   };
-  
+
   const formTypeColor = formTypeColors[data.formType] || "#f97316";
-  const formTypeLabel = data.formType.charAt(0).toUpperCase() + data.formType.slice(1);
-  
-  const formattedDateTime = new Intl.DateTimeFormat('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-    hour: 'numeric',
-    minute: 'numeric',
-    hour12: true
+  const formTypeLabel =
+    data.formType.charAt(0).toUpperCase() + data.formType.slice(1);
+
+  const formattedDateTime = new Intl.DateTimeFormat("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    hour: "numeric",
+    minute: "numeric",
+    hour12: true,
   }).format(new Date());
-  
+
   return `
     <!DOCTYPE html>
     <html>
@@ -163,36 +165,56 @@ const getAdminEmailTemplate = (data: FormSubmissionRequest): string => {
           </div>
           <div class="field">
             <span class="label">Email:</span>
-            <span class="value"><a href="mailto:${data.email}" style="color: ${formTypeColor}; text-decoration: none;">${data.email}</a></span>
+            <span class="value"><a href="mailto:${
+              data.email
+            }" style="color: ${formTypeColor}; text-decoration: none;">${
+    data.email
+  }</a></span>
           </div>
-          ${data.company ? `
+          ${
+            data.company
+              ? `
           <div class="field">
             <span class="label">Company:</span>
             <span class="value">${data.company}</span>
-          </div>` : ''}
-          ${data.phone ? `
+          </div>`
+              : ""
+          }
+          ${
+            data.phone
+              ? `
           <div class="field">
             <span class="label">Phone:</span>
-            <span class="value">${data.countryCode || ''} ${data.phone}</span>
-          </div>` : ''}
+            <span class="value">${data.countryCode || ""} ${data.phone}</span>
+          </div>`
+              : ""
+          }
         </div>
 
-        ${data.service ? `
+        ${
+          data.service
+            ? `
         <div class="section">
           <div class="section-title">Service Details</div>
           <div class="field">
             <span class="label">Service:</span>
             <span class="value">${data.service}</span>
           </div>
-        </div>` : ''}
+        </div>`
+            : ""
+        }
         
-        ${data.message ? `
+        ${
+          data.message
+            ? `
         <div class="section">
           <div class="section-title">Message</div>
           <div class="message-content">
-            ${data.message.replace(/\n/g, '<br>')}
+            ${data.message.replace(/\n/g, "<br>")}
           </div>
-        </div>` : ''}
+        </div>`
+            : ""
+        }
         
         <div class="footer">
           <p>This is an automated notification from your website.</p>
@@ -233,7 +255,7 @@ const getUserEmailTemplate = (data: FormSubmissionRequest): string => {
         <div class="contact-info">
           <p>If you have any urgent queries, you can reach us at:</p>
           <p><span class="highlight">Email:</span> <strong>jd@growwthpartners.com</strong></p>
-          <p><span class="highlight">Phone:</span> <strong>+65 8893 0720</strong></p>
+          <p><span class="highlight">Phone:</span> <strong>+65 9861 5600</strong></p>
         </div>
         
         <p>Looking forward to connecting with you soon!</p>
@@ -277,65 +299,81 @@ serve(async (req) => {
       throw new Error("Missing required form fields");
     }
 
-    console.log(`Processing ${formData.formType} form submission for ${formData.name}`);
+    console.log(
+      `Processing ${formData.formType} form submission for ${formData.name}`
+    );
 
     // Prepare admin notification email
-    const adminEmailResponse = await fetch("https://api.sendgrid.com/v3/mail/send", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${SENDGRID_API_KEY}`,
-      },
-      body: JSON.stringify({
-        personalizations: [
-          {
-            to: [{ email: ADMIN_EMAIL }],
-            subject: `New ${formData.formType} form submission from ${formData.name}`,
-          },
-        ],
-        from: { email: SENDER_EMAIL, name: "Website Notifications" },
-        reply_to: { email: formData.email, name: formData.name },
-        subject: `New ${formData.formType} form submission from ${formData.name}`,
-        content: [{ type: "text/html", value: getAdminEmailTemplate(formData) }],
-      }),
-    });
+    const adminEmailResponse = await fetch(
+      "https://api.sendgrid.com/v3/mail/send",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${SENDGRID_API_KEY}`,
+        },
+        body: JSON.stringify({
+          personalizations: [
+            {
+              to: [{ email: ADMIN_EMAIL }],
+              subject: `New ${formData.formType} form submission from ${formData.name}`,
+            },
+          ],
+          from: { email: SENDER_EMAIL, name: "Website Notifications" },
+          reply_to: { email: formData.email, name: formData.name },
+          subject: `New ${formData.formType} form submission from ${formData.name}`,
+          content: [
+            { type: "text/html", value: getAdminEmailTemplate(formData) },
+          ],
+        }),
+      }
+    );
 
     if (!adminEmailResponse.ok) {
       const adminErrorText = await adminEmailResponse.text();
       console.error("SendGrid admin notification failed:", adminErrorText);
-      throw new Error(`Failed to send admin notification: ${adminEmailResponse.status}`);
+      throw new Error(
+        `Failed to send admin notification: ${adminEmailResponse.status}`
+      );
     }
 
     // Prepare user confirmation email
-    const userEmailResponse = await fetch("https://api.sendgrid.com/v3/mail/send", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${SENDGRID_API_KEY}`,
-      },
-      body: JSON.stringify({
-        personalizations: [
-          {
-            to: [{ email: formData.email }],
-            subject: "Thank you for your submission",
-          },
-        ],
-        from: { email: SENDER_EMAIL, name: "Growwth Partners" },
-        reply_to: { email: "jd@growwthpartners.com" },
-        subject: "Thank you for your submission",
-        content: [{ type: "text/html", value: getUserEmailTemplate(formData) }],
-      }),
-    });
+    const userEmailResponse = await fetch(
+      "https://api.sendgrid.com/v3/mail/send",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${SENDGRID_API_KEY}`,
+        },
+        body: JSON.stringify({
+          personalizations: [
+            {
+              to: [{ email: formData.email }],
+              subject: "Thank you for your submission",
+            },
+          ],
+          from: { email: SENDER_EMAIL, name: "Growwth Partners" },
+          reply_to: { email: "jd@growwthpartners.com" },
+          subject: "Thank you for your submission",
+          content: [
+            { type: "text/html", value: getUserEmailTemplate(formData) },
+          ],
+        }),
+      }
+    );
 
     if (!userEmailResponse.ok) {
       const userErrorText = await userEmailResponse.text();
       console.error("SendGrid user confirmation failed:", userErrorText);
       // We'll still return success since the admin was notified
-      console.warn("Failed to send user confirmation email but admin was notified");
+      console.warn(
+        "Failed to send user confirmation email but admin was notified"
+      );
     }
 
     console.log("Successfully sent emails");
-    
+
     return new Response(
       JSON.stringify({ success: true, message: "Emails sent successfully" }),
       {
@@ -345,11 +383,12 @@ serve(async (req) => {
     );
   } catch (error) {
     console.error("Error in send-form-email function:", error);
-    
+
     return new Response(
-      JSON.stringify({ 
-        success: false, 
-        message: error instanceof Error ? error.message : "Unknown error occurred" 
+      JSON.stringify({
+        success: false,
+        message:
+          error instanceof Error ? error.message : "Unknown error occurred",
       }),
       {
         status: 500,

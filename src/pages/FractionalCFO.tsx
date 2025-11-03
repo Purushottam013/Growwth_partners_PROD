@@ -1,4 +1,3 @@
-
 import { Navigate } from "react-router-dom";
 import { Layout } from "@/components/Layout";
 import { motion } from "framer-motion";
@@ -18,55 +17,59 @@ const FractionalCFOPage = () => {
   const { country } = useCountry();
 
   // Redirect non-Singapore users to their respective home pages
-  if (country === 'uae') {
+  if (country === "uae") {
     return <Navigate to="/uae" replace />;
   }
 
-  if (country === 'australia') {
+  if (country === "australia") {
     return <Navigate to="/australia" replace />;
   }
 
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": [{
-      "@type": "Question",
-      "name": "What's the difference between a part-time CFO and a full-time CFO?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A part-time or fractional CFO offers strategic financial expertise without the cost of a full-time hire. You only pay for the support you need—making it ideal for startups and SMEs."
-      }
-    },{
-      "@type": "Question",
-      "name": "Is a CFO necessary if I already have an accountant?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Accountants handle compliance and historical data. CFOs look forward—helping with planning, strategy, investor relations, and growth decisions."
-      }
-    },{
-      "@type": "Question",
-      "name": "Are your virtual CFOs based in Singapore?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, our CFOs have deep local expertise and work with companies across Singapore and Southeast Asia."
-      }
-    }],
-    "areaServed": "Singapore, UAE, Australia",
-    "serviceType": "Part Time CFO Services",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "What's the difference between a part-time CFO and a full-time CFO?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "A part-time or fractional CFO offers strategic financial expertise without the cost of a full-time hire. You only pay for the support you need—making it ideal for startups and SMEs.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Is a CFO necessary if I already have an accountant?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes. Accountants handle compliance and historical data. CFOs look forward—helping with planning, strategy, investor relations, and growth decisions.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Are your virtual CFOs based in Singapore?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes, our CFOs have deep local expertise and work with companies across Singapore and Southeast Asia.",
+        },
+      },
+    ],
+    areaServed: "Singapore, UAE, Australia",
+    serviceType: "Part Time CFO Services",
     contactPoint: {
       "@type": "ContactPoint",
       email: "jd@growwthpartners.com",
-      telephone: "+65 8893 0720",
+      telephone: "+65 9861 5600",
       contactType: "Business Service",
     },
     address: {
-        "@type": "PostalAddress",
-        streetAddress: "65 Chulia Street",
-        addressLocality: "Singapore",
-        addressRegion: "#46-00 OCBC Centre, Singapore 049513",
-        postalCode: "049513",
-        addressCountry: "SG",
-      },
+      "@type": "PostalAddress",
+      streetAddress: "65 Chulia Street",
+      addressLocality: "Singapore",
+      addressRegion: "#46-00 OCBC Centre, Singapore 049513",
+      postalCode: "049513",
+      addressCountry: "SG",
+    },
   };
 
   return (
@@ -78,20 +81,20 @@ const FractionalCFOPage = () => {
         canonicalUrl="https://growwthpartners.com/part-time-cfo/"
         structuredData={organizationSchema}
       />
-       <motion.div
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
         className="overflow-hidden"
       >
-        <HeroSection/>
-        <FinancialInsights/>
-        <ServiceOverview/>
-        <WorkProcess/>
-        <CaseStudySection/>
-        <ContactTestimonials/>
-        <CTASection/>
-        <FAQAccordion/>
+        <HeroSection />
+        <FinancialInsights />
+        <ServiceOverview />
+        <WorkProcess />
+        <CaseStudySection />
+        <ContactTestimonials />
+        <CTASection />
+        <FAQAccordion />
       </motion.div>
     </Layout>
   );

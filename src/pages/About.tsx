@@ -1,4 +1,3 @@
-
 import { Navigate } from "react-router-dom";
 import { Layout } from "@/components/Layout";
 import { AboutHero } from "@/components/about/AboutHero";
@@ -18,29 +17,30 @@ const AboutPage = () => {
   const { country } = useCountry();
 
   // Redirect non-Singapore users to their respective home pages
-  if (country === 'uae') {
+  if (country === "uae") {
     return <Navigate to="/uae/" replace />;
   }
 
-  if (country === 'australia') {
+  if (country === "australia") {
     return <Navigate to="/australia/" replace />;
   }
 
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "AboutPage",
-    "name": "About Growwth Partners",
-    "applicationCategory": "FinanceApplication",
-    "operatingSystem": "Web",
-      "mainEntity": {
+    name: "About Growwth Partners",
+    applicationCategory: "FinanceApplication",
+    operatingSystem: "Web",
+    mainEntity: {
       "@type": "Organization",
-      "name": "https://growwthpartners.com",
-      "description": "Expert financial, accounting, and bookkeeping services. Get started with our CFO, finance and accounting solutions to manage and grow your business efficiently"
+      name: "https://growwthpartners.com",
+      description:
+        "Expert financial, accounting, and bookkeeping services. Get started with our CFO, finance and accounting solutions to manage and grow your business efficiently",
     },
     contactPoint: {
       "@type": "ContactPoint",
       email: "jd@growwthpartners.com",
-      telephone: "+65 8893 0720",
+      telephone: "+65 9861 5600",
       contactType: "Business Service",
     },
     service: {
@@ -58,8 +58,7 @@ const AboutPage = () => {
         addressCountry: "SG",
       },
     },
-    }
-  
+  };
 
   return (
     <Layout>
@@ -70,7 +69,7 @@ const AboutPage = () => {
         canonicalUrl="https://growwthpartners.com/about"
         structuredData={structuredData}
       />
-      
+
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

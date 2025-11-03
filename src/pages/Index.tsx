@@ -1,4 +1,3 @@
-
 import React, { lazy, Suspense, useEffect } from "react";
 import { Layout } from "@/components/Layout";
 import { HeroSection } from "@/components/home/HeroSection";
@@ -7,24 +6,28 @@ import { TrustedSection } from "@/components/accounting/TrustedSection";
 import SEOhelper from "@/components/SEOhelper";
 
 // More effective code splitting with smaller chunks
-const ServicesSection = lazy(() => 
-  import("@/components/home/ServicesSection")
-    .then(mod => ({ default: mod.ServicesSection }))
+const ServicesSection = lazy(() =>
+  import("@/components/home/ServicesSection").then((mod) => ({
+    default: mod.ServicesSection,
+  }))
 );
 
-const AchievementsSection = lazy(() => 
-  import("@/components/home/AchievementsSection")
-    .then(mod => ({ default: mod.AchievementsSection }))
+const AchievementsSection = lazy(() =>
+  import("@/components/home/AchievementsSection").then((mod) => ({
+    default: mod.AchievementsSection,
+  }))
 );
 
-const TestimonialsSection = lazy(() => 
-  import("@/components/home/TestimonialsSection")
-    .then(mod => ({ default: mod.TestimonialsSection }))
+const TestimonialsSection = lazy(() =>
+  import("@/components/home/TestimonialsSection").then((mod) => ({
+    default: mod.TestimonialsSection,
+  }))
 );
 
-const CtaSection = lazy(() => 
-  import("@/components/home/CtaSection")
-    .then(mod => ({ default: mod.CtaSection }))
+const CtaSection = lazy(() =>
+  import("@/components/home/CtaSection").then((mod) => ({
+    default: mod.CtaSection,
+  }))
 );
 
 // Minimal fallback for better mobile experience
@@ -42,7 +45,7 @@ const Index = () => {
       import("@/components/home/ServicesSection");
       import("@/components/home/AchievementsSection");
     };
-    
+
     // Immediate preload for better mobile experience
     preloadComponents();
   }, []);
@@ -66,7 +69,7 @@ const Index = () => {
     contactPoint: {
       "@type": "ContactPoint",
       email: "jd@growwthpartners.com",
-      telephone: "+65 8893 0720",
+      telephone: "+65 9861 5600",
       contactType: "Business Service",
     },
     service: {
@@ -86,17 +89,16 @@ const Index = () => {
     },
   };
 
-
   return (
     <Layout>
-      <SEOhelper 
+      <SEOhelper
         title="Growwth Partners - Financial & Accounting Services"
         description="Expert financial, accounting, and bookkeeping services. Get started with our CFO, finance and accounting solutions to manage and grow your business efficiently."
         keywords="financial services, accounting singapore, cfo services, bookkeeping, business growth"
         canonicalUrl="https://growwthpartners.com/"
         structuredData={organizationSchema}
       />
-      
+
       <AnimatedElement
         animation="fade-in"
         duration={0.2}
@@ -105,20 +107,20 @@ const Index = () => {
         {/* Critical content - loads immediately */}
         <HeroSection />
         <TrustedSection />
-        
+
         {/* Lazy loaded sections with minimal loading indicators */}
         <Suspense fallback={<SectionLoader />}>
           <ServicesSection />
         </Suspense>
-        
+
         <Suspense fallback={<SectionLoader />}>
           <AchievementsSection />
         </Suspense>
-        
+
         <Suspense fallback={<SectionLoader />}>
           <TestimonialsSection />
         </Suspense>
-        
+
         <Suspense fallback={<SectionLoader />}>
           <CtaSection />
         </Suspense>
