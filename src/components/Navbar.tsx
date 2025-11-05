@@ -40,6 +40,14 @@ const navItems = [
     dropdown: false
   },
   {
+    title: "Pages",
+    path: "/use-of-ai-in-finance",
+    dropdown: true,
+    items: [
+      { title: "Use of AI in Finance", path: "/use-of-ai-in-finance" }
+    ]
+  },
+  {
     title: "Resources",
     path: "/achievements",
     dropdown: true,

@@ -124,6 +124,10 @@ export const routes: RouteRecord[] = [
         async lazy() { const { default: Component } = await import('./pages/News'); return { Component }; },
       },
       {
+        path: 'use-of-ai-in-finance',
+        async lazy() { const { default: Component } = await import('./pages/AiInFinance'); return { Component }; },
+      },
+      {
         path: 'resources',
         element: <Navigate to="/achievements/" replace />
       },
