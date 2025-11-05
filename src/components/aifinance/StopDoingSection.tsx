@@ -22,7 +22,7 @@ export const StopDoingSection = () => {
   ];
 
   return (
-    <section className="py-16 lg:py-24 bg-gradient-to-br from-destructive/5 to-muted/30">
+    <section className="py-16 lg:py-24 bg-white">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -32,7 +32,7 @@ export const StopDoingSection = () => {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">What You Can Stop Doing</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
             This is what teams usually stop doing within 30 days of using RyzUp.
           </p>
         </motion.div>
@@ -45,15 +45,15 @@ export const StopDoingSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-card p-6 rounded-xl shadow-lg border-2 border-destructive/20"
+              className="bg-white p-6 rounded-xl shadow-lg border-2 border-red-200"
             >
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-destructive/10 rounded-full flex items-center justify-center flex-shrink-0">
-                  <X className="w-5 h-5 text-destructive" />
+                <div className="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  <X className="w-5 h-5 text-red-600" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                  <p className="text-muted-foreground">{item.description}</p>
+                  <h3 className="text-xl font-bold mb-2 text-gray-900">{item.title}</h3>
+                  <p className="text-gray-700">{item.description}</p>
                 </div>
               </div>
             </motion.div>

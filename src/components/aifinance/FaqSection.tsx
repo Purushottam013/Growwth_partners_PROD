@@ -36,7 +36,7 @@ export const FaqSection = () => {
   ];
 
   return (
-    <section className="bg-muted/30 py-16 lg:py-24">
+    <section className="bg-white py-16 lg:py-24">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -45,11 +45,11 @@ export const FaqSection = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <span className="inline-block px-4 py-1 bg-primary/10 text-primary rounded-full text-sm font-semibold mb-4">
+          <span className="inline-block px-4 py-1 bg-brand-orange/10 text-brand-orange rounded-full text-sm font-semibold mb-4">
             Common Questions
           </span>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-gray-700 max-w-2xl mx-auto">
             Find answers to common questions about AI in finance and RyzUp
           </p>
         </motion.div>
@@ -65,13 +65,13 @@ export const FaqSection = () => {
                 <AccordionTrigger
                   className="
                     group flex items-center justify-between w-full
-                    bg-card px-6 py-6
+                    bg-white px-6 py-6
                     font-bold text-xl md:text-2xl
-                    rounded-none border border-border transition-all duration-200 
+                    rounded-none border border-gray-200 transition-all duration-200 
                     shadow-none
                     outline-none
                     focus-visible:outline-none
-                    data-[state=open]:border-2 data-[state=open]:border-primary
+                    data-[state=open]:border-2 data-[state=open]:border-brand-orange
                     data-[state=open]:rounded-md
                   "
                   style={{
@@ -80,15 +80,15 @@ export const FaqSection = () => {
                     borderWidth: "1.5px",
                   }}
                 >
-                  <span className="text-left w-full select-none font-medium">{faq.question}</span>
+                  <span className="text-left w-full select-none font-medium text-gray-900">{faq.question}</span>
                   <span className="flex items-center justify-center transition-all duration-300">
-                    <span className="flex items-center justify-center w-8 h-8 md:w-9 md:h-9 bg-primary rounded-full text-primary-foreground transition-all duration-200">
+                    <span className="flex items-center justify-center w-8 h-8 md:w-9 md:h-9 bg-brand-orange rounded-full text-white transition-all duration-200">
                       <Plus className="w-6 h-6 transition-all duration-200 group-data-[state=open]:hidden" strokeWidth={3} />
                       <Minus className="w-6 h-6 transition-all duration-200 group-data-[state=closed]:hidden" strokeWidth={3} />
                     </span>
                   </span>
                 </AccordionTrigger>
-                <AccordionContent className="bg-card px-6 pb-6 pt-2 border border-border border-t-0 text-lg leading-relaxed rounded-b-md animate-slide-down">
+                <AccordionContent className="bg-white px-6 pb-6 pt-2 border border-gray-200 border-t-0 text-lg leading-relaxed rounded-b-md animate-slide-down text-gray-700">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
@@ -103,23 +103,26 @@ export const FaqSection = () => {
           viewport={{ once: true }}
           className="text-center mt-12"
         >
-          <p className="text-lg font-semibold mb-6">
+          <p className="text-lg font-semibold mb-6 text-gray-900">
             RyzUp puts AI in finance where it belongs. Inside your workflow. Inside your models. Inside your decisions.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              size="lg"
-              onClick={() => window.open('https://workspace.google.com/u/0/marketplace/app/ryzup_sheets/1047771589087?flow_type=2&utm_source=website&utm_medium=click&utm_campaign=promotion&utm_content=cta', '_blank')}
+            <a
+              href="https://workspace.google.com/u/0/marketplace/app/ryzup_sheets/1047771589087?flow_type=2&utm_source=website&utm_medium=click&utm_campaign=promotion&utm_content=cta"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 bg-brand-orange text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-brand-orange/90 transition-colors"
             >
               Get Started Free
-            </Button>
-            <Button 
-              size="lg" 
-              variant="outline"
-              onClick={() => window.location.href = '/contact-us'}
+            </a>
+            <a
+              href="https://calendly.com/jd-growwthpartners/15min?month=2025-11"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 bg-white text-brand-orange border-2 border-brand-orange px-8 py-4 rounded-lg font-semibold text-lg hover:bg-brand-orange/10 transition-colors"
             >
               Request a Demo
-            </Button>
+            </a>
           </div>
         </motion.div>
       </div>

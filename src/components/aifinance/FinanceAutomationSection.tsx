@@ -17,7 +17,7 @@ export const FinanceAutomationSection = () => {
   ];
 
   return (
-    <section className="py-16 lg:py-24 bg-gradient-to-br from-primary/5 to-accent/5">
+    <section className="py-16 lg:py-24 bg-gradient-to-br from-[#F1F0FB] to-white">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -29,7 +29,7 @@ export const FinanceAutomationSection = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Finance Automation Tools Built For Real Operators
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
             Most finance automation tools promise visibility. RyzUp gives you visibility and decision support.
           </p>
         </motion.div>
@@ -44,11 +44,11 @@ export const FinanceAutomationSection = () => {
             <h3 className="text-2xl font-bold mb-6">RyzUp is built for</h3>
             <div className="space-y-4">
               {targetUsers.map((user, index) => (
-                <div key={index} className="flex items-start gap-4 bg-card p-4 rounded-lg shadow">
-                  <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <user.icon className="w-5 h-5 text-primary" />
+                <div key={index} className="flex items-start gap-4 bg-white p-4 rounded-lg shadow">
+                  <div className="w-10 h-10 bg-brand-orange/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <user.icon className="w-5 h-5 text-brand-orange" />
                   </div>
-                  <p className="text-muted-foreground pt-2">{user.text}</p>
+                  <p className="text-gray-700 pt-2">{user.text}</p>
                 </div>
               ))}
             </div>
@@ -63,13 +63,13 @@ export const FinanceAutomationSection = () => {
             <h3 className="text-2xl font-bold mb-6">What you get</h3>
             <div className="space-y-4">
               {benefits.map((benefit, index) => (
-                <div key={index} className="flex items-start gap-3 bg-card p-4 rounded-lg shadow">
-                  <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
-                  <p className="text-muted-foreground">{benefit}</p>
+                <div key={index} className="flex items-start gap-3 bg-white p-4 rounded-lg shadow">
+                  <CheckCircle className="w-6 h-6 text-brand-orange flex-shrink-0 mt-0.5" />
+                  <p className="text-gray-700">{benefit}</p>
                 </div>
               ))}
             </div>
-            <p className="text-lg font-semibold mt-8 text-primary">
+            <p className="text-lg font-semibold mt-8 text-brand-orange">
               This is the next generation of finance automation tools. Less time preparing. More time deciding.
             </p>
           </motion.div>

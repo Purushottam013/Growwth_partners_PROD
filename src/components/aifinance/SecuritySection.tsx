@@ -10,7 +10,7 @@ export const SecuritySection = () => {
   ];
 
   return (
-    <section className="py-16 lg:py-24 bg-muted/30">
+    <section className="py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-white">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -20,7 +20,7 @@ export const SecuritySection = () => {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Security and Trust</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
             RyzUp is built for finance. That means accuracy, security, and reliability are not optional.
           </p>
         </motion.div>
@@ -33,12 +33,12 @@ export const SecuritySection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-card p-6 rounded-xl shadow-lg text-center"
+              className="bg-white p-6 rounded-xl shadow-lg text-center"
             >
-              <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <feature.icon className="w-7 h-7 text-primary" />
+              <div className="w-14 h-14 bg-brand-orange/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <feature.icon className="w-7 h-7 text-brand-orange" />
               </div>
-              <p className="font-semibold">{feature.text}</p>
+              <p className="font-semibold text-gray-900">{feature.text}</p>
             </motion.div>
           ))}
         </div>
@@ -50,7 +50,7 @@ export const SecuritySection = () => {
           viewport={{ once: true }}
           className="text-center max-w-3xl mx-auto"
         >
-          <p className="text-lg font-semibold text-primary">
+          <p className="text-lg font-semibold text-brand-orange">
             AI in finance only works if finance can trust it. We build for CFO level scrutiny, not for demo screenshots.
           </p>
         </motion.div>
