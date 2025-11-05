@@ -1,19 +1,13 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { ChevronRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-  DialogTrigger,
-} from '@/components/ui/dialog';
-import ExpertForm from './ExpertForm';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { ChevronRight, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { ContactModal } from "@/components/ui/contact-modal";
+
+import ExpertForm from "./ExpertForm";
 
 export const CTASection: React.FC = () => {
-  const [contactOpen, setContactOpen] = useState(false);
+  const [contactModalOpen, setContactModalOpen] = useState(false);
 
   return (
     <section className="py-16 bg-gradient-to-b from-white to-blue-50/50 overflow-hidden">
@@ -43,7 +37,8 @@ export const CTASection: React.FC = () => {
               transition={{ delay: 0.4, duration: 0.6 }}
               className="text-xl text-gray-700 mb-10"
             >
-              Let's explore how our fractional CFO services can bring clarity, confidence, and strategic direction to your business.
+              Let's explore how our fractional CFO services can bring clarity,
+              confidence, and strategic direction to your business.
             </motion.p>
 
             <motion.div
@@ -51,30 +46,21 @@ export const CTASection: React.FC = () => {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.6, duration: 0.6 }}
             >
-              <Dialog open={contactOpen} onOpenChange={setContactOpen}>
-                <DialogTrigger asChild>
-                  <Button
-                    onClick={() => setContactOpen(true)}
-                    className="bg-brand-orange text-white hover:bg-brand-orange/90 shadow-lg hover:shadow-xl px-8 py-7 text-lg font-medium rounded-xl transform transition-all duration-300 hover:scale-105 inline-flex items-center"
-                  >
-                    <span>Book a Free CFO Consultation</span>
-                    <ChevronRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-2" />
-                  </Button>
-                </DialogTrigger>
-                <DialogContent className="sm:max-w-md">
-                  <DialogHeader>
-                    <DialogTitle className="text-center">Book a Free CFO Consultation</DialogTitle>
-                    <DialogDescription className="text-center">
-                      Fill in the form below and we'll get back to you shortly.
-                    </DialogDescription>
-                  </DialogHeader>
-                  <ExpertForm onSuccess={() => setContactOpen(false)} />
-                </DialogContent>
-              </Dialog>
+              <Button
+                onClick={() => setContactModalOpen(true)}
+                className="bg-brand-orange hover:bg-brand-orange/90 text-white rounded-full px-8 py-6 text-lg font-medium group"
+              >
+                Book a Free CFO Consultation
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
             </motion.div>
           </motion.div>
         </div>
       </div>
+      <ContactModal
+        open={contactModalOpen}
+        onOpenChange={setContactModalOpen}
+      />
     </section>
   );
 };
