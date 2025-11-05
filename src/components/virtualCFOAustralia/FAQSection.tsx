@@ -46,9 +46,6 @@ export const FAQSection = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <span className="inline-block px-4 py-1 bg-[#06C0A9]/10 text-[#06C0A9] rounded-full text-sm font-semibold mb-4">
-            FAQ
-          </span>
           <h3 className="heading-md mb-4">Frequently Asked Questions</h3>
           <p className="text-lg text-gray-700 max-w-3xl mx-auto">
             Find answers to common questions about our Virtual CFO and fractional CFO services for Australian businesses.
@@ -85,7 +82,7 @@ export const FAQSection = () => {
                     <span className={`
                       flex items-center justify-center
                       w-8 h-8 md:w-9 md:h-9
-                      bg-black rounded-full
+                      bg-[#06C0A9] rounded-full
                       text-white
                       transition-all duration-200
                     `}>

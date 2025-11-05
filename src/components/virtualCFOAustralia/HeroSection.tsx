@@ -98,7 +98,7 @@ export const HeroSection: React.FC = () => {
                   )
                 }
                 variant="outline"
-                className="px-8 py-6 font-bold text-gray-700 border-2 border-orange-500 rounded-full"
+                className="px-8 py-6 font-bold text-gray-700 border-2 border-[#06C0A9] rounded-full"
               >
                 BOOK FREE 30 MINS CALL
                 <ChevronRight className="ml-2 h-5 w-5" />
