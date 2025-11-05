@@ -101,28 +101,30 @@ export const FaqSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
-          className="text-center mt-12"
+          className="mt-12 max-w-4xl mx-auto"
         >
-          <p className="text-lg font-semibold mb-6 text-gray-900">
-            RyzUp puts AI in finance where it belongs. Inside your workflow. Inside your models. Inside your decisions.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="https://workspace.google.com/u/0/marketplace/app/ryzup_sheets/1047771589087?flow_type=2&utm_source=website&utm_medium=click&utm_campaign=promotion&utm_content=cta"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 bg-brand-orange text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-brand-orange/90 transition-colors"
-            >
-              Get Started Free
-            </a>
-            <a
-              href="https://calendly.com/jd-growwthpartners/15min?month=2025-11"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 bg-white text-brand-orange border-2 border-brand-orange px-8 py-4 rounded-lg font-semibold text-lg hover:bg-brand-orange/10 transition-colors"
-            >
-              Request a Demo
-            </a>
+          <div className="bg-gradient-to-br from-blue-50/50 to-orange-50/30 p-8 md:p-12 rounded-xl shadow-lg border border-gray-200">
+            <p className="text-xl font-semibold mb-8 text-gray-900 text-center">
+              RyzUp puts AI in finance where it belongs. Inside your workflow. Inside your models. Inside your decisions.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="https://workspace.google.com/u/0/marketplace/app/ryzup_sheets/1047771589087?flow_type=2&utm_source=website&utm_medium=click&utm_campaign=promotion&utm_content=cta"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 bg-brand-orange text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-brand-orange/90 transition-colors"
+              >
+                Get Started Free
+              </a>
+              <a
+                href="https://calendly.com/jd-growwthpartners/15min?month=2025-11"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 bg-white text-brand-orange border-2 border-brand-orange px-8 py-4 rounded-lg font-semibold text-lg hover:bg-brand-orange/10 transition-colors"
+              >
+                Request a Demo
+              </a>
+            </div>
           </div>
         </motion.div>
       </div>

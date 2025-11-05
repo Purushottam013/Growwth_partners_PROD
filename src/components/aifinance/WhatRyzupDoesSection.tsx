@@ -46,7 +46,7 @@ export const WhatRyzupDoesSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
           {features.map((feature, index) => (
             <motion.div
               key={index}
@@ -54,7 +54,7 @@ export const WhatRyzupDoesSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow border border-gray-200"
+              className="bg-blue-50/50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow border border-gray-200 w-full"
             >
               <div className="w-12 h-12 bg-brand-orange/10 rounded-lg flex items-center justify-center mb-4">
                 <feature.icon className="w-6 h-6 text-brand-orange" />

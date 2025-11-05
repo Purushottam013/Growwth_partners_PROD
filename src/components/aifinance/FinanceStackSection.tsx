@@ -90,7 +90,7 @@ export const FinanceStackSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white p-6 rounded-xl shadow-lg border border-gray-200"
+              className="bg-blue-50/50 p-6 rounded-xl shadow-lg border border-gray-200"
             >
               <div className="w-12 h-12 bg-brand-orange/10 rounded-lg flex items-center justify-center mb-4">
                 <feature.icon className="w-6 h-6 text-brand-orange" />
