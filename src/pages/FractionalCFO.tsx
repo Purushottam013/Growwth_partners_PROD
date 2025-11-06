@@ -101,8 +101,8 @@ const FractionalCFOPage = () => {
   return (
     <Layout>
       <SEOhelper
-        title="Expert Fractional & Virtual CFO in Singapore"
-        description="Hire top-rated fractional, part-time, or virtual CFO services in Singapore. Boost financial strategy and performance without full-time costs."
+        title="Fractional & Part-Time CFO Services in Singapore | Growwth Partners"
+        description="Explore fractional, part-time, and virtual CFO services in Singapore. Strengthen financial strategy, optimise cash flow, and drive data-driven growth."
         keywords="virtual cfo, singapore cfo, financial strategy, fractional leadership"
         canonicalUrl="https://growwthpartners.com/part-time-cfo/"
         structuredData={structuredData}

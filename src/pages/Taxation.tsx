@@ -103,8 +103,8 @@ const TaxationPage = () => {
   return (
     <Layout>
       <SEOhelper
-        title="Taxation & Compliance Services in Singapore | Growwth Partners"
-        description="Professional taxation and compliance services in Singapore for startups & SMEs. Stay compliant and scale confidently with Growwth Partners' expert support."
+        title="Corporate Taxation & Compliance Services | Growwth Partners"
+        description="Expert tax and compliance services in Singapore for businesses of all sizes. Manage GST, corporate tax, and IRAS regulations efficiently."
         keywords="singapore taxation, tax compliance, corporate tax, gst filing"
         canonicalUrl="https://growwthpartners.com/taxation/"
         structuredData={structuredData}
