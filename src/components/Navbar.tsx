@@ -14,12 +14,7 @@ const navItems = [
   {
     title: "Home",
     path: "/",
-    dropdown: false
-  },
-  {
-    title: "About Us",
-    path: "/about",
-    dropdown: false
+    dropdown: false,
   },
   {
     title: "Services",
@@ -31,13 +26,13 @@ const navItems = [
       { title: "Payroll", path: "/payroll" },
       { title: "Taxation & Compliance", path: "/taxation" },
       { title: "Part Time CFO", path: "/part-time-cfo" },
-      { title: "Cash Flow Modelling", path: "/cash-flow" }
-    ]
+      { title: "Cash Flow Modelling", path: "/cash-flow" },
+    ],
   },
   {
     title: "Contact Us",
     path: "/contact-us",
-    dropdown: false
+    dropdown: false,
   },
   {
     title: "Pages",
@@ -45,21 +40,29 @@ const navItems = [
     dropdown: true,
     items: [
       { title: "Use of AI in Finance", path: "/use-of-ai-in-finance" },
-      { title: "Strategic Finance Support", path: "/strategic-finance-singapore" }
-    ]
+      {
+        title: "Strategic Finance Support",
+        path: "/strategic-finance-singapore",
+      },
+    ],
   },
   {
     title: "Resources",
     path: "/achievements",
     dropdown: true,
     items: [
+      {
+        title: "About Us",
+        path: "/about",
+        dropdown: false,
+      },
       { title: "Blog", path: "/blog" },
       { title: "Success Stories", path: "/success-stories" },
       { title: "Guide", path: "/guide" },
       { title: "Achievements & Awards", path: "/achievements" },
-      { title: "In The News", path: "/news" }
-    ]
-  }
+      { title: "In The News", path: "/news" },
+    ],
+  },
 ];
 
 export const Navbar = () => {
