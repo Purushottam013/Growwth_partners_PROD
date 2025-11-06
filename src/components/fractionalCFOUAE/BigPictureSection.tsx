@@ -47,10 +47,10 @@ export const BigPictureSection: React.FC = () => {
           className="text-center mb-12"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Big-Picture Thinking, <span className="text-[#8B5CF6]">Tailored for Your Business</span>
+            Big-Picture Thinking, <span className="text-[#FFB343]">Tailored for Your Business</span>
           </h2>
           <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
-            At Growwth Partners, our fractional CFOs act as part of your team, helping you navigate challenges, identify opportunities, and build a strong financial future. If you're looking for an <span className="font-semibold text-[#8B5CF6]">outsourced CFO Dubai</span> partnership, we embed directly into your leadership so you get real strategic finance, not just accounting.
+            At Growwth Partners, our fractional CFOs act as part of your team, helping you navigate challenges, identify opportunities, and build a strong financial future. If you're looking for an <span className="font-semibold text-[#FFB343]">outsourced CFO Dubai</span> partnership, we embed directly into your leadership so you get real strategic finance, not just accounting.
           </p>
         </motion.div>
 
@@ -62,7 +62,7 @@ export const BigPictureSection: React.FC = () => {
           className="mb-12"
         >
           <h3 className="text-3xl font-bold text-gray-900 text-center mb-8">
-            High-Impact CFO Support, <span className="text-[#8B5CF6]">Without the Full-Time Cost</span>
+            High-Impact CFO Support, <span className="text-[#FFB343]">Without the Full-Time Cost</span>
           </h3>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
@@ -77,8 +77,8 @@ export const BigPictureSection: React.FC = () => {
                 <Card className="h-full bg-white border-2 border-purple-100/50 shadow-lg hover:shadow-xl transition-shadow">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
-                      <div className="bg-[#8B5CF6]/10 p-3 rounded-lg flex-shrink-0">
-                        <benefit.icon className="w-6 h-6 text-[#8B5CF6]" />
+                      <div className="bg-[#FFB343]/10 p-3 rounded-lg flex-shrink-0">
+                        <benefit.icon className="w-6 h-6 text-[#FFB343]" />
                       </div>
                       <div>
                         <h4 className="text-xl font-bold text-gray-900 mb-2">{benefit.title}</h4>
@@ -102,11 +102,11 @@ export const BigPictureSection: React.FC = () => {
           <Card className="bg-gradient-to-br from-purple-50/50 via-white to-purple-50/30 border-2 border-purple-100 shadow-lg max-w-4xl mx-auto">
             <CardContent className="p-8">
               <p className="text-lg text-gray-700 mb-6">
-                This is the value of a <span className="font-semibold text-[#8B5CF6]">fractional CFO</span> and <span className="font-semibold text-[#8B5CF6]">outsourced CFO Dubai</span> style model: proven strategic finance without adding a full-time headcount.
+                This is the value of a <span className="font-semibold text-[#FFB343]">fractional CFO</span> and <span className="font-semibold text-[#FFB343]">outsourced CFO Dubai</span> style model: proven strategic finance without adding a full-time headcount.
               </p>
               <Button
                 onClick={() => setContactModalOpen(true)}
-                className="bg-[#8B5CF6] hover:bg-[#8B5CF6]/90 text-white rounded-full px-8 py-6 text-lg font-medium"
+                className="bg-[#FFB343] hover:bg-[#FFB343]/90 text-white rounded-full px-8 py-6 text-lg font-medium"
               >
                 Schedule Your Free Consultation
               </Button>

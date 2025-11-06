@@ -19,7 +19,7 @@ export const TestimonialsSection: React.FC = () => {
           className="text-center mb-12"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            What Our <span className="text-[#8B5CF6]">Clients Say</span>
+            What Our <span className="text-[#FFB343]">Clients Say</span>
           </h2>
         </motion.div>
 
@@ -58,11 +58,11 @@ export const TestimonialsSection: React.FC = () => {
                 Get CFO-Level Insights Without the Full-Time Cost
               </h3>
               <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                Companies across the UAE trust Growwth Partners when they need a strategic finance partner, <span className="font-semibold text-[#8B5CF6]">fractional CFO support</span>, or an <span className="font-semibold text-[#8B5CF6]">outsourced CFO Dubai</span> model that scales with their growth.
+                Companies across the UAE trust Growwth Partners when they need a strategic finance partner, <span className="font-semibold text-[#FFB343]">fractional CFO support</span>, or an <span className="font-semibold text-[#FFB343]">outsourced CFO Dubai</span> model that scales with their growth.
               </p>
               <Button
                 onClick={() => setContactModalOpen(true)}
-                className="bg-[#8B5CF6] hover:bg-[#8B5CF6]/90 text-white rounded-full px-8 py-6 text-lg font-medium"
+                className="bg-[#FFB343] hover:bg-[#FFB343]/90 text-white rounded-full px-8 py-6 text-lg font-medium"
               >
                 Book a Free Consultation
               </Button>

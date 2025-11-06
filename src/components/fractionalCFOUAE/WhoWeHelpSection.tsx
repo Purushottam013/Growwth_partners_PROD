@@ -61,7 +61,7 @@ export const WhoWeHelpSection: React.FC = () => {
           className="text-center mb-12"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Who We <span className="text-[#8B5CF6]">Help</span>
+            Who We <span className="text-[#FFB343]">Help</span>
           </h2>
           <p className="text-xl text-gray-700 font-semibold">
             CFO-Level Expertise for Every Business Stage
@@ -80,8 +80,8 @@ export const WhoWeHelpSection: React.FC = () => {
               <Card className="h-full bg-white border-2 border-purple-100/50 shadow-lg hover:shadow-xl transition-all hover:scale-105">
                 <CardContent className="p-8">
                   <div className="flex flex-col items-center text-center gap-4">
-                    <div className="bg-[#8B5CF6]/10 p-4 rounded-full">
-                      <type.icon className="w-8 h-8 text-[#8B5CF6]" />
+                    <div className="bg-[#FFB343]/10 p-4 rounded-full">
+                      <type.icon className="w-8 h-8 text-[#FFB343]" />
                     </div>
                     <h3 className="text-2xl font-bold text-gray-900">{type.title}</h3>
                     <p className="text-gray-700 leading-relaxed">{type.description}</p>
@@ -101,7 +101,7 @@ export const WhoWeHelpSection: React.FC = () => {
           className="text-center mb-12"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            How Our <span className="text-[#8B5CF6]">Fractional CFO Services</span> Work
+            How Our <span className="text-[#FFB343]">Fractional CFO Services</span> Work
           </h2>
           <p className="text-xl text-gray-700 font-semibold">
             Strategic Financial Leadership, On Your Terms
@@ -121,7 +121,7 @@ export const WhoWeHelpSection: React.FC = () => {
               <Card className="bg-gradient-to-r from-purple-50/50 to-white border-2 border-purple-100/50 shadow-md">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-6">
-                    <div className="bg-[#8B5CF6] text-white text-2xl font-bold rounded-full w-16 h-16 flex items-center justify-center flex-shrink-0">
+                    <div className="bg-[#FFB343] text-white text-2xl font-bold rounded-full w-16 h-16 flex items-center justify-center flex-shrink-0">
                       {step.number}
                     </div>
                     <div className="flex-grow">
@@ -145,11 +145,11 @@ export const WhoWeHelpSection: React.FC = () => {
           <Card className="bg-gradient-to-br from-purple-50/50 via-white to-purple-50/30 border-2 border-purple-100 shadow-lg max-w-4xl mx-auto">
             <CardContent className="p-8">
               <p className="text-xl text-gray-700 mb-6 leading-relaxed">
-                No overhead. No long-term commitment. Just expert financial guidance, when you need it. This is how <span className="font-semibold text-[#8B5CF6]">outsourced CFO Dubai</span> support should work.
+                No overhead. No long-term commitment. Just expert financial guidance, when you need it. This is how <span className="font-semibold text-[#FFB343]">outsourced CFO Dubai</span> support should work.
               </p>
               <Button
                 onClick={() => setContactModalOpen(true)}
-                className="bg-[#8B5CF6] hover:bg-[#8B5CF6]/90 text-white rounded-full px-8 py-6 text-lg font-medium group"
+                className="bg-[#FFB343] hover:bg-[#FFB343]/90 text-white rounded-full px-8 py-6 text-lg font-medium group"
               >
                 Start Working with a CFO Today
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />

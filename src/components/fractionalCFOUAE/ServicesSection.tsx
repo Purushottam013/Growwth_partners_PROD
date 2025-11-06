@@ -29,7 +29,7 @@ export const ServicesSection: React.FC = () => {
           className="text-center mb-12"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Our <span className="text-[#8B5CF6]">CFO Services</span> Include
+            Our <span className="text-[#FFB343]">CFO Services</span> Include
           </h2>
         </motion.div>
 
@@ -60,11 +60,11 @@ export const ServicesSection: React.FC = () => {
 
               <div className="text-center pt-6 border-t border-purple-100">
                 <p className="text-xl font-semibold text-gray-900 mb-6">
-                  Get expert financial leadership, <span className="text-[#8B5CF6]">when you need it</span>.
+                  Get expert financial leadership, <span className="text-[#FFB343]">when you need it</span>.
                 </p>
                 <Button
                   onClick={() => setContactModalOpen(true)}
-                  className="bg-[#8B5CF6] hover:bg-[#8B5CF6]/90 text-white rounded-full px-8 py-6 text-lg font-medium"
+                  className="bg-[#FFB343] hover:bg-[#FFB343]/90 text-white rounded-full px-8 py-6 text-lg font-medium"
                 >
                   Talk to a CFO Expert
                 </Button>
