@@ -66,8 +66,8 @@ const PayrollPage = () => {
   return (
     <Layout>
       <SEOhelper
-        title="Expert Payroll Services in Singapore for Startups | Growwth Partners"
-        description="Affordable and easy payroll services designed for small businesses. Simplify tax compliance and pay your team effortlessly with Growwth partnres."
+        title="Payroll Management & Compliance Services | Growwth Partners"
+        description="Comprehensive payroll outsourcing in Singapore. Ensure timely salary processing, CPF compliance, and smooth HR operations with expert support."
         keywords="small business payroll, payroll for small business, affordable payroll, small business tax, easy payroll"
         canonicalUrl="https://growwthpartners.com/payroll-services-in-singapore/"
         structuredData={structuredData}

@@ -107,8 +107,8 @@ const CashFlowPage = () => {
   return (
     <Layout>
       <SEOhelper
-        title="Cash Flow Modelling Services in Singapore | Growwth Partners"
-        description="Take control of your cash flow and future-proof your business with flexible modelling services tailored for Singaporean SMEs & startups."
+        title="Cash Flow Forecasting & Modelling Services | Growwth Partners"
+        description="Data-driven cash flow modelling in Singapore. Plan liquidity, analyse scenarios, and make informed financial decisions with expert guidance"
         keywords="singapore cash flow modelling, financial modeling, business forecasting, cash flow management"
         canonicalUrl="https://growwthpartners.com/cash-flow-services-in-singapore/"
         structuredData={structuredData}

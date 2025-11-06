@@ -74,8 +74,8 @@ const AccountingPage = () => {
   return (
     <Layout>
       <SEOhelper
-        title="Professional Accounting Services in Singapore | Growwth Partners"
-        description="Expert accounting services in Singapore. Professional financial reporting, tax compliance, and bookkeeping solutions for startups and SMEs. Get started today."
+        title="Accounting & Financial Reporting Services | Growwth Partners"
+        description="Professional accounting services in Singapore for SMEs and startups.Ensure compliance, accuracy, and clear financial insights with Growwth Partners"
         keywords="accounting services, financial reporting, tax compliance, bookkeeping, growwth partners"
         canonicalUrl="https://growwthpartners.com/accounting-services-in-singapore/"
         structuredData={structuredData}
