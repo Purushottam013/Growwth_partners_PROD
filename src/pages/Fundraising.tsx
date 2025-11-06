@@ -15,42 +15,90 @@ const Fundraising = () => {
   const { getCountryUrl } = useCountry();
   const [contactModalOpen, setContactModalOpen] = useState(false);
 
-  const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "name": "Expert Fundraising Services for Startups | Growwth Partners",
-    "mainEntity": [{
-      "@type": "Question",
-      "name": "What types of companies do you work with?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "We work with companies across various industries and stages, from pre-seed startups to established businesses seeking growth capital. Our expertise spans technology, healthcare, fintech, e-commerce, and many other sectors."
-      }
-    },{
-      "@type": "Question",
-      "name": "How long does the fundraising process typically take?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The fundraising timeline varies depending on several factors including company stage, funding amount, and market conditions. Typically, the process takes 4-6 months from initial engagement to closing, though some rounds may close faster or take longer depending on complexity."
-      }
-    },{
-      "@type": "Question",
-      "name": "Do you guarantee funding success?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "While we cannot guarantee funding outcomes due to market variables and investor preferences, our proven methodology, extensive network, and comprehensive approach significantly increase your chances of successful fundraising. We work diligently to position your company for success."
-      }
+  const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "FAQPage",
+      "@id": "https://growwthpartners.com/fundraising-services/#faq",
+      "name": "Expert Fundraising Services for Startups | Growwth Partners - FAQ",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What types of companies do you work with?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We work with companies across various industries and stages, from pre-seed startups to established businesses seeking growth capital. Our expertise spans technology, healthcare, fintech, e-commerce, and other high-growth sectors."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does the fundraising process typically take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Timelines vary based on stage, round size, and market conditions, but most processes take around 4–6 months from engagement to closing. Some rounds may close faster or take longer depending on complexity and investor appetite."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you guarantee funding success?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No one can guarantee funding outcomes. However, our structured process, investor network, and positioning support significantly improve your chances by sharpening your narrative, numbers, and target list."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you help prepare our pitch deck?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We work with your leadership team to build an investor-ready deck that clearly articulates your value proposition, traction, market size, business model, unit economics, and growth story in a way that resonates with serious investors."
+          }
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "How do you help prepare our pitch deck?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Our team works closely with you to create compelling, investor-ready pitch decks that clearly communicate your value proposition, market opportunity, business model, and growth potential. We ensure your presentation tells a compelling story that resonates with investors."
-      }
+      "@type": "Service",
+      "@id": "https://growwthpartners.com/fundraising-services/#service",
+      "name": "Fundraising Advisory & Investor-Readiness for Startups",
+      "serviceType": [
+        "Fundraising Advisory",
+        "Investor Readiness",
+        "Pitch Deck & Financial Model Support"
+      ],
+      "description": "Strategic fundraising support for startups, including investor targeting, pitch narrative, financial modeling, and end-to-end deal support.",
+      "provider": {
+        "@id": "https://growwthpartners.com/#organization"
+      },
+      "areaServed": [
+        "Singapore",
+        "United Arab Emirates",
+        "Australia"
+      ]
     },
+    {
+      "@type": "Organization",
+      "@id": "https://growwthpartners.com/#organization",
+      "name": "Growwth Partners",
+      "url": "https://growwthpartners.com",
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "email": "jd@growwthpartners.com",
+          "telephone": "+65 9861 5600",
+          "contactType": "business"
+        }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "65 Chulia Street",
+        "addressLocality": "Singapore",
+        "postalCode": "049513",
+        "addressCountry": "SG"
+      }
+    }
   ]
-  };
+};
 
   return (
     <Layout>
@@ -59,7 +107,7 @@ const Fundraising = () => {
         description="Secure the capital your business needs to scale with our expert-led fundraising solutions. From seed to Series A and beyond - start your fundraising journey today."
         keywords="fundraising services, startup funding, venture capital, angel investors, pitch deck, Series A funding, investment strategy"
         canonicalUrl='https://growwthpartners.com/fundraising-services/'
-        structuredData={organizationSchema}
+        structuredData={structuredData}
       />
 
       <HeroSection onContactClick={() => setContactModalOpen(true)} />

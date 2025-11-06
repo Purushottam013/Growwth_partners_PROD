@@ -18,33 +18,37 @@ const AchievementsPage = () => {
     return <Navigate to="/australia" replace />;
   }
 
-  const achievementsSchema = {
-    "@context": "https://schema.org",
-    "@type": "AboutPage",
-    name: "Achievements & Awards | Growwth Partners",
-    description: "Independent recognition for fractional CFO excellence, innovation, and leadership across APAC. Explore Growwth Partners' industry awards and recognitions.",
-    url: "https://growwthpartners.com/achievements",
-    publisher: {
+  const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "AboutPage",
+      "@id": "https://growwthpartners.com/achievements/#about",
+      "name": "Achievements & Awards | Growwth Partners",
+      "description": "Independent recognition for fractional CFO excellence, innovation, and leadership across APAC. Explore Growwth Partners' industry awards and recognitions.",
+      "url": "https://growwthpartners.com/achievements",
+      "publisher": {
+        "@id": "https://growwthpartners.com/#organization"
+      },
+      "mainEntity": {
+        "@id": "https://growwthpartners.com/#organization"
+      }
+    },
+    {
       "@type": "Organization",
-      name: "Growwth Partners",
-      url: "https://growwthpartners.com",
-      award: [
+      "@id": "https://growwthpartners.com/#organization",
+      "name": "Growwth Partners",
+      "url": "https://growwthpartners.com",
+      "award": [
         "Acquisition International M&A Awards 2024 Winner",
         "Best Fractional CFO Services Award 2024 - Golden Globe Tigers",
         "CMO Asia Innovation Leadership Award 2022",
         "Most Admired Global Indians 2021"
       ]
-    },
-    mainEntity: {
-      "@type": "Organization",
-      name: "Growwth Partners",
-      award: [
-        "Best Fractional CFO Services Award 2024",
-        "M&A Awards 2024 Winner",
-        "Innovation Leadership Award 2022"
-      ]
     }
-  };
+  ]
+};
+
 
   return (
     <Layout>
@@ -53,7 +57,7 @@ const AchievementsPage = () => {
         description="Independent recognition for fractional CFO excellence, innovation, and leadership across APAC. Our work is measured by outcomes for clients first."
         keywords="growwth partners awards, fractional cfo excellence, m&a awards, golden globe tigers, cmo asia, financial services recognition, apac awards"
         canonicalUrl="https://growwthpartners.com/achievements"
-        structuredData={achievementsSchema}
+        structuredData={structuredData}
       />
       
       <AchievementsHero />

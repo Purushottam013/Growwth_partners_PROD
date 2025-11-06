@@ -11,43 +11,64 @@ import { useCountry } from "@/contexts/CountryContext";
 import SEOhelper from "@/components/SEOhelper";
 
 const FractionalCFOUAEPage = () => {
-  const organizationSchema = {
-    "@context": "https://schema.org",
-    areaServed: "UAE",
-    serviceType: "Fractional CFO Services, Outsourced CFO Services",
-    description: "Discover how AI in finance is changing financial operations. RyzUp provides finance automation tools for forecasting, cash flow visibility, and real time decision support so teams can move faster with confidence",
-    provider: {
-    "@type": "Organization",
-    name: "Growwth Partners",
-    url: "https://growwthpartners.com",
-    },
-    "@type": "FAQPage",
-    mainEntity: [
-      {
-        "@type": "Question",
-        name: "What does a Fractional CFO service do for my business in the UAE?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "A Fractional CFO or outsourced CFO Dubai service gives you high-level financial leadership without hiring a full-time CFO. Growwth Partners manages cash flow, budgeting, forecasting, reporting, profitability analysis, and strategic decision support so you can scale with clarity and control.",
+ const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "FAQPage",
+      "@id": "https://growwthpartners.com/fractional-cfo-uae/#faq",
+      "name": "Fractional & Outsourced CFO Services in UAE - FAQ",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What does a Fractional CFO service do for my business in the UAE?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A Fractional CFO or outsourced CFO Dubai service gives you high-level financial leadership without hiring a full-time CFO. Growwth Partners manages cash flow, budgeting, forecasting, reporting, profitability analysis, and strategic decision support so you can scale with clarity and control."
+          }
         },
-      },
-      {
-        "@type": "Question",
-        name: "Why should I choose Growwth Partners instead of hiring a full-time CFO in the UAE?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Hiring a full-time CFO in the UAE is expensive. A senior finance leader can easily cost six figures annually. Growwth Partners provides Fractional CFO and outsourced CFO Dubai support so you get the same strategic guidance at a fraction of the cost, with flexible scope that matches your stage of growth.",
-        },
-      },
-    ],
-  
-    contactPoint: {
-      "@type": "ContactPoint",
-      email: "jd@growwthpartners.com",
-      telephone: "+65 9861 5600",
-      contactType: "Business Service",
+        {
+          "@type": "Question",
+          "name": "Why should I choose Growwth Partners instead of hiring a full-time CFO in the UAE?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Hiring a full-time CFO in the UAE is expensive. A senior finance leader can easily cost six figures annually. Growwth Partners provides Fractional CFO and outsourced CFO Dubai support so you get the same strategic guidance at a fraction of the cost, with flexible scope that matches your stage of growth."
+          }
+        }
+      ]
     },
-  };
+    {
+      "@type": "Service",
+      "@id": "https://growwthpartners.com/fractional-cfo-uae/#service",
+      "name": "Fractional & Outsourced CFO Services in UAE",
+      "serviceType": [
+        "Fractional CFO Services",
+        "Outsourced CFO Services"
+      ],
+      "description": "Strategic Fractional and outsourced CFO services for UAE-based businesses, including budgeting, forecasting, cash flow visibility, performance reporting, and investor-ready insights.",
+      "areaServed": [
+        "United Arab Emirates"
+      ],
+      "provider": {
+        "@id": "https://growwthpartners.com/#organization"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://growwthpartners.com/#organization",
+      "name": "Growwth Partners",
+      "url": "https://growwthpartners.com",
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "email": "jd@growwthpartners.com",
+          "telephone": "+65 9861 5600",
+          "contactType": "business"
+        }
+      ]
+    }
+  ]
+};
 
   return (
     <Layout>
@@ -56,7 +77,7 @@ const FractionalCFOUAEPage = () => {
         description="Growwth Partners provides Fractional CFO services UAE businesses trust for cash flow optimization, strategic finance support, and expert CFO guidance without the full-time cost. Book a free consultation today."
         keywords="fractional cfo uae, outsourced cfo dubai, fractional cfo services uae, part time cfo uae"
         canonicalUrl="https://growwthpartners.com/uae/virtual-cfo-services-uae/"
-        structuredData={organizationSchema}
+        structuredData={structuredData}
       />
       <motion.div
         initial={{ opacity: 0 }}

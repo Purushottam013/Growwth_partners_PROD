@@ -25,52 +25,78 @@ const CorporateSecretaryPage = () => {
     return <Navigate to="/australia" replace />;
   }
 
-  const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: [
-      {
-        "@type": "Question",
-        name: "What is the scope of services of the company secretary?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "When an individual gets into company secretarial services, he/she needs to manage meetings, facilitate and take care of financial transactions, ensure legal compliance, manage risks and offer legal advice and assistance.",
+  const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "FAQPage",
+      "@id": "https://growwthpartners.com/corporate-secretarial-services-singapore/#faq",
+      "name": "Corporate Secretarial Services in Singapore - FAQ",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the scope of services of the company secretary?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A company secretary typically manages board and shareholder meetings, maintains statutory records, ensures regulatory and filing compliance, supports governance and risk management, and advises on corporate procedures."
+          }
         },
-      },
-      {
-        "@type": "Question",
-        name: "How much does a Company Secretary cost in Singapore?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "An in-house company secretary costs between SGD 60,000 to SGD 100,000 annually. On the other hand, if an organization decides to outsource these services, it eventually costs around SGD 300 to SGD 1,500.",
+        {
+          "@type": "Question",
+          "name": "How much does a Company Secretary cost in Singapore?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "An in-house company secretary can cost between SGD 60,000 to SGD 100,000 annually. Outsourced company secretarial service packages generally range from around SGD 300 to SGD 1,500, depending on scope and complexity."
+          }
         },
-      },
-      {
-        "@type": "Question",
-        name: "How do I change my company secretary in Singapore?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "If you want to change your company secretary in Singapore and opt for other company secretarial services in Singapore, the new secretary needs to sign the Form 45B.",
-        },
-      },
-    ],
-    areaServed: "Singapore, UAE, Australia",
-    serviceType: "Corporate Secretary Services",
-    contactPoint: {
-      "@type": "ContactPoint",
-      email: "jd@growwthpartners.com",
-      telephone: "+65 9861 5600",
-      contactType: "Business Service",
+        {
+          "@type": "Question",
+          "name": "How do I change my company secretary in Singapore?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To change your company secretary in Singapore, the new secretary must consent to act (typically via the prescribed form), and the appointment and cessation must be properly lodged with ACRA within the required timelines."
+          }
+        }
+      ]
     },
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "65 Chulia Street",
-      addressLocality: "Singapore",
-      addressRegion: "#46-00 OCBC Centre, Singapore 049513",
-      postalCode: "049513",
-      addressCountry: "SG",
+    {
+      "@type": "Service",
+      "@id": "https://growwthpartners.com/corporate-secretarial-services-singapore/#service",
+      "name": "Corporate Secretarial Services in Singapore",
+      "serviceType": "Corporate Secretary Services",
+      "areaServed": [
+        "Singapore",
+        "United Arab Emirates",
+        "Australia"
+      ],
+      "provider": {
+        "@id": "https://growwthpartners.com/#organization"
+      }
     },
-  };
+    {
+      "@type": "Organization",
+      "@id": "https://growwthpartners.com/#organization",
+      "name": "Growwth Partners",
+      "url": "https://growwthpartners.com",
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "email": "jd@growwthpartners.com",
+          "telephone": "+65 9861 5600",
+          "contactType": "business",
+          "areaServed": "SG"
+        }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "65 Chulia Street",
+        "addressLocality": "Singapore",
+        "postalCode": "049513",
+        "addressCountry": "SG"
+      }
+    }
+  ]
+};
 
   return (
     <Layout>
@@ -79,7 +105,7 @@ const CorporateSecretaryPage = () => {
         description="Outsource your company secretarial functions to Singapore's trusted experts. Growwth Partners offers full compliance, filing, and advisory services."
         keywords="singapore corporate secretary, company compliance, statutory filing, acra filing"
         canonicalUrl="https://growwthpartners.com/corporate-secretary-services-in-singapore/"
-        structuredData={organizationSchema}
+        structuredData={structuredData}
       />
 
       <motion.div

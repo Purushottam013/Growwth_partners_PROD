@@ -25,52 +25,78 @@ const FractionalCFOPage = () => {
     return <Navigate to="/australia" replace />;
   }
 
-  const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: [
-      {
-        "@type": "Question",
-        name: "What's the difference between a part-time CFO and a full-time CFO?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "A part-time or fractional CFO offers strategic financial expertise without the cost of a full-time hire. You only pay for the support you need—making it ideal for startups and SMEs.",
+ const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "FAQPage",
+      "@id": "https://growwthpartners.com/part-time-cfo-services/#faq",
+      "name": "Part-Time CFO Services - FAQ",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What's the difference between a part-time CFO and a full-time CFO?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A part-time or fractional CFO offers strategic financial expertise without the cost of a full-time hire. You only pay for the support you need—making it ideal for startups and SMEs."
+          }
         },
-      },
-      {
-        "@type": "Question",
-        name: "Is a CFO necessary if I already have an accountant?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Yes. Accountants handle compliance and historical data. CFOs look forward—helping with planning, strategy, investor relations, and growth decisions.",
+        {
+          "@type": "Question",
+          "name": "Is a CFO necessary if I already have an accountant?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Accountants handle compliance and historical data. CFOs look forward—helping with planning, strategy, investor relations, and growth decisions."
+          }
         },
-      },
-      {
-        "@type": "Question",
-        name: "Are your virtual CFOs based in Singapore?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Yes, our CFOs have deep local expertise and work with companies across Singapore and Southeast Asia.",
-        },
-      },
-    ],
-    areaServed: "Singapore, UAE, Australia",
-    serviceType: "Part Time CFO Services",
-    contactPoint: {
-      "@type": "ContactPoint",
-      email: "jd@growwthpartners.com",
-      telephone: "+65 9861 5600",
-      contactType: "Business Service",
+        {
+          "@type": "Question",
+          "name": "Are your virtual CFOs based in Singapore?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, our CFOs have deep local expertise and work with companies across Singapore and Southeast Asia."
+          }
+        }
+      ]
     },
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "65 Chulia Street",
-      addressLocality: "Singapore",
-      addressRegion: "#46-00 OCBC Centre, Singapore 049513",
-      postalCode: "049513",
-      addressCountry: "SG",
+    {
+      "@type": "Service",
+      "@id": "https://growwthpartners.com/part-time-cfo-services/#service",
+      "name": "Part-Time CFO Services",
+      "serviceType": "Part Time CFO Services",
+      "areaServed": [
+        "Singapore",
+        "United Arab Emirates",
+        "Australia"
+      ],
+      "provider": {
+        "@id": "https://growwthpartners.com/#organization"
+      }
     },
-  };
+    {
+      "@type": "Organization",
+      "@id": "https://growwthpartners.com/#organization",
+      "name": "Growwth Partners",
+      "url": "https://growwthpartners.com",
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "email": "jd@growwthpartners.com",
+          "telephone": "+65 9861 5600",
+          "contactType": "business",
+          "areaServed": "SG"
+        }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "65 Chulia Street",
+        "addressLocality": "Singapore",
+        "postalCode": "049513",
+        "addressCountry": "SG"
+      }
+    }
+  ]
+};
 
   return (
     <Layout>
@@ -79,7 +105,7 @@ const FractionalCFOPage = () => {
         description="Hire top-rated fractional, part-time, or virtual CFO services in Singapore. Boost financial strategy and performance without full-time costs."
         keywords="virtual cfo, singapore cfo, financial strategy, fractional leadership"
         canonicalUrl="https://growwthpartners.com/part-time-cfo/"
-        structuredData={organizationSchema}
+        structuredData={structuredData}
       />
       <motion.div
         initial={{ opacity: 0 }}

@@ -12,35 +12,47 @@ import SEOhelper from "@/components/SEOhelper";
 const PayrollPage = () => {
   const { country } = useCountry();
 
-  const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    name: "Payroll Services in Singapore",
-    description:
-      "Affordable and easy payroll services designed for small businesses",
-    provider: {
+  const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://growwthpartners.com/payroll-services-in-singapore/#service",
+      "name": "Payroll Services in Singapore",
+      "description": "Affordable and easy payroll services designed for small businesses.",
+      "serviceType": "Payroll Services",
+      "areaServed": [
+        "Singapore",
+        "United Arab Emirates",
+        "Australia"
+      ],
+      "provider": {
+        "@id": "https://growwthpartners.com/#organization"
+      }
+    },
+    {
       "@type": "Organization",
-      name: "Growwth Partners",
-      url: "https://growwthpartners.com",
-    },
-    areaServed: "Singapore, UAE, Australia",
-    serviceType: "Payroll Services",
-
-    contactPoint: {
-      "@type": "ContactPoint",
-      email: "jd@growwthpartners.com",
-      telephone: "+65 9861 5600",
-      contactType: "Business Service",
-    },
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "65 Chulia Street",
-      addressLocality: "Singapore",
-      addressRegion: "#46-00 OCBC Centre, Singapore 049513",
-      postalCode: "049513",
-      addressCountry: "SG",
-    },
-  };
+      "@id": "https://growwthpartners.com/#organization",
+      "name": "Growwth Partners",
+      "url": "https://growwthpartners.com",
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "email": "jd@growwthpartners.com",
+          "telephone": "+65 9861 5600",
+          "contactType": "business"
+        }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "65 Chulia Street",
+        "addressLocality": "Singapore",
+        "postalCode": "049513",
+        "addressCountry": "SG"
+      }
+    }
+  ]
+};
 
   // Redirect non-Singapore users to their respective home pages
   if (country === "uae") {
@@ -58,7 +70,7 @@ const PayrollPage = () => {
         description="Affordable and easy payroll services designed for small businesses. Simplify tax compliance and pay your team effortlessly with Growwth partnres."
         keywords="small business payroll, payroll for small business, affordable payroll, small business tax, easy payroll"
         canonicalUrl="https://growwthpartners.com/payroll-services-in-singapore/"
-        structuredData={organizationSchema}
+        structuredData={structuredData}
       />
       <motion.div
         initial={{ opacity: 0 }}

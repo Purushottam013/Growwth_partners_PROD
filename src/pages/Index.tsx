@@ -50,44 +50,51 @@ const Index = () => {
     preloadComponents();
   }, []);
 
-  const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "Growwth Partners",
-    url: "https://growwthpartners.com",
-    logo: "https://growwthpartners.com/lovable-uploads/5f2bc1cf-2bab-424d-8245-eb52af504603.png",
-    sameAs: [
-      "https://www.linkedin.com/company/growwth-partners/",
-      "https://www.youtube.com/@GrowwthPartners",
-    ],
-    description:
-      "Expert financial, accounting, and bookkeeping services for businesses in Singapore, UAE, and Australia.",
-    address: {
-      "@type": "PostalAddress",
-      addressCountry: "Singapore",
-    },
-    contactPoint: {
-      "@type": "ContactPoint",
-      email: "jd@growwthpartners.com",
-      telephone: "+65 9861 5600",
-      contactType: "Business Service",
-    },
-    service: {
-      "@type": "LocalBusiness",
-      name: "Growwth Partners",
-      description:
-        "Professional accounting, bookkeeping, Payroll, taxation and compliance,cash flow modeling and CFO services in Singapore",
-      url: "https://growwthpartners.com",
-      address: {
+  const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://growwthpartners.com/#organization",
+      "name": "Growwth Partners",
+      "url": "https://growwthpartners.com",
+      "logo": "https://growwthpartners.com/lovable-uploads/5f2bc1cf-2bab-424d-8245-eb52af504603.png",
+      "sameAs": [
+        "https://www.linkedin.com/company/growwth-partners/",
+        "https://www.youtube.com/@GrowwthPartners"
+      ],
+      "description": "Expert financial, accounting, bookkeeping, CFO, and fundraising services for businesses in Singapore, UAE, and Australia.",
+      "address": {
         "@type": "PostalAddress",
-        streetAddress: "65 Chulia Street",
-        addressLocality: "Singapore",
-        addressRegion: "#46-00 OCBC Centre, Singapore 049513",
-        postalCode: "049513",
-        addressCountry: "SG",
+        "addressCountry": "SG"
       },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "email": "jd@growwthpartners.com",
+          "telephone": "+65 9861 5600",
+          "contactType": "Business Service"
+        }
+      ]
     },
-  };
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://growwthpartners.com/#localbusiness",
+      "name": "Growwth Partners",
+      "url": "https://growwthpartners.com",
+      "description": "Professional accounting, bookkeeping, payroll, taxation, compliance, cash flow modeling, and CFO services in Singapore.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "65 Chulia Street",
+        "addressLocality": "Singapore",
+        "addressRegion": "#46-00 OCBC Centre",
+        "postalCode": "049513",
+        "addressCountry": "SG"
+      },
+      "telephone": "+65 9861 5600"
+    }
+  ]
+};
 
   return (
     <Layout>
@@ -96,7 +103,7 @@ const Index = () => {
         description="Expert financial, accounting, and bookkeeping services. Get started with our CFO, finance and accounting solutions to manage and grow your business efficiently."
         keywords="financial services, accounting singapore, cfo services, bookkeeping, business growth"
         canonicalUrl="https://growwthpartners.com/"
-        structuredData={organizationSchema}
+        structuredData={structuredData}
       />
 
       <AnimatedElement

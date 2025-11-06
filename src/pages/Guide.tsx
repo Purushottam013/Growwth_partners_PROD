@@ -25,34 +25,48 @@ const GuidePage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const { country } = useCountry();
 
-  const GuideSchema = {
-    "@context": "https://schema.org",
-    "@type": "Guide",
-    name: "Growwth Partners Guide",
-    description:
-      "Stay updated with expert insights and Guide on payroll, finance, and SME growth in Singapore from Growwth Partners",
-    url: "https://growwthpartners.com/guide/",
-    publisher: {
+  const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Guide",
+      "@id": "https://growwthpartners.com/guide/#guide",
+      "name": "Growwth Partners Guides",
+      "description": "Expert guides on payroll, finance, compliance, fundraising, and SME growth in Singapore and across APAC.",
+      "url": "https://growwthpartners.com/guide/",
+      "publisher": {
+        "@id": "https://growwthpartners.com/#organization"
+      }
+    },
+    {
       "@type": "Organization",
-      name: "Growwth Partners",
-      url: "https://growwthpartners.com",
-    },
-    areaServed: "Singapore, UAE, Australia",
-    contactPoint: {
-      "@type": "ContactPoint",
-      email: "jd@growwthpartners.com",
-      telephone: "+65 9861 5600",
-      contactType: "Business Service",
-    },
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "65 Chulia Street",
-      addressLocality: "Singapore",
-      addressRegion: "#46-00 OCBC Centre, Singapore 049513",
-      postalCode: "049513",
-      addressCountry: "SG",
-    },
-  };
+      "@id": "https://growwthpartners.com/#organization",
+      "name": "Growwth Partners",
+      "url": "https://growwthpartners.com",
+      "areaServed": [
+        "Singapore",
+        "United Arab Emirates",
+        "Australia"
+      ],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "email": "jd@growwthpartners.com",
+          "telephone": "+65 9861 5600",
+          "contactType": "business",
+          "areaServed": "SG"
+        }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "65 Chulia Street",
+        "addressLocality": "Singapore",
+        "postalCode": "049513",
+        "addressCountry": "SG"
+      }
+    }
+  ]
+};
 
   // Redirect non-Singapore users to their respective home pages
   if (country === "uae") {
@@ -97,7 +111,7 @@ const GuidePage = () => {
         description="Explore in-depth guides on payroll compliance, accounting best practices, and scaling your business with Growwth Partners' expertise."
         keywords="business guides, accounting resources, singapore compliance, financial best practices, startup guides"
         canonicalUrl="https://growwthpartners.com/guide"
-        structuredData={GuideSchema}
+        structuredData={structuredData}
       />
 
       <section className="relative w-full flex justify-center">
