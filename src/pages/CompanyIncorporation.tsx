@@ -26,52 +26,79 @@ const CompanyIncorporationPage = () => {
     return <Navigate to="/australia" replace />;
   }
 
-  const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: [
-      {
-        "@type": "Question",
-        name: "What is the price of registering a corporation in Singapore?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "The standard fee for registering a corporation in Singapore is nearly $315.",
+  const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "FAQPage",
+      "@id": "https://growwthpartners.com/company-incorporation-singapore/#faq",
+      "name": "Company Incorporation in Singapore - FAQ",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the price of registering a corporation in Singapore?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The standard fee for registering a corporation in Singapore is nearly $315."
+          }
         },
-      },
-      {
-        "@type": "Question",
-        name: "Why should your company incorporate in Singapore?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Several individuals choose to incorporate their companies in Singapore because this place has an attractive tax system. Here, no tax on capital gains is levied, which makes Singapore a preferable choice for entrepreneurs and business people.",
+        {
+          "@type": "Question",
+          "name": "Why should your company incorporate in Singapore?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Several individuals choose to incorporate their companies in Singapore because of its attractive tax system, including no tax on capital gains, making it a preferred choice for entrepreneurs and business owners."
+          }
         },
-      },
-      {
-        "@type": "Question",
-        name: "Does a Singaporean business need a director who resides there?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Yes, at least one director who resides in Singapore must be present in a Singaporean business. This is evident according to Singapore's Companies Act.",
-        },
-      },
-    ],
-    areaServed: "Singapore, UAE, Australia",
-    serviceType: "Company Incorporation Services",
-    contactPoint: {
-      "@type": "ContactPoint",
-      email: "jd@growwthpartners.com",
-      telephone: "+65 9861 5600",
-      contactType: "Business Service",
+        {
+          "@type": "Question",
+          "name": "Does a Singaporean business need a director who resides there?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, at least one director who resides in Singapore must be appointed in a Singaporean company, as required under Singapore's Companies Act."
+          }
+        }
+      ]
     },
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "65 Chulia Street",
-      addressLocality: "Singapore",
-      addressRegion: "#46-00 OCBC Centre, Singapore 049513",
-      postalCode: "049513",
-      addressCountry: "SG",
+    {
+      "@type": "Service",
+      "@id": "https://growwthpartners.com/company-incorporation-singapore/#service",
+      "name": "Company Incorporation Services in Singapore",
+      "serviceType": "Company Incorporation Services",
+      "areaServed": [
+        "Singapore",
+        "United Arab Emirates",
+        "Australia"
+      ],
+      "provider": {
+        "@id": "https://growwthpartners.com/#organization"
+      }
     },
-  };
+    {
+      "@type": "Organization",
+      "@id": "https://growwthpartners.com/#organization",
+      "name": "Growwth Partners",
+      "url": "https://growwthpartners.com",
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "email": "jd@growwthpartners.com",
+          "telephone": "+65 9861 5600",
+          "contactType": "business",
+          "areaServed": "SG"
+        }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "65 Chulia Street",
+        "addressLocality": "Singapore",
+        "postalCode": "049513",
+        "addressCountry": "SG"
+      }
+    }
+  ]
+};
+
 
   return (
     <Layout>
@@ -80,7 +107,7 @@ const CompanyIncorporationPage = () => {
         description="Launch your Singapore company with hassle-free incorporation services from industry leaders. Full compliance, smooth process, effective results."
         keywords="singapore company incorporation, business registration, company setup, acra registration"
         canonicalUrl="https://growwthpartners.com/company-incorporation-services-in-singapore/"
-        structuredData={organizationSchema}
+        structuredData={structuredData}
       />
 
       <motion.div

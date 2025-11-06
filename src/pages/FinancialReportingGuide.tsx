@@ -14,35 +14,48 @@ import SEOhelper from "@/components/SEOhelper";
 
 const FinancialReportingGuide = () => {
   const navigate = useNavigate();
-  const Schema = {
-    "@context": "https://schema.org",
-    "@type": "Guide",
-    name: "Growwth Partners Guide",
-    description:
-      "Stay updated with expert insights and Guide on payroll, finance, and SME growth in Singapore from Growwth Partners",
-    url: "https://growwthpartners.com/guide/financial-reporting-standards-singapore",
-    publisher: {
+  const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Guide",
+      "@id": "https://growwthpartners.com/guide/financial-reporting-standards-singapore/#guide",
+      "name": "Growwth Partners Guide: Financial Reporting Standards in Singapore",
+      "description": "Expert guide on financial reporting standards in Singapore for SMEs and growing businesses.",
+      "url": "https://growwthpartners.com/guide/financial-reporting-standards-singapore",
+      "publisher": {
+        "@id": "https://growwthpartners.com/#organization"
+      }
+    },
+    {
       "@type": "Organization",
-      name: "Growwth Partners",
-      url: "https://growwthpartners.com",
-    },
-    areaServed: "Singapore, UAE, Australia",
-    serviceType: "Corporate Secretary Services",
-    contactPoint: {
-      "@type": "ContactPoint",
-      email: "jd@growwthpartners.com",
-      telephone: "+65 9861 5600",
-      contactType: "Business Service",
-    },
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "65 Chulia Street",
-      addressLocality: "Singapore",
-      addressRegion: "#46-00 OCBC Centre, Singapore 049513",
-      postalCode: "049513",
-      addressCountry: "SG",
-    },
-  };
+      "@id": "https://growwthpartners.com/#organization",
+      "name": "Growwth Partners",
+      "url": "https://growwthpartners.com",
+      "areaServed": [
+        "Singapore",
+        "United Arab Emirates",
+        "Australia"
+      ],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "email": "jd@growwthpartners.com",
+          "telephone": "+65 9861 5600",
+          "contactType": "business",
+          "areaServed": "SG"
+        }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "65 Chulia Street",
+        "addressLocality": "Singapore",
+        "postalCode": "049513",
+        "addressCountry": "SG"
+      }
+    }
+  ]
+};
 
   const handleContactClick = () => {
     // Navigate to contact page and scroll to consultation form
@@ -73,7 +86,7 @@ const FinancialReportingGuide = () => {
         description="A practical handbook for SFRS for Small Entities in Singapore. Learn about compliance, eligibility, and best practices for simplified financial reporting."
         keywords="singapore corporate Guide, company compliance, statutory filing, acra filing"
         canonicalUrl="https://growwthpartners.com/guide/financial-reporting-standards-singapore"
-        structuredData={Schema}
+        structuredData={structuredData}
       />
       {/* Hero Section with Title - Now with background gradient */}
       <section className="relative py-16 bg-gradient-to-b from-blue-100 to-white">

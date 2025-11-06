@@ -12,33 +12,48 @@ import SEOhelper from "@/components/SEOhelper";
 
 const BookkeepingPage = () => {
   const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    name: `Professional Bookkeeping Services in Singapore`,
-    serviceType: "Bookkeeping Services",
-    areaServed: "Singapore, UAE, Australia",
-    provider: {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://growwthpartners.com/bookkeeping-services-in-singapore/#service",
+      "name": "Professional Bookkeeping Services in Singapore",
+      "serviceType": "Bookkeeping Services",
+      "description": "Professional bookkeeping and financial reporting services for growing businesses in Singapore.",
+      "provider": {
+        "@id": "https://growwthpartners.com/#organization"
+      },
+      "areaServed": [
+        "Singapore",
+        "United Arab Emirates",
+        "Australia"
+      ]
+    },
+    {
       "@type": "Organization",
-      name: "Growwth Partners",
-      url: "https://growwthpartners.com",
-      description:
-        "Expert financial, accounting, and bookkeeping services. Get started with our CFO, finance and accounting solutions to manage and grow your business efficiently",
-    },
-    contactPoint: {
-      "@type": "ContactPoint",
-      email: "jd@growwthpartners.com",
-      telephone: "+65 9861 5600",
-      contactType: "Business Service",
-    },
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "65 Chulia Street",
-      addressLocality: "Singapore",
-      addressRegion: "#46-00 OCBC Centre, Singapore 049513",
-      postalCode: "049513",
-      addressCountry: "SG",
-    },
-  };
+      "@id": "https://growwthpartners.com/#organization",
+      "name": "Growwth Partners",
+      "url": "https://growwthpartners.com",
+      "description": "Expert financial, accounting, and bookkeeping services. CFO, finance and accounting solutions to manage and grow your business efficiently.",
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "email": "jd@growwthpartners.com",
+          "telephone": "+65 9861 5600",
+          "contactType": "business",
+          "areaServed": "SG"
+        }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "65 Chulia Street",
+        "addressLocality": "Singapore",
+        "postalCode": "049513",
+        "addressCountry": "SG"
+      }
+    }
+  ]
+};
 
   return (
     <Layout>
