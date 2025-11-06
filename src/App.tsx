@@ -292,6 +292,15 @@ export const routes: RouteRecord[] = [
           return { Component };
         },
       },
+      {
+        path: "uae/fractional-cfo",
+        async lazy() {
+          const { default: Component } = await import(
+            "./pages/FractionalCFOUAE"
+          );
+          return { Component };
+        },
+      },
       // Australia Routes
       {
         path: "au",
@@ -500,7 +509,11 @@ export const routes: RouteRecord[] = [
       },
       {
         path: "uae/part-time-cfo",
-        element: <Navigate to="/part-time-cfo-uae/" replace />,
+        element: <Navigate to="/uae/fractional-cfo/" replace />,
+      },
+      {
+        path: "part-time-cfo-uae",
+        element: <Navigate to="/uae/fractional-cfo/" replace />,
       },
       // Legacy Australia redirects
       {

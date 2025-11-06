@@ -63,7 +63,7 @@ export const CountryProvider = ({
     if (path.startsWith("/corporate-secretary"))
       return `/${getCountryServiceSlug("corporate-secretary")}`;
     if (path.startsWith("/part-time-cfo")) {
-      if (country === "uae") return `/part-time-cfo-uae/`;
+      if (country === "uae") return `/uae/fractional-cfo/`;
       if (country === "australia") return `/au/virtual-cfo-services-australia/`;
       return `/part-time-cfo/`;
     }

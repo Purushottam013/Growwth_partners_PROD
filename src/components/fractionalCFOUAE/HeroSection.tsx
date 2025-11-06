@@ -1,0 +1,178 @@
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { ContactModal } from "@/components/ui/contact-modal";
+import {
+  ChevronRight,
+  Award,
+  ShieldCheck,
+  TrendingUp,
+  BarChart3,
+  ArrowRight,
+} from "lucide-react";
+import heroImage from "/lovable-uploads/54b8e38f-0d15-438c-b9ac-a121ec19b560.png";
+import { OptimizedImage } from "../ui/optimized-image";
+
+export const HeroSection: React.FC = () => {
+  const [contactModalOpen, setContactModalOpen] = useState(false);
+
+  return (
+    <section className="relative py-20 md:py-20 overflow-hidden bg-gradient-to-b from-purple-100/80 via-white to-purple-100/40">
+      {/* Decorative blobs */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-purple-300/20 rounded-full filter blur-3xl animate-pulse opacity-70" />
+        <div className="absolute bottom-1/3 left-1/3 w-72 h-72 bg-[#8B5CF6]/20 rounded-full filter blur-3xl animate-pulse opacity-60 delay-500" />
+        <div className="absolute -top-10 -left-10 w-40 h-40 bg-purple-300/20 rounded-full filter blur-2xl animate-pulse opacity-50 delay-300" />
+      </div>
+
+      <div className="container-custom relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          {/* Hero Text Content */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            className="space-y-6 text-center lg:text-left"
+          >
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+              className="inline-flex px-4 py-2 rounded-full bg-[#8B5CF6]/10 text-[#8B5CF6] font-medium shadow-sm"
+            >
+              <Award className="mr-2 h-4 w-4" />
+              UAE's Leading Fractional CFO Services
+            </motion.div>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+              className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-gray-900"
+            >
+              Fractional CFO{" "}
+              <span className="text-[#8B5CF6]">Services in the UAE</span>{" "}
+              for Startups & SMEs
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6, duration: 0.6 }}
+              className="text-xl text-gray-700"
+            >
+              Strategic financial leadership without the cost of a full-time
+              hire, saving 50-70% while accelerating your growth.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.8, duration: 0.6 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+            >
+              <Button
+                onClick={() => setContactModalOpen(true)}
+                className="bg-[#8B5CF6] hover:bg-[#8B5CF6]/90 text-white rounded-full px-8 py-6 text-lg font-medium group"
+              >
+                Speak To An Expert
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+
+              <Button
+                onClick={() =>
+                  window.open(
+                    "https://calendly.com/jd-growwthpartners/15min?month=2025-11",
+                    "_blank",
+                    "noopener,noreferrer"
+                  )
+                }
+                variant="outline"
+                className="px-8 py-6 font-bold text-gray-700 border-2 border-[#8B5CF6] rounded-full"
+              >
+                BOOK FREE 30 MINS CALL
+                <ChevronRight className="ml-2 h-5 w-5" />
+              </Button>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.0, duration: 0.6 }}
+              className="flex items-center justify-center lg:justify-start space-x-2 text-gray-500"
+            >
+              <ShieldCheck className="h-5 w-5 text-[#8B5CF6]" />
+              <span className="text-sm">
+                Trusted by 200+ UAE businesses
+              </span>
+            </motion.div>
+          </motion.div>
+
+          {/* Hero Image */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.6, duration: 0.6 }}
+            className="relative"
+          >
+            {/* Floating badges */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+              className="absolute -bottom-8 -left-8 z-30 animate-float-slow"
+            >
+              <div className="flex items-center gap-2 bg-white rounded-xl p-3 shadow-lg backdrop-blur-sm border border-gray-100">
+                <div className="bg-[#8B5CF6]/10 p-2 rounded-lg">
+                  <TrendingUp className="h-5 w-5 text-[#8B5CF6]" />
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-gray-800">
+                    50-70% Cost Savings
+                  </p>
+                  <p className="text-xs text-gray-600">vs Full-Time CFO</p>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1 }}
+              className="absolute -top-8 -right-8 z-30 animate-float"
+            >
+              <div className="flex items-center gap-2 bg-white rounded-xl p-3 shadow-lg backdrop-blur-sm border border-gray-100">
+                <div className="bg-purple-500/20 p-2 rounded-lg">
+                  <BarChart3 className="h-5 w-5 text-purple-600" />
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-gray-800">
+                    Data-Driven Insights
+                  </p>
+                  <p className="text-xs text-gray-600">
+                    Strategic Financial Planning
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-100/30 to-purple-100/30 rounded-3xl rotate-3" />
+            <div className="relative overflow-hidden rounded-2xl shadow-2xl z-20">
+              <OptimizedImage
+                src={heroImage}
+                alt="Financial analysis with charts"
+                className="w-full h-auto max-h-[345px] object-cover"
+              />
+            </div>
+          </motion.div>
+        </div>
+        <ContactModal
+          open={contactModalOpen}
+          onOpenChange={setContactModalOpen}
+        />
+      </div>
+    </section>
+  );
+};
+
+export default HeroSection;
