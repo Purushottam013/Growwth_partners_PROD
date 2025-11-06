@@ -143,7 +143,7 @@ export const Navbar = () => {
 
           {/* Country Switcher & Contact Button */}
           <div className="hidden lg:flex items-center gap-4">
-            <CountrySwitcher variant="dark" showLabel={true} />
+            <CountrySwitcher variant="dark" showLabel={true} style="dropdown" />
             <Button 
               onClick={() => setContactModalOpen(true)} 
               className="bg-brand-orange hover:bg-brand-orange/90 mr-4"
@@ -206,7 +206,7 @@ export const Navbar = () => {
               </div>
             ))}
             <div className="mt-4 space-y-3">
-              <CountrySwitcher variant="dark" showLabel={true} className="w-full" />
+              <CountrySwitcher variant="dark" showLabel={true} style="dropdown" className="w-full" />
               <Button 
                 onClick={() => {
                   setContactModalOpen(true);
