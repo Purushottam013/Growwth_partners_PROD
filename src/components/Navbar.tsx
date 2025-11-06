@@ -5,6 +5,7 @@ import { useCountry } from "@/contexts/CountryContext";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ContactModal } from "@/components/ui/contact-modal";
+import { CountrySwitcher } from "@/components/CountrySwitcher";
 
 // Import the company logo
 import companyLogo from "/lovable-uploads/5f2bc1cf-2bab-424d-8245-eb52af504603.png";
@@ -140,13 +141,16 @@ export const Navbar = () => {
             ))}
           </nav>
 
-          {/* Contact Button */}
-          <Button 
-            onClick={() => setContactModalOpen(true)} 
-            className="hidden lg:flex bg-brand-orange hover:bg-brand-orange/90 mr-4"
-          >
-            Speak To An Expert
-          </Button>
+          {/* Country Switcher & Contact Button */}
+          <div className="hidden lg:flex items-center gap-2">
+            <CountrySwitcher variant="dark" showLabel={true} />
+            <Button 
+              onClick={() => setContactModalOpen(true)} 
+              className="bg-brand-orange hover:bg-brand-orange/90 mr-4"
+            >
+              Speak To An Expert
+            </Button>
+          </div>
 
           {/* Mobile Menu Button */}
           <button
@@ -201,15 +205,18 @@ export const Navbar = () => {
                 )}
               </div>
             ))}
-            <Button 
-              onClick={() => {
-                setContactModalOpen(true);
-                setMobileMenuOpen(false);
-              }} 
-              className="w-full mt-4 bg-brand-orange hover:bg-brand-orange/90"
-            >
-              Speak To An Expert
-            </Button>
+            <div className="mt-4 space-y-3">
+              <CountrySwitcher variant="dark" showLabel={true} className="w-full" />
+              <Button 
+                onClick={() => {
+                  setContactModalOpen(true);
+                  setMobileMenuOpen(false);
+                }} 
+                className="w-full bg-brand-orange hover:bg-brand-orange/90"
+              >
+                Speak To An Expert
+              </Button>
+            </div>
           </nav>
         )}
       </div>
