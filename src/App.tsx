@@ -293,7 +293,7 @@ export const routes: RouteRecord[] = [
         },
       },
       {
-        path: "uae/fractional-cfo",
+        path: "uae/virtual-cfo-services-uae",
         async lazy() {
           const { default: Component } = await import(
             "./pages/FractionalCFOUAE"
@@ -509,11 +509,11 @@ export const routes: RouteRecord[] = [
       },
       {
         path: "uae/part-time-cfo",
-        element: <Navigate to="/uae/fractional-cfo/" replace />,
+        element: <Navigate to="/uae/virtual-cfo-services-uae/" replace />,
       },
       {
         path: "part-time-cfo-uae",
-        element: <Navigate to="/uae/fractional-cfo/" replace />,
+        element: <Navigate to="/uae/virtual-cfo-services-uae/" replace />,
       },
       // Legacy Australia redirects
       {
