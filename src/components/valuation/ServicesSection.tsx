@@ -84,7 +84,7 @@ export const ServicesSection = () => {
   const [contactModalOpen, setContactModalOpen] = useState(false);
 
   return (
-    <section className="py-20 bg-background">
+    <section className="py-20 bg-white">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -93,10 +93,10 @@ export const ServicesSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
             Holistic Valuation Services for Strategic Growth
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg text-gray-700 max-w-3xl mx-auto">
             Our suite of company valuation services helps founders, SMEs, and investors gain clarity across every financial milestone.
           </p>
         </motion.div>
@@ -109,13 +109,13 @@ export const ServicesSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
               viewport={{ once: true }}
-              className="bg-card rounded-xl p-6 border border-border hover:border-primary/50 transition-all hover:shadow-lg group"
+              className="bg-white rounded-xl p-6 border border-gray-200 hover:border-brand-blue/50 transition-all hover:shadow-lg group"
             >
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                <service.icon className="w-6 h-6 text-primary" />
+              <div className="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-blue-200 transition-colors">
+                <service.icon className="w-7 h-7 text-brand-blue" />
               </div>
-              <h3 className="text-xl font-bold mb-3 text-foreground">{service.title}</h3>
-              <p className="text-muted-foreground leading-relaxed">{service.description}</p>
+              <h3 className="text-xl font-bold mb-3 text-gray-900">{service.title}</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">{service.description}</p>
             </motion.div>
           ))}
         </div>
@@ -127,13 +127,13 @@ export const ServicesSection = () => {
           viewport={{ once: true }}
           className="text-center"
         >
-          <p className="text-muted-foreground mb-6">
+          <p className="text-gray-700 mb-6">
             These services collectively strengthen strategic planning for corporate valuation consulting, pre-seed and seed valuation Singapore, and long-term growth.
           </p>
           <Button
             onClick={() => setContactModalOpen(true)}
             size="lg"
-            className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8"
+            className="bg-brand-orange hover:bg-brand-orange/90 text-white font-semibold px-8"
           >
             Get Free Quote
           </Button>
