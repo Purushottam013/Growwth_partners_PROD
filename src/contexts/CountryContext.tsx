@@ -72,11 +72,7 @@ export const CountryProvider = ({
         "/about",
         "/blog",
         "/contact-us",
-        "/success-stories",
         "/taxation",
-        "/achievements",
-        "/guide",
-        "/news",
         "/privacy-policy",
         "/terms",
       ].includes(path)
