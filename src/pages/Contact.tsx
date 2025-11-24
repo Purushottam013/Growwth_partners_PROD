@@ -65,33 +65,33 @@ const ContactPage = () => {
   };
 
   // Redirect non-Singapore users to their respective home pages
-  if (country === "uae") {
-    return (
-      <>
-        <SEOhelper
-          title="Contact Experts in the UAE | Growwth Partners"
-          description="Get UAE-specific support! Reach out to Growwth Partners for expert local UAE financial and accounting advice. Contact our Emirates-based specialists for customized business solutions."
-          canonicalUrl={`https://growwthpartners.com/uae/contact-us`}
-          keywords="contact uae, uae financial experts, emirates accounting, dubai consultants"
-        />
-        <Navigate to="/uae" replace />
-      </>
-    );
-  }
+  // if (country === "uae") {
+  //   return (
+  //     <>
+  //       <SEOhelper
+  //         title="Contact Experts in the UAE | Growwth Partners"
+  //         description="Get UAE-specific support! Reach out to Growwth Partners for expert local UAE financial and accounting advice. Contact our Emirates-based specialists for customized business solutions."
+  //         canonicalUrl={`https://growwthpartners.com/contact-us`}
+  //         keywords="contact uae, uae financial experts, emirates accounting, dubai consultants"
+  //       />
+  //       <Navigate to="/uae" replace /> 
+  //     </> 
+  //   ); 
+  // } 
 
-  if (country === "australia") {
-    return (
-      <>
-        <SEOhelper
-          title="Australia Enquiry | Growwth Partners"
-          description="Connecting Australian businesses with the right financial, compliance, and startup support. Use our local Australia experts for compliant and growth-oriented business solutions."
-          canonicalUrl={`https://growwthpartners.com/au/contact-us`}
-          keywords="contact australia, australian financial experts, sydney consultants, melbourne accounting"
-        />
-        <Navigate to="/au" replace />
-      </>
-    );
-  }
+  // if (country === "australia") {
+  //   return (
+  //     <>
+  //       <SEOhelper
+  //         title="Australia Enquiry | Growwth Partners"
+  //         description="Connecting Australian businesses with the right financial, compliance, and startup support. Use our local Australia experts for compliant and growth-oriented business solutions."
+  //         canonicalUrl={`https://growwthpartners.com/contact-us`}
+  //         keywords="contact australia, australian financial experts, sydney consultants, melbourne accounting"
+  //       />
+  //       <Navigate to="/au" replace />
+  //     </>
+  //   );
+  // }
 
   return (
     <Layout>
