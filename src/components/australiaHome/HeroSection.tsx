@@ -5,8 +5,8 @@ import heroImage from "@/assets/business-in-australia.webp";
 
 export const HeroSection = () => {
   return (
-    <section className="relative min-h-[600px] bg-gradient-to-br from-brand-blue via-blue-700 to-blue-900 overflow-hidden">
-      <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
+    <section className="relative min-h-[600px] bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
+      <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
       
       <div className="container-custom relative z-10 py-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -15,7 +15,7 @@ export const HeroSection = () => {
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-white"
+            className="text-gray-900"
           >
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -23,7 +23,7 @@ export const HeroSection = () => {
               transition={{ delay: 0.2 }}
               className="mb-6"
             >
-              <span className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-semibold mb-6">
+              <span className="inline-block px-4 py-2 bg-brand-blue/10 backdrop-blur-sm rounded-full text-brand-blue text-sm font-semibold mb-6">
                 Finance Solutions for Australia
               </span>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
@@ -35,7 +35,7 @@ export const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed"
+              className="text-lg md:text-xl text-gray-700 mb-8 leading-relaxed"
             >
               Get a senior finance team that blends deep CFO expertise with production-grade AI. Growwth Partners delivers strategic finance, accounting, and tax services enhanced by our own finance AI stack, Ryzup.ai — so you make faster decisions, reduce errors, and stay fully compliant across Australia.
             </motion.p>
@@ -81,6 +81,11 @@ export const HeroSection = () => {
                 className="w-full h-auto object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-blue-900/50 to-transparent"></div>
+              
+              {/* Badge overlay */}
+              <div className="absolute top-6 right-6 bg-white/95 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
+                <span className="text-brand-blue font-semibold text-sm">AI-Powered Finance</span>
+              </div>
             </div>
           </motion.div>
         </div>
