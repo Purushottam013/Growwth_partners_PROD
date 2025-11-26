@@ -1,46 +1,95 @@
 import { Layout } from "@/components/Layout";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { useNavigate } from "react-router-dom";
+import { HeroSection } from "@/components/australiaHome/HeroSection";
+import { WhyChooseSection } from "@/components/australiaHome/WhyChooseSection";
+import { WhatWeDoSection } from "@/components/australiaHome/WhatWeDoSection";
+import { AIAdvantageSection } from "@/components/australiaHome/AIAdvantageSection";
+import { HowWeWorkSection } from "@/components/australiaHome/HowWeWorkSection";
+import { SectorsSection } from "@/components/australiaHome/SectorsSection";
+import { TestimonialSection } from "@/components/australiaHome/TestimonialSection";
+import { FaqSection } from "@/components/accounting/FaqSection";
+import { CtaSection } from "@/components/shared/CtaSection";
 import SEOhelper from "@/components/SEOhelper";
 
-const HomeAustralia = () => {
-  const navigate = useNavigate();
+const HomeAustraliaPage = () => {
+  const faqs = [
+    {
+      question: "What does Growwth Partners deliver for Australian businesses?",
+      answer: "Growwth Partners delivers end-to-end finance — fractional CFO, accounting, bookkeeping, payroll, corporate tax (ATO), and board reporting — enhanced by Ryzup.ai to reduce errors and accelerate decisions."
+    },
+    {
+      question: "How does Growwth Partners combine human expertise with AI?",
+      answer: "Growwth Partners provides expert CFO leadership and standard finance processes, then layers Ryzup.ai for in-sheet analysis, error detection, reconciliations, dashboards, and privacy-safe AI usage."
+    },
+    {
+      question: "What accuracy and control benefits does Growwth Partners target?",
+      answer: "Growwth Partners targets near-zero-error operations using automated checks, reconciliation agents, and audit-friendly workpapers — improving trust in numbers without slowing the team."
+    },
+    {
+      question: "Which platforms does Growwth Partners support?",
+      answer: "Growwth Partners supports Google Sheets and leading cloud accounting platforms, integrating Ryzup.ai for live data, automation, and reporting."
+    },
+    {
+      question: "How does Growwth Partners prepare leadership and investors?",
+      answer: "Growwth Partners builds investor-ready packs, KPI dashboards, and plain-English narratives so boards see what changed, why, and what to do next."
+    }
+  ];
 
-  const handleContactClick = () => {
-    // Navigate to Singapore contact page specifically
-    window.location.href = "/contact-us/";
-  };
-
-  const organizationSchema = {
+  const structuredData = {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "Growwth Partners",
-    url: "https://growwthpartners.com/",
-    logo: "https://growwthpartners.com/lovable-uploads/5f2bc1cf-2bab-424d-8245-eb52af504603.png",
-    description:
-      "Expert financial, accounting, and bookkeeping services for businesses in Singapore, UAE, and Australia.",
-    areaServed: "Singapore, UAE, Australia",
-    contactPoint: {
-      "@type": "ContactPoint",
-      email: "jd@growwthpartners.com",
-      telephone: "+65 9861 5600",
-      contactType: "Business Service",
-    },
-    address: {
-      "@type": "PostalAddress",
-      addressCountry: "UAE",
-    },
+    "@graph": [
+      {
+        "@type": "FAQPage",
+        "@id": "https://growwthpartners.com/au/#faq",
+        "name": "Finance & CFO Services Australia - FAQ | Growwth Partners",
+        "mainEntity": faqs.map(faq => ({
+          "@type": "Question",
+          "name": faq.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.answer
+          }
+        }))
+      },
+      {
+        "@type": "Service",
+        "@id": "https://growwthpartners.com/au/#service",
+        "name": "AI-Powered Finance & CFO Services in Australia",
+        "serviceType": [
+          "Fractional CFO Services",
+          "Strategic Finance",
+          "Accounting & Bookkeeping",
+          "Corporate Tax (ATO)",
+          "Payroll & Compliance"
+        ],
+        "areaServed": "Australia",
+        "provider": {
+          "@id": "https://growwthpartners.com/#organization"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://growwthpartners.com/#organization",
+        "name": "Growwth Partners",
+        "url": "https://growwthpartners.com",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "jd@growwthpartners.com",
+          "telephone": "+65 9861 5600",
+          "contactType": "business"
+        }
+      }
+    ]
   };
 
   return (
     <Layout>
       <SEOhelper
-        title="Growwth Partners Australia | Accounting & Financial Experts"
-        description="We enable Australian SMEs, startups, and local founders to scale nationwide—our on-the-ground Sydney/Melbourne-based team brings the best in bookkeeping, compliance, and strategic advisory for the Australian business ecosystem."
-        keywords="australia accounting, sydney financial services, melbourne business solutions, australian tax compliance, company incorporation australia"
+        title="AI-Powered Finance & CFO Services Australia | Expert Accounting, Tax & Strategic Finance | Growwth Partners"
+        description="Growwth Partners Australia delivers expert finance services enhanced by AI. Get fractional CFO support, strategic finance, accounting, ATO tax compliance, and Ryzup.ai-powered automation for faster decisions and near-zero errors."
+        keywords="fractional cfo australia, cfo services australia, strategic finance australia, accounting services australia, ato tax compliance, ai finance australia, ryzup.ai"
         canonicalUrl="https://growwthpartners.com/au"
-        structuredData={organizationSchema}
+        structuredData={structuredData}
       />
       <motion.div
         initial={{ opacity: 0 }}
@@ -48,55 +97,24 @@ const HomeAustralia = () => {
         transition={{ duration: 0.5 }}
         className="overflow-hidden"
       >
-        <div className="min-h-[70vh] flex items-center justify-center flex-col text-center px-4 py-12">
-          <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-            <div className="absolute top-1/3 right-1/4 w-72 h-72 bg-green-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
-            <div className="absolute bottom-1/4 left-1/3 w-80 h-80 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
-          </div>
-
-          <div className="relative z-10 max-w-2xl mx-auto">
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ delay: 0.2, duration: 0.5 }}
-              className="mb-6 inline-block px-4 py-1 bg-blue-100 text-brand-blue rounded-full text-sm font-semibold"
-            >
-              Australia Services
-            </motion.div>
-
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-brand-orange">
-              Growwth Australia: Finance Solutions For Aussie Businesses
-            </h1>
-            <p className="text-lg text-gray-600 mb-8">
-              From Melbourne to Sydney, Growwth's team specializes in Australian
-              accounting, payroll, and incorporation. We help local businesses
-              stay compliant and profitable as they grow throughout the country.
-            </p>
-
-            <div className="relative py-10 px-8 rounded-xl border-2 border-dashed border-blue-300 bg-blue-50/50 mb-10">
-              <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-white px-4">
-                <span className="text-brand-blue font-semibold">
-                  Coming Soon
-                </span>
-              </div>
-              <p className="text-gray-600">
-                Our Australia-only service desk opens soon. Curious about early
-                access? Register your interest now and help shape our offerings
-                for your business needs.
-              </p>
-            </div>
-
-            <Button
-              onClick={handleContactClick}
-              className="bg-brand-orange hover:bg-brand-orange/90 text-white font-medium px-6 py-3"
-            >
-              Register Interest
-            </Button>
-          </div>
-        </div>
+        <HeroSection />
+        <WhyChooseSection />
+        <WhatWeDoSection />
+        <AIAdvantageSection />
+        <HowWeWorkSection />
+        <SectorsSection />
+        <TestimonialSection />
+        <FaqSection faqs={faqs} />
+        <CtaSection
+          title="Expert finance, supercharged with AI."
+          description="If defensible numbers, faster closes, and confident decisions matter, Growwth Partners Australia is ready."
+          primaryButtonText="Book a Free Strategy Call"
+          secondaryButtonText="Speak to a CFO Expert"
+          backgroundColor="from-brand-blue to-blue-700"
+        />
       </motion.div>
     </Layout>
   );
 };
 
-export default HomeAustralia;
+export default HomeAustraliaPage;
