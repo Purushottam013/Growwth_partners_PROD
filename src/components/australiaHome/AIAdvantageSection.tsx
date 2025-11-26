@@ -31,8 +31,8 @@ const features = [
 
 export const AIAdvantageSection = () => {
   return (
-    <section className="py-20 bg-gradient-to-br from-blue-900 to-blue-700 text-white relative overflow-hidden">
-      <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
+    <section className="py-20 bg-gradient-to-br from-blue-50 to-purple-50 text-gray-900 relative overflow-hidden">
+      <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
       
       <div className="container-custom relative z-10">
         <motion.div
@@ -42,19 +42,19 @@ export const AIAdvantageSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-semibold mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-brand-blue/10 backdrop-blur-sm rounded-full text-brand-blue text-sm font-semibold mb-6">
             <Bot className="h-4 w-4" />
             Powered by Ryzup.ai
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
             Our AI Advantage
           </h2>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto mb-4">
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto mb-4">
             Bring AI into day-to-day finance — safely and pragmatically.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 max-w-6xl mx-auto">
           {features.map((feature, index) => (
             <motion.div
               key={index}
@@ -62,7 +62,7 @@ export const AIAdvantageSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300"
+              className="bg-white/60 backdrop-blur-sm p-6 rounded-xl border border-gray-200 hover:bg-white/80 transition-all duration-300 shadow-sm"
             >
               <div className="mb-4 inline-flex items-center justify-center w-12 h-12 bg-brand-orange rounded-lg">
                 <feature.icon className="h-6 w-6 text-white" />
@@ -70,7 +70,7 @@ export const AIAdvantageSection = () => {
               <h3 className="text-xl font-bold mb-3">
                 {feature.title}
               </h3>
-              <p className="text-white/80 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed">
                 {feature.description}
               </p>
             </motion.div>
@@ -82,7 +82,7 @@ export const AIAdvantageSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
-          className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 text-center max-w-4xl mx-auto"
+          className="bg-white/60 backdrop-blur-sm border border-gray-200 rounded-2xl p-8 text-center max-w-4xl mx-auto shadow-sm"
         >
           <p className="text-xl font-semibold">
             Result: fewer manual errors, faster closes, decision-ready numbers — with humans in control and AI doing the heavy lifting.
