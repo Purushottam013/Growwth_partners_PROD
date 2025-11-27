@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -20,6 +20,7 @@ import {
   MessageSquare 
 } from "lucide-react";
 import { sendToContactApi, mapContactPagePayload } from "@/lib/contactApi";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const services = [
   "Accounting Services",
@@ -77,6 +78,8 @@ export const ContactForm = () => {
     service: "",
     message: ""
   });
+  const recaptcha = useRef(null);
+  const key = import.meta.env.VITE_SITE_KEY;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -89,6 +92,17 @@ export const ContactForm = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    const captchaValue = recaptcha.current?.getValue();
+    if (!captchaValue) {
+      toast({
+        title: "Submission Error",
+        description: "Please complete the captcha and try again.",
+        variant: "destructive",
+      });
+      return; // stop submission
+    }
+
     setIsSubmitting(true);
 
     try {
@@ -110,6 +124,7 @@ export const ContactForm = () => {
         service: "",
         message: ""
       });
+       recaptcha.current?.reset();
     } catch (error) {
       console.error("Error submitting form:", error);
       toast({
@@ -248,6 +263,7 @@ export const ContactForm = () => {
           />
         </div>
       </div>
+
       
       <Button 
         type="submit" 
@@ -256,6 +272,11 @@ export const ContactForm = () => {
       >
         {isSubmitting ? "Submitting..." : "Submit Request"}
       </Button>
+      <div className="w-full flex justify-center">
+       <div className="w-full flex justify-center">
+    <ReCAPTCHA sitekey={key} ref={recaptcha} />
+  </div>
+  </div>
     </form>
   );
 };
