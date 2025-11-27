@@ -270,14 +270,6 @@ export const ContactForm = () => {
         </div>
       </div>
 
-      <Button
-        type="submit"
-        className="w-full bg-brand-orange hover:bg-brand-orange/90 text-white py-6 text-lg font-medium transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
-        disabled={isSubmitting}
-      >
-        {isSubmitting ? "Submitting..." : "Submit Request"}
-      </Button>
-
       {isBrowser && (
         <div className="w-full flex justify-center">
           <div className="w-full flex justify-center">
@@ -288,6 +280,14 @@ export const ContactForm = () => {
           </div>
         </div>
       )}
+      <Button
+        type="submit"
+        className="w-full bg-brand-orange hover:bg-brand-orange/90 text-white py-6 text-lg font-medium transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
+        disabled={isSubmitting}
+      >
+        {isSubmitting ? "Submitting..." : "Submit Request"}
+      </Button>
+
     </form>
   );
 };
