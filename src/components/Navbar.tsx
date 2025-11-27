@@ -116,13 +116,13 @@ export const Navbar = () => {
               <div key={item.title} className="relative group">
                 {item.dropdown ? (
                   <div className="flex flex-col">
-                    <Link
-                      to={getCountryUrl(item.path)}
+                    <button
+                      type="button"
                       className="px-3 py-2 text-gray-700 hover:text-brand-orange font-medium flex items-center"
                     >
                       {item.title}
                       <ChevronDown className="ml-1 w-4 h-4" />
-                    </Link>
+                    </button>
                     <div className="absolute left-0 mt-10 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                       <div className="bg-white rounded-md shadow-lg py-2">
                         {item.items?.map((subItem) => (
