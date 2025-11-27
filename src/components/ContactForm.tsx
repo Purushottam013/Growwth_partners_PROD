@@ -1,18 +1,19 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { 
-  Select, 
-  SelectContent, 
-  SelectItem, 
-  SelectTrigger, 
-  SelectValue
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
 } from "@/components/ui/select";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { useToast } from "@/hooks/use-toast";
 import { PhoneIcon, User, Building, Mail, ChevronDown } from "lucide-react";
 import { sendToContactApi, mapGeneralContactPayload } from "@/lib/contactApi";
+import ReCAPTCHA from "react-google-recaptcha";
 
 interface ContactFormProps {
   onSuccess?: () => void;
@@ -31,7 +32,7 @@ const services = [
   "Due Diligence",
   "Pitch Your StartUp",
   "Invester Growth Services",
-  "Other"
+  "Other",
 ];
 
 const countryCodes = [
@@ -73,6 +74,8 @@ export function ContactForm({ onSuccess }: ContactFormProps) {
     phone: "",
     service: "",
   });
+  const recaptcha = useRef(null);
+  const key = import.meta.env.VITE_SITE_KEY;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -85,6 +88,17 @@ export function ContactForm({ onSuccess }: ContactFormProps) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    const captchaValue = recaptcha.current?.getValue();
+    if (!captchaValue) {
+      toast({
+        title: "Submission Error",
+        description: "Please complete the captcha and try again.",
+        variant: "destructive",
+      });
+      return; // stop submission
+    }
+
     setIsSubmitting(true);
 
     try {
@@ -96,7 +110,7 @@ export function ContactForm({ onSuccess }: ContactFormProps) {
         title: "Request Submitted",
         description: "Our expert will contact you shortly.",
       });
-      
+
       setFormData({
         name: "",
         company: "",
@@ -105,13 +119,14 @@ export function ContactForm({ onSuccess }: ContactFormProps) {
         phone: "",
         service: "",
       });
-      
+
       if (onSuccess) onSuccess();
     } catch (error) {
       console.error("Error submitting form:", error);
       toast({
         title: "Submission Error",
-        description: "There was a problem submitting your request. Please try again.",
+        description:
+          "There was a problem submitting your request. Please try again.",
         variant: "destructive",
       });
     } finally {
@@ -136,7 +151,7 @@ export function ContactForm({ onSuccess }: ContactFormProps) {
           />
         </div>
       </div>
-      
+
       <div className="space-y-2">
         <Label htmlFor="company">Company Name</Label>
         <div className="relative">
@@ -152,7 +167,7 @@ export function ContactForm({ onSuccess }: ContactFormProps) {
           />
         </div>
       </div>
-      
+
       <div className="space-y-2">
         <Label htmlFor="email">Email Address</Label>
         <div className="relative">
@@ -169,7 +184,7 @@ export function ContactForm({ onSuccess }: ContactFormProps) {
           />
         </div>
       </div>
-      
+
       <div className="space-y-2">
         <Label htmlFor="phone">Phone Number</Label>
         <div className="flex space-x-2">
@@ -183,7 +198,11 @@ export function ContactForm({ onSuccess }: ContactFormProps) {
             <SelectContent className="max-h-[250px]">
               <ScrollArea className="h-[200px]">
                 {countryCodes.map((country) => (
-                  <SelectItem key={country.code} value={country.code} className="text-base py-2">
+                  <SelectItem
+                    key={country.code}
+                    value={country.code}
+                    className="text-base py-2"
+                  >
                     <span className="flex items-center">
                       <span className="mr-2 text-lg">{country.flag}</span>
                       <span>{country.code}</span>
@@ -208,7 +227,7 @@ export function ContactForm({ onSuccess }: ContactFormProps) {
           </div>
         </div>
       </div>
-      
+
       <div className="space-y-2">
         <Label htmlFor="service">Service Looking For</Label>
         <Select
@@ -229,14 +248,20 @@ export function ContactForm({ onSuccess }: ContactFormProps) {
           </SelectContent>
         </Select>
       </div>
-      
-      <Button 
-        type="submit" 
-        className="w-full bg-brand-orange hover:bg-brand-orange/90" 
+
+      <Button
+        type="submit"
+        className="w-full bg-brand-orange hover:bg-brand-orange/90"
         disabled={isSubmitting}
       >
         {isSubmitting ? "Submitting..." : "Submit Request"}
       </Button>
+
+      <div className="w-full flex justify-center">
+        <div className="w-full flex justify-center">
+          <ReCAPTCHA sitekey={key} ref={recaptcha} />
+        </div>
+      </div>
     </form>
   );
 }
