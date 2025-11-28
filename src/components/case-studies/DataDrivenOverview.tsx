@@ -27,9 +27,9 @@ export const DataDrivenOverview = () => {
           >
             <div className="absolute -top-6 -right-6 w-64 h-64 bg-brand-orange/10 rounded-full filter blur-3xl"></div>
             <img
-              src="/lovable-uploads/3b2e26a7-2abc-4ceb-8c28-3a872d517807.png"
+              src="/images/data-driven-overview.jpg"
               alt="Digital Learning Platform"
-              className="rounded-2xl shadow-2xl relative z-10"
+              className="rounded-2xl shadow-2xl relative z-10 w-full"
             />
           </motion.div>
         </div>
