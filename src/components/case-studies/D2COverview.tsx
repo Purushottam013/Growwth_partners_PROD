@@ -29,7 +29,7 @@ export const D2COverview = () => {
             <img
               src="/images/d2c-overview.jpg"
               alt="D2C Business Overview"
-              className="rounded-2xl shadow-2xl relative z-10"
+              className="rounded-2xl shadow-2xl relative z-10 w-full"
             />
           </motion.div>
         </div>
