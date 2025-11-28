@@ -24,9 +24,10 @@ export const PlaceholderContent = ({
   features
 }: PlaceholderContentProps) => {
   const navigate = useNavigate();
+  const { getCountryUrl } = useCountry();
 
   const handleJoinUs = () => {
-    navigate('/contact-us');
+    navigate(getCountryUrl('/contact-us'));
     window.scrollTo(0, 0);
   };
   return (
