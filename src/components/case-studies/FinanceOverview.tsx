@@ -27,7 +27,7 @@ export const FinanceOverview = () => {
           >
             <div className="absolute -top-6 -right-6 w-64 h-64 bg-brand-orange/10 rounded-full filter blur-3xl"></div>
             <img
-              src="/images/finance-overview.jpg"
+              src="/images/finance-business-overview.jpg"
               alt="Finance Retail Fuel Industry Overview"
               className="rounded-2xl shadow-2xl relative z-10 w-full"
             />
