@@ -255,6 +255,14 @@ export const Footer = () => {
                   Cash Flow Modelling
                 </Link>
               </li>
+              <li>
+                <Link 
+                  to={getCountryUrl("/esop-advisory-singapore")} 
+                  className="hover:text-brand-orange transition-colors"
+                >
+                  ESOP Advisory Services
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

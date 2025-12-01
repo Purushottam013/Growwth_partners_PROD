@@ -128,6 +128,13 @@ export const routes: RouteRecord[] = [
         },
       },
       {
+        path: "esop-advisory-singapore",
+        async lazy() {
+          const { default: Component } = await import("./pages/EsopAdvisorySingapore");
+          return { Component };
+        },
+      },
+      {
         path: "privacy-policy",
         async lazy() {
           const { default: Component } = await import("./pages/PrivacyPolicy");
