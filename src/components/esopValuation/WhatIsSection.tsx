@@ -134,7 +134,7 @@ export const WhatIsSection = ({ onEnquireClick }: WhatIsSectionProps) => {
                   <Button
                     onClick={onEnquireClick}
                     size="lg"
-                    className="w-full md:w-auto bg-brand-blue hover:bg-brand-blue/90 text-white font-semibold text-sm md:text-base px-6 rounded-full transition-all"
+                    className="w-full md:w-auto bg-brand-blue hover:bg-brand-blue/90 text-white font-semibold text-sm md:text-base px-6 shadow-lg rounded-full transition-all"
                   >
                     Enquire Now
                     <ArrowRight className="ml-2 h-4 w-4" />
