@@ -33,9 +33,9 @@ export const ClientsSection = () => {
           viewport={{ once: true }}
           className="text-center"
         >
-          <Card className="max-w-3xl mx-auto bg-gradient-to-br from-primary/5 to-secondary/5 border-2 border-primary/20">
+          <Card className="max-w-3xl mx-auto bg-gradient-to-br from-brand-orange/5 to-brand-blue/5 border-2 border-brand-orange/20">
             <CardContent className="p-12">
-              <Award className="h-16 w-16 text-primary mx-auto mb-6" />
+              <Award className="h-16 w-16 text-brand-orange mx-auto mb-6" />
               <h3 className="text-2xl font-bold mb-4 text-foreground">
                 Trusted by Leading Companies Across APAC
               </h3>
@@ -43,7 +43,7 @@ export const ClientsSection = () => {
                 Our ESOP advisory services have helped numerous startups and established companies successfully implement employee stock incentive plans, driving growth and retention.
               </p>
               <Link to={getCountryUrl("/success-stories")}>
-                <Button variant="outline" size="lg" className="font-semibold">
+                <Button variant="outline" size="lg" className="font-semibold border-2 border-brand-orange text-brand-orange hover:bg-brand-orange hover:text-white">
                   Read Success Stories
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>

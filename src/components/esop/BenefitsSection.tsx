@@ -60,15 +60,15 @@ export const BenefitsSection = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <Card className="h-full hover:shadow-xl transition-shadow duration-300 border-2 hover:border-primary/50">
+              <Card className="h-full hover:shadow-xl transition-shadow duration-300 border-2 hover:border-brand-orange/50 group">
                 <CardContent className="p-8">
                   <div className="mb-6">
-                    <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
-                      <benefit.icon className="h-8 w-8 text-primary" />
+                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-brand-orange/20 to-brand-blue/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <benefit.icon className="h-8 w-8 text-brand-orange" />
                     </div>
                   </div>
                   <h3 className="text-xl font-bold mb-4 text-foreground">{benefit.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{benefit.description}</p>
+                  <p className="text-gray-700 leading-relaxed">{benefit.description}</p>
                 </CardContent>
               </Card>
             </motion.div>

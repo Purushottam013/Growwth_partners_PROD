@@ -26,7 +26,7 @@ export const BlogSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-primary/5 to-secondary/5">
+    <section className="py-20 bg-gradient-to-br from-[#FFF5F0] to-[#F0F9FF]">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -50,20 +50,20 @@ export const BlogSection = () => {
               viewport={{ once: true }}
             >
               <Link to={getCountryUrl(post.slug)}>
-                <Card className="h-full hover:shadow-xl transition-all duration-300 hover:-translate-y-2 cursor-pointer group">
+                <Card className="h-full hover:shadow-xl transition-all duration-300 hover:-translate-y-2 cursor-pointer group border-l-4 border-l-brand-orange">
                   <CardContent className="p-8">
                     <div className="mb-6">
-                      <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                        <FileText className="h-8 w-8 text-primary" />
+                      <div className="w-16 h-16 rounded-full bg-brand-orange/10 flex items-center justify-center group-hover:bg-brand-orange/20 transition-colors">
+                        <FileText className="h-8 w-8 text-brand-orange" />
                       </div>
                     </div>
-                    <h3 className="text-xl font-bold mb-4 text-foreground group-hover:text-primary transition-colors">
+                    <h3 className="text-xl font-bold mb-4 text-foreground group-hover:text-brand-orange transition-colors">
                       {post.title}
                     </h3>
-                    <p className="text-muted-foreground leading-relaxed mb-6">
+                    <p className="text-gray-700 leading-relaxed mb-6">
                       {post.description}
                     </p>
-                    <div className="flex items-center text-primary font-semibold">
+                    <div className="flex items-center text-brand-orange font-semibold">
                       Read Article <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                     </div>
                   </CardContent>

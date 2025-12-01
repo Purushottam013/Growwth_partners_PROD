@@ -4,7 +4,7 @@ import { Scale, UserCheck } from "lucide-react";
 
 export const PremiumAddOnsSection = () => {
   return (
-    <section className="py-20 bg-gradient-to-br from-primary/5 to-secondary/5">
+    <section className="py-20 bg-gradient-to-br from-brand-orange/5 to-brand-blue/5">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -25,11 +25,11 @@ export const PremiumAddOnsSection = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <Card className="h-full hover:shadow-xl transition-shadow duration-300 border-2 border-primary/20">
+            <Card className="h-full hover:shadow-xl transition-shadow duration-300 border-2 border-brand-blue/20">
               <CardContent className="p-8">
                 <div className="mb-6">
-                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
-                    <Scale className="h-8 w-8 text-primary" />
+                  <div className="w-16 h-16 rounded-full bg-brand-blue/10 flex items-center justify-center">
+                    <Scale className="h-8 w-8 text-brand-blue" />
                   </div>
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-foreground">Legal Advisory Services</h3>
@@ -46,11 +46,11 @@ export const PremiumAddOnsSection = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <Card className="h-full hover:shadow-xl transition-shadow duration-300 border-2 border-primary/20">
+            <Card className="h-full hover:shadow-xl transition-shadow duration-300 border-2 border-brand-green/20">
               <CardContent className="p-8">
                 <div className="mb-6">
-                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
-                    <UserCheck className="h-8 w-8 text-primary" />
+                  <div className="w-16 h-16 rounded-full bg-brand-green/10 flex items-center justify-center">
+                    <UserCheck className="h-8 w-8 text-brand-green" />
                   </div>
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-foreground">Dedicated Relationship Manager</h3>
