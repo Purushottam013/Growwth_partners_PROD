@@ -135,6 +135,13 @@ export const routes: RouteRecord[] = [
         },
       },
       {
+        path: "esop-valuation-singapore",
+        async lazy() {
+          const { default: Component } = await import("./pages/EsopValuationSingapore");
+          return { Component };
+        },
+      },
+      {
         path: "privacy-policy",
         async lazy() {
           const { default: Component } = await import("./pages/PrivacyPolicy");
