@@ -29,11 +29,11 @@ export const PricingTableSection = () => {
           >
             <table className="w-full border-collapse bg-card rounded-lg overflow-hidden shadow-lg">
               <thead>
-                <tr className="bg-primary text-primary-foreground">
+                <tr className="bg-gradient-to-r from-brand-orange to-brand-blue text-white">
                   <th className="p-6 text-left text-lg font-bold">ESOP Services</th>
                   <th className="p-6 text-center text-lg font-bold">Basic</th>
                   <th className="p-6 text-center text-lg font-bold">Advanced</th>
-                  <th className="p-6 text-center text-lg font-bold border-2 border-accent">Premium</th>
+                  <th className="p-6 text-center text-lg font-bold border-2 border-white">Premium</th>
                 </tr>
               </thead>
               <tbody className="text-foreground">
@@ -41,43 +41,43 @@ export const PricingTableSection = () => {
                   <td className="p-6 font-semibold">Plan Design</td>
                   <td className="p-6 text-center">Basic design</td>
                   <td className="p-6 text-center">Detailed and tailored design</td>
-                  <td className="p-6 text-center bg-accent/5">Highly detailed and customised design</td>
+                  <td className="p-6 text-center bg-brand-orange/5 font-semibold">Highly detailed and customised design</td>
                 </tr>
                 <tr className="border-b border-border bg-muted/30">
                   <td className="p-6 font-semibold">Documentation Assistance</td>
                   <td className="p-6 text-center">Essential support</td>
                   <td className="p-6 text-center">Comprehensive assistance</td>
-                  <td className="p-6 text-center bg-accent/5">Complete support</td>
+                  <td className="p-6 text-center bg-brand-orange/5 font-semibold">Complete support</td>
                 </tr>
                 <tr className="border-b border-border">
                   <td className="p-6 font-semibold">Implementation & Communication</td>
                   <td className="p-6 text-center">Basic strategy</td>
                   <td className="p-6 text-center">Comprehensive strategy</td>
-                  <td className="p-6 text-center bg-accent/5">Tailored and sophisticated strategies</td>
+                  <td className="p-6 text-center bg-brand-orange/5 font-semibold">Tailored and sophisticated strategies</td>
                 </tr>
                 <tr className="border-b border-border bg-muted/30">
                   <td className="p-6 font-semibold">Administration of ESOP</td>
                   <td className="p-6 text-center">Standard support</td>
                   <td className="p-6 text-center">Enhanced services</td>
-                  <td className="p-6 text-center bg-accent/5">Premium-level administration</td>
+                  <td className="p-6 text-center bg-brand-orange/5 font-semibold">Premium-level administration</td>
                 </tr>
                 <tr className="border-b border-border">
                   <td className="p-6 font-semibold">Accounting and Valuation</td>
                   <td className="p-6 text-center">Basic support</td>
                   <td className="p-6 text-center">Advanced support</td>
-                  <td className="p-6 text-center bg-accent/5">Premium-level support</td>
+                  <td className="p-6 text-center bg-brand-orange/5 font-semibold">Premium-level support</td>
                 </tr>
                 <tr className="border-b border-border bg-muted/30">
                   <td className="p-6 font-semibold">Regulatory Compliance</td>
                   <td className="p-6 text-center">Essential support</td>
                   <td className="p-6 text-center">Robust support</td>
-                  <td className="p-6 text-center bg-accent/5">Comprehensive support</td>
+                  <td className="p-6 text-center bg-brand-orange/5 font-semibold">Comprehensive support</td>
                 </tr>
                 <tr>
                   <td className="p-6 font-semibold">Tax Advisory Services</td>
                   <td className="p-6 text-center">General advisory</td>
                   <td className="p-6 text-center">In-depth advisory</td>
-                  <td className="p-6 text-center bg-accent/5">Customised and strategic advisory</td>
+                  <td className="p-6 text-center bg-brand-orange/5 font-semibold">Customised and strategic advisory</td>
                 </tr>
               </tbody>
             </table>

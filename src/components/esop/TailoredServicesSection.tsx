@@ -40,10 +40,10 @@ export const TailoredServicesSection = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <Card className="hover:shadow-lg transition-shadow duration-300">
+              <Card className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-l-4 border-l-brand-green">
                 <CardContent className="p-6 flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <service.icon className="h-6 w-6 text-primary" />
+                  <div className="w-12 h-12 rounded-lg bg-brand-green/10 flex items-center justify-center flex-shrink-0">
+                    <service.icon className="h-6 w-6 text-brand-green" />
                   </div>
                   <p className="text-lg font-medium text-foreground">{service.text}</p>
                 </CardContent>
