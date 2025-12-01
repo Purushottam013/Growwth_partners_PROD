@@ -263,6 +263,14 @@ export const Footer = () => {
                   ESOP Advisory Services
                 </Link>
               </li>
+              <li>
+                <Link 
+                  to={getCountryUrl("/esop-valuation-singapore")} 
+                  className="hover:text-brand-orange transition-colors"
+                >
+                  ESOP Valuation Services
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

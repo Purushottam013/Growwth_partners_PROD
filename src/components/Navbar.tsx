@@ -29,6 +29,7 @@ const navItems = [
       { title: "Part Time CFO", path: "/part-time-cfo" },
       { title: "Cash Flow Modelling", path: "/cash-flow" },
       { title: "ESOP Advisory Services", path: "/esop-advisory-singapore" },
+      { title: "ESOP Valuation Services", path: "/esop-valuation-singapore" },
     ],
   },
   {
