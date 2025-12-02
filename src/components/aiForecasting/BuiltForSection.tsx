@@ -10,9 +10,9 @@ export const BuiltForSection = () => {
       benefits: [
         "Quickly show investors your runway, burn, and growth plan",
         "Run scenarios before fundraises, expansions, or new product launches",
-        "Make every board meeting data backed"
+        "Make every board meeting data backed",
       ],
-      color: "brand-green"
+      color: "brand-green",
     },
     {
       icon: Building2,
@@ -20,9 +20,9 @@ export const BuiltForSection = () => {
       benefits: [
         "Understand how seasonal sales and costs affect cash",
         "Plan hiring and capital expenditure with confidence",
-        "Avoid surprises with clear forward views"
+        "Avoid surprises with clear forward views",
       ],
-      color: "brand-blue"
+      color: "brand-blue",
     },
     {
       icon: Briefcase,
@@ -30,15 +30,45 @@ export const BuiltForSection = () => {
       benefits: [
         "Stop rebuilding models manually for every meeting",
         "Use AI forecasting to standardise planning",
-        "Align leadership around one set of trusted numbers"
+        "Align leadership around one set of trusted numbers",
       ],
-      color: "brand-orange"
-    }
+      color: "brand-orange",
+    },
   ];
+
+  const getColorClasses = (color) => {
+    switch (color) {
+      case "brand-blue":
+        return {
+          bg: "bg-brand-blue/10",
+          text: "text-brand-blue",
+          border: "border-brand-blue/20",
+        };
+      case "brand-orange":
+        return {
+          bg: "bg-brand-orange/10",
+          text: "text-brand-orange",
+          border: "border-brand-orange/20",
+        };
+      case "brand-green":
+        return {
+          bg: "bg-brand-green/10",
+          text: "text-brand-green",
+          border: "border-brand-green/20",
+        };
+      default:
+        return {
+          bg: "bg-primary/10",
+          text: "text-primary",
+          border: "border-primary/20",
+        };
+    }
+  };
 
   return (
     <section className="py-16 lg:py-24 bg-gradient-to-br from-brand-blue/5 via-background to-brand-green/5">
       <div className="container-custom">
+        {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -52,32 +82,50 @@ export const BuiltForSection = () => {
           </h2>
         </motion.div>
 
+        {/* Cards */}
         <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
-          {audiences.map((audience, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-card rounded-2xl p-6 lg:p-8 shadow-lg border border-border hover:shadow-xl transition-all hover:-translate-y-1"
-            >
-              <div className={`w-14 h-14 bg-${audience.color}/10 rounded-xl flex items-center justify-center mb-4`}>
-                <audience.icon className={`w-7 h-7 text-${audience.color}`} />
-              </div>
-              <h3 className="text-lg font-semibold mb-4">{audience.title}</h3>
-              <ul className="space-y-3">
-                {audience.benefits.map((benefit, i) => (
-                  <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
-                    <div className={`w-1.5 h-1.5 rounded-full bg-${audience.color} mt-2 shrink-0`} />
-                    {benefit}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          ))}
+          {audiences.map((audience, index) => {
+            const colors = getColorClasses(audience.color);
+
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className={`${colors.bg} rounded-2xl p-6 lg:p-8 shadow-lg border ${colors.border} hover:shadow-xl transition-all hover:-translate-y-1`}
+              >
+                <div
+                  className={`w-14 h-14 ${colors.bg} rounded-xl flex items-center justify-center mb-4`}
+                >
+                  <audience.icon className={`w-7 h-7 ${colors.text}`} />
+                </div>
+
+                <h3 className="text-lg font-semibold mb-4">{audience.title}</h3>
+
+                <ul className="space-y-3">
+                  {audience.benefits.map((benefit, i) => (
+                    <li
+                      key={i}
+                      className="flex items-start gap-2 text-sm text-muted-foreground"
+                    >
+                      <div
+                        className={`w-1.5 h-1.5 rounded-full ${colors.bg.replace(
+                          "/10",
+                          ""
+                        )} ${colors.text} mt-2 shrink-0`}
+                      />
+                      {benefit}
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            );
+          })}
         </div>
 
+        {/* CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -85,8 +133,15 @@ export const BuiltForSection = () => {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="text-center mt-12"
         >
-          <a href="https://calendly.com/jd-growwthpartners/15min?month=2025-11" target="_blank" rel="noopener noreferrer">
-            <Button size="lg" className="bg-brand-blue hover:bg-brand-blue/90 text-white">
+          <a
+            href="https://calendly.com/jd-growwthpartners/15min?month=2025-11"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button
+              size="lg"
+              className="bg-brand-blue hover:bg-brand-blue/90 text-white"
+            >
               <Calendar className="w-4 h-4 mr-2" />
               Book a Call With a RyzUp Expert
             </Button>
