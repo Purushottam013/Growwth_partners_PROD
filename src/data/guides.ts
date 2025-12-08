@@ -53,6 +53,28 @@ export const getGuidesByCategory = (category?: string): Guide[] => {
 export const guides: Guide[] = [
   {
     id: 0,
+    Title: "The Most Comprehensive Guide to Pitching to Investors",
+    slug: "pitching-to-investors-guide",
+    Image: "/images/guides/pitching-to-investors.jpeg",
+    Category: "Fundraising",
+    Excerpt: "Everything you need to know about pitching to investors, including when is the right time to seek for investment, creating winning pitch decks, and finding the right investors.",
+    Content: "Full guide content for pitching to investors",
+    publishedAt: "2024-12-08",
+    keyTakeaways: [
+      { title: "Business Needs", description: "Realise when and why a company will need outside funding to scale effectively." },
+      { title: "Different Investors", description: "Know the various kinds of investors and what they anticipate." },
+      { title: "Create an Engaging Pitch Deck", description: "Organise your pitch deck well so that it captures the attention of investors who want to see your business potential." },
+      { title: "Perfect Your Elevator Pitch", description: "Create a concise, compelling elevator pitch that will leave a lasting impression on potential investors." },
+      { title: "Navigate Investor Networks", description: "Understanding where and how to find suitable investors can greatly increase the chances of securing required funds for growth." }
+    ],
+    faqs: [
+      { question: "How do I know if my business is ready for investment?", answer: "You can look for indicators like quick growth opportunities, product development needs, plans to expand into new markets, financial strain, and the need to stay competitive." },
+      { question: "What is the difference between venture capitalists and angel investors?", answer: "Angel investors usually use their own money while venture capitalists invest pooled funds from many different sources." },
+      { question: "How challenging is it to get funding?", answer: "Getting funding is difficult and competitive. It calls for perseverance, a potent business plan, and a captivating pitch." }
+    ]
+  },
+  {
+    id: 1,
     Title: "A Comprehensive Guide on Accounting for Businesses",
     slug: "business-accounting-guide",
     Image: "/images/guides/accounting-for-businesses.jpeg",
