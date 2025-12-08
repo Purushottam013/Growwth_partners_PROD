@@ -7,7 +7,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
 import { 
   ChevronRight, 
   Building2, 
@@ -32,7 +31,6 @@ import {
 import SEOhelper from "@/components/SEOhelper";
 
 // Import images
-import incorporatingBusinessImage from "@/assets/guides/incorporating-business-singapore.jpeg";
 import checklistLegalDocumentsImage from "@/assets/guides/checklist-legal-documents.jpeg";
 import incorporateCompanyStepsImage from "@/assets/guides/incorporate-company-steps.jpeg";
 import incorporationStructureImage from "@/assets/guides/incorporation-structure.jpeg";
