@@ -487,40 +487,7 @@ const PitchingToInvestorsGuide = () => {
               />
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {signsBusinessNeedsInvestorsData.slice(0, 3).map((sign, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-                  className="bg-gradient-to-br from-amber-50 to-orange-50 p-6 rounded-xl border border-amber-200"
-                >
-                  <div className="flex items-center gap-3 mb-4">
-                    <span className="text-3xl font-bold text-amber-500">{sign.number}</span>
-                    <h4 className="text-lg font-semibold text-gray-900">{sign.title}</h4>
-                  </div>
-                  <p className="text-gray-700 text-sm">{sign.description}</p>
-                </motion.div>
-              ))}
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 max-w-3xl mx-auto">
-              {signsBusinessNeedsInvestorsData.slice(3).map((sign, index) => (
-                <motion.div
-                  key={index + 3}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
-                  className="bg-gradient-to-br from-amber-50 to-orange-50 p-6 rounded-xl border border-amber-200"
-                >
-                  <div className="flex items-center gap-3 mb-4">
-                    <span className="text-3xl font-bold text-amber-500">{sign.number}</span>
-                    <h4 className="text-lg font-semibold text-gray-900">{sign.title}</h4>
-                  </div>
-                  <p className="text-gray-700 text-sm">{sign.description}</p>
-                </motion.div>
-              ))}
-            </div>
+           
           </motion.div>
         </div>
       </section>
@@ -708,43 +675,6 @@ const PitchingToInvestorsGuide = () => {
               />
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-white p-6 rounded-xl shadow-md">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center text-amber-600 font-bold">1</div>
-                  <h4 className="font-semibold text-gray-900">Keep it concise</h4>
-                </div>
-                <p className="text-gray-700 text-sm">Your pitch deck should be concise and focused. Aim for 10-15 slides that cover all essential aspects of your business, but ensure to avoid clutter and overly technical jargon.</p>
-              </div>
-              <div className="bg-white p-6 rounded-xl shadow-md">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center text-amber-600 font-bold">2</div>
-                  <h4 className="font-semibold text-gray-900">Tell a story</h4>
-                </div>
-                <p className="text-gray-700 text-sm">Make your pitch more engaging. Highlight the problem your business solves, your solution, and the journey you've taken so far. However, it should be clear, focused and cover the potential risks as well.</p>
-              </div>
-              <div className="bg-white p-6 rounded-xl shadow-md">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center text-amber-600 font-bold">3</div>
-                  <h4 className="font-semibold text-gray-900">Highlight key metrics</h4>
-                </div>
-                <p className="text-gray-700 text-sm">Include KPIs that show your business's traction and potential, including user growth, revenue, customer acquisition costs, and well-researched financial projections.</p>
-              </div>
-              <div className="bg-white p-6 rounded-xl shadow-md">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center text-amber-600 font-bold">4</div>
-                  <h4 className="font-semibold text-gray-900">Visual Appeal</h4>
-                </div>
-                <p className="text-gray-700 text-sm">Make your pitch deck visually appealing with high-quality graphics, charts, and images. A clean, professional design can make a strong impression.</p>
-              </div>
-              <div className="bg-white p-6 rounded-xl shadow-md md:col-span-2 max-w-md mx-auto">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center text-amber-600 font-bold">5</div>
-                  <h4 className="font-semibold text-gray-900">Clear call to action</h4>
-                </div>
-                <p className="text-gray-700 text-sm">End your pitch deck with a clear call to action, specifying the amount of funding you need and how it will be used.</p>
-              </div>
-            </div>
           </motion.div>
         </div>
       </section>
@@ -941,28 +871,55 @@ const PitchingToInvestorsGuide = () => {
         </div>
       </section>
 
-      {/* Summary Section */}
-      <section id="summary" className="py-12 bg-white scroll-mt-20">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-4xl mx-auto"
-          >
-            <h3 className="text-2xl font-bold mb-6 text-gray-900">Summary</h3>
-            <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-              Being able to pitch to investors is essential for an entrepreneur who wants to grow his or her business. It's important to recognise when your business needs money, what kinds of investors and investments there are, as well as how best to go about making and giving a presentation, because it is these things which will increase your chances for getting funded.
+    {/* Summary Section */}
+<section id="summary" className="py-16 bg-gray-50 scroll-mt-20">
+  <div className="container mx-auto px-4">
+    <motion.div
+      initial={{ opacity: 0, y: 12 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="max-w-5xl mx-auto"
+    >
+      {/* Badge */}
+      <div className="inline-flex items-center gap-2 rounded-full bg-indigo-500/10 px-4 py-1 mb-4">
+        <span className="h-2 w-2 rounded-full bg-indigo-500" />
+        <span className="text-sm font-medium text-indigo-700 tracking-wide">
+          Investor-ready fundraising support
+        </span>
+      </div>
+
+      {/* Card */}
+      <div className="rounded-2xl border border-gray-100 bg-white p-8 md:p-10 shadow-sm">
+        {/* Header */}
+        <div className="flex items-start gap-4 mb-6">
+
+          <div>
+            <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
+              Summary
+            </h3>
+            <p className="mt-1 text-sm text-gray-500">
+              Nail your story, deck, and numbers to win investor trust.
             </p>
-            <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-              But another part of the process involves putting together a captivating pitch deck, perfecting an elevator speech, and understanding who you are talking with on this journey. Maintaining persistence and professionalism will be key, as securing investments is often a complex process.
-            </p>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              Growwth Partners offers a full range of fundraising services, such as customised funding plans, investor matching, professional valuation, flawless pitches, streamlined due diligence, and transparent financial statements. You can rely on Growwth Partners's team of financial experts to help you with every stage of the investing process, from planning ahead to upholding enduring relationships with investors.
-            </p>
-          </motion.div>
+          </div>
         </div>
-      </section>
+
+        {/* Content */}
+        <div className="space-y-4 text-gray-700 text-base md:text-lg leading-relaxed">
+          <p>
+            Being able to pitch to investors is essential for an entrepreneur who wants to grow his or her business. It's important to recognise when your business needs money, what kinds of investors and investments there are, as well as how best to go about making and giving a presentation, because it is these things which will increase your chances for getting funded.
+          </p>
+          <p>
+            But another part of the process involves putting together a captivating pitch deck, perfecting an elevator speech, and understanding who you are talking with on this journey. Maintaining persistence and professionalism will be key, as securing investments is often a complex process.
+          </p>
+          <p>
+            Growwth Partners offers a full range of fundraising services, such as customised funding plans, investor matching, professional valuation, flawless pitches, streamlined due diligence, and transparent financial statements. You can rely on Growwth Partners's team of financial experts to help you with every stage of the investing process, from planning ahead to upholding enduring relationships with investors.
+          </p>
+        </div>
+      </div>
+    </motion.div>
+  </div>
+</section>
+
 
       {/* CTA Section */}
       <section className="py-16 bg-gradient-to-r from-amber-500 to-orange-500">
@@ -980,10 +937,10 @@ const PitchingToInvestorsGuide = () => {
               Putting important parts of your investment-seeking journey in the hands of professionals can greatly increase your chances of success!
             </p>
             <Button 
-              onClick={() => window.location.href = "/contact-us"}
+              onClick={() => window.open('https://calendly.com/jd-growwthpartners/15min?month=2025-11', '_blank')}
               className="bg-white text-amber-600 hover:bg-gray-100 text-lg px-8 py-6 rounded-full"
             >
-              Contact Growwth Partners
+              Book a Call with Growwth Partners
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </motion.div>
