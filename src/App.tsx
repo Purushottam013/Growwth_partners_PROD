@@ -247,6 +247,13 @@ export const routes: RouteRecord[] = [
         },
       },
       {
+        path: "guide/pitching-to-investors-guide",
+        async lazy() {
+          const { default: Component } = await import("./pages/PitchingToInvestorsGuide");
+          return { Component };
+        },
+      },
+      {
         path: "news",
         async lazy() {
           const { default: Component } = await import("./pages/News");
