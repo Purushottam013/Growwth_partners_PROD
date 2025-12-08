@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 import { Layout } from "@/components/Layout";
 import { motion } from "framer-motion";
 import {
@@ -34,7 +33,6 @@ import {
 import SEOhelper from "@/components/SEOhelper";
 
 const BusinessAccountingGuide = () => {
-  const navigate = useNavigate();
   
   const structuredData = {
     "@context": "https://schema.org",
@@ -620,30 +618,6 @@ const BusinessAccountingGuide = () => {
               />
             </div>
 
-            <div className="relative">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {accountingCycleSteps.map((step, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-                    className="bg-white p-6 rounded-xl shadow-md relative"
-                  >
-                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-amber-500 rounded-full flex items-center justify-center text-white font-bold text-xl">
-                      {step.step}
-                    </div>
-                    <h4 className="text-lg font-semibold mt-6 mb-3 text-center text-gray-900">
-                      {step.title}
-                    </h4>
-                    <p className="text-gray-700 text-sm text-center">
-                      {step.description}
-                    </p>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-
             <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg mt-8">
               <div className="flex items-start gap-3">
                 <Lightbulb className="h-6 w-6 text-blue-600 mt-1 flex-shrink-0" />
@@ -793,32 +767,6 @@ const BusinessAccountingGuide = () => {
                 alt="How to Create a Budget for Business - Define Objectives, Estimate Revenues, Project Expenses, Review and Adjust" 
                 className="w-full max-w-3xl rounded-xl shadow-lg"
               />
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-              {budgetingSteps.map((step, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-                  className="text-center"
-                >
-                  <div className="relative mb-6">
-                    <div className={`w-16 h-16 mx-auto rounded-full flex items-center justify-center text-white font-bold text-xl ${index % 2 === 0 ? 'bg-amber-500' : 'bg-amber-400'}`}>
-                      {step.step}
-                    </div>
-                    {index < budgetingSteps.length - 1 && (
-                      <div className="hidden md:block absolute top-1/2 left-full w-full h-0.5 border-t-2 border-dashed border-gray-300" />
-                    )}
-                  </div>
-                  <div className="p-3 bg-amber-100 rounded-full mx-auto w-14 h-14 flex items-center justify-center mb-4">
-                    <step.icon className="h-7 w-7 text-amber-600" />
-                  </div>
-                  <h4 className="text-lg font-semibold mb-2">{step.title}</h4>
-                  <p className="text-gray-700 text-sm">{step.description}</p>
-                </motion.div>
-              ))}
             </div>
 
             <div className="bg-gradient-to-r from-blue-100 to-purple-100 p-8 rounded-xl mb-8">
@@ -1061,68 +1009,52 @@ const BusinessAccountingGuide = () => {
               />
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-              {accountingTips.slice(0, 3).map((tip, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-                  className="bg-gradient-to-br from-amber-50 to-orange-50 p-6 rounded-xl shadow-md border border-amber-100"
-                >
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="p-3 bg-amber-100 rounded-full">
-                      <tip.icon className="h-6 w-6 text-amber-600" />
-                    </div>
-                    <h4 className="text-lg font-semibold">{tip.title}</h4>
-                  </div>
-                  <p className="text-gray-700 text-sm">{tip.description}</p>
-                </motion.div>
-              ))}
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-              {accountingTips.slice(3).map((tip, index) => (
-                <motion.div
-                  key={index + 3}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
-                  className="bg-gradient-to-br from-amber-50 to-orange-50 p-6 rounded-xl shadow-md border border-amber-100"
-                >
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="p-3 bg-amber-100 rounded-full">
-                      <tip.icon className="h-6 w-6 text-amber-600" />
-                    </div>
-                    <h4 className="text-lg font-semibold">{tip.title}</h4>
-                  </div>
-                  <p className="text-gray-700 text-sm">{tip.description}</p>
-                </motion.div>
-              ))}
-            </div>
           </motion.div>
         </div>
       </section>
 
       {/* Summary Section */}
-      <section id="summary" className="py-12 bg-gray-50 scroll-mt-20">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-4xl mx-auto"
-          >
-            <h3 className="text-2xl font-bold mb-6 text-gray-900">Summary</h3>
-            <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-              Good accounting practices will ensure that there is accurate reporting of finances. Hence, decisions are made based on facts, ensuring continued growth. Thus, we can say that the business success is reliant on its accounting.
+        <section id="summary" className="py-16 bg-white scroll-mt-20">
+  <div className="container mx-auto px-4">
+    <motion.div
+      initial={{ opacity: 0, y: 12 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="max-w-5xl mx-auto"
+    >
+      <div className="inline-flex items-center gap-2 rounded-full bg-emerald-500/10 px-4 py-1 mb-4">
+        <span className="h-2 w-2 rounded-full bg-emerald-500" />
+        <span className="text-sm font-medium text-emerald-700 tracking-wide">
+          Strong foundations for business growth
+        </span>
+      </div>
+
+      <div className="rounded-2xl border border-gray-100 bg-gray-50/70 p-8 md:p-10 shadow-sm">
+        <div className="flex items-start gap-4 mb-6">
+
+          <div>
+            <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
+              Summary
+            </h3>
+            <p className="mt-1 text-sm text-gray-500">
+              Clear numbers, better decisions, stronger businesses.
             </p>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              Understanding financial statements, selecting the best accounting method, and using effective accounting tools can greatly contribute towards continued business success.
-            </p>
-          </motion.div>
+          </div>
         </div>
-      </section>
+
+        <div className="space-y-4 text-gray-700 text-base md:text-lg leading-relaxed">
+          <p>
+            Good accounting practices will ensure that there is accurate reporting of finances. Hence, decisions are made based on facts, ensuring continued growth. Thus, we can say that the business success is reliant on its accounting.
+          </p>
+          <p>
+            Understanding financial statements, selecting the best accounting method, and using effective accounting tools can greatly contribute towards continued business success.
+          </p>
+        </div>
+      </div>
+    </motion.div>
+  </div>
+</section>
+
 
       {/* CTA Section */}
       <section className="py-16 bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
@@ -1140,7 +1072,7 @@ const BusinessAccountingGuide = () => {
               Our experts provide a variety of financial services designed around what works best for your company. Whether small or big enterprises, start-ups or established organisations, we have got all your financial management needs covered.
             </p>
             <Button
-              onClick={() => navigate("/contact-us")}
+              onClick={() => window.open('https://calendly.com/jd-growwthpartners/15min?month=2025-11', '_blank')}
               size="lg"
               className="bg-white text-blue-700 hover:bg-gray-100 font-semibold text-lg px-8 py-6 rounded-lg shadow-lg transform transition-transform hover:scale-105"
             >
