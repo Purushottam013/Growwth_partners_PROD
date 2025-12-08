@@ -77,16 +77,6 @@ const PartTimeCFOGuide = () => {
     ]
   };
 
-  const handleContactClick = () => {
-    navigate("/contact-us");
-    setTimeout(() => {
-      const consultationForm = document.getElementById("consultation-form");
-      if (consultationForm) {
-        consultationForm.scrollIntoView({ behavior: "smooth" });
-      }
-    }, 100);
-  };
-
   const keyTakeaways = [
     {
       icon: DollarSign,
@@ -1030,7 +1020,7 @@ const PartTimeCFOGuide = () => {
               Let us help you secure your business's financial future with expert Part-Time CFO services.
             </p>
             <Button
-              onClick={handleContactClick}
+              onClick={() => window.open('https://calendly.com/jd-growwthpartners/15min?month=2025-11', '_blank')}
               size="lg"
               className="bg-white text-blue-700 hover:bg-gray-100 font-semibold text-lg px-8 py-6 rounded-lg shadow-lg transform transition-transform hover:scale-105"
             >
