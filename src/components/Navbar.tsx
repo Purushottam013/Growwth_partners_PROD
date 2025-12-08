@@ -71,6 +71,10 @@ const navItems = [
         title: "AI Decision Intelligence",
         path: "/ai-decision-intelligence-singapore",
       },
+      {
+        title: "AI Advisory for Finance Transformation",
+        path: "/ai-advisory-finance-transformation-singapore",
+      },
     ],
   },
   {
