@@ -105,9 +105,9 @@ const CorporateTaxFilingAustralia = () => {
   return (
     <Layout>
       <SEOhelper
-        title="Corporate Tax Filing Services in Australia | ATO Compliant | Growwth Partners"
-        description="Simplify your corporate tax filing in Australia with Growwth Partners. Get accurate ATO-compliant lodgement, tax optimisation for SMEs, and expert business tax compliance support."
-        keywords="corporate tax filing australia, ATO tax filing, business tax compliance australia, company tax return australia, tax lodgement australia, SME tax optimisation"
+        title="Corporate Tax Filing Services in Australia | Growwth Partners"
+        description="Stay ATO-compliant with accurate and timely corporate tax lodgements."
+        keywords="corporate tax filing australia, ATO tax filing, Explain ATO compliance, tax optimisation for SMEs, end-of-year reports"
         canonicalUrl="https://growwthpartners.com/au/corporate-tax-filing-australia"
         structuredData={structuredData}
       />
@@ -130,8 +130,8 @@ const CorporateTaxFilingAustralia = () => {
         <CtaSection
           title="Simplify Your Corporate Tax Filing Today"
           description="Stay ATO-compliant, reduce risk, and unlock potential savings with expert corporate tax filing support from Growwth Partners Australia."
-          primaryButtonText="Book a Free Tax Consultation"
-          secondaryButtonText="Speak to a Corporate Tax Specialist"
+          primaryButtonText= "Speak to a Corporate Tax Specialist"
+          secondaryButtonText="Book a Free Tax Consultation"
           backgroundColor="from-[#06C0A9] to-teal-700"
         />
       </motion.div>

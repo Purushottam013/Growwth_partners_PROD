@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Phone, Shield, Clock, CheckCircle, FileCheck } from "lucide-react";
 import { ContactModal } from "@/components/ui/contact-modal";
 import { OptimizedImage } from "@/components/ui/optimized-image";
-import heroImage from "@/assets/business-in-australia.webp";
+import heroImage from "@/assets/corporate-tax-Australia.jpg";
 
 export const HeroSection = () => {
   const [contactModalOpen, setContactModalOpen] = useState(false);
@@ -76,7 +76,7 @@ export const HeroSection = () => {
               transition={{ delay: 0.3 }}
               className="text-lg md:text-xl text-gray-700 mb-8 leading-relaxed"
             >
-              Growwth Partners delivers accurate, on-time corporate tax filing in Australia so your company stays ATO-compliant, avoids penalties, and unlocks every eligible saving. From year-end tax computations to business tax compliance and planning, we handle the details so you can focus on growth.
+              Growwth Partners delivers accurate, on-time corporate tax filing in Australia so your company stays ATO-compliant, avoids penalties, and unlocks every saving. From tax computations to business tax compliance and planning, we handle details so you can focus on growth
             </motion.p>
 
             <motion.div
@@ -87,7 +87,11 @@ export const HeroSection = () => {
             >
               <Button
                 size="lg"
-                onClick={() => setContactModalOpen(true)}
+                onClick={() =>
+                  window.open(
+                    "https://calendly.com/jd-growwthpartners/15min?month=2025-11",
+                    "_blank"
+                  )}
                 className="bg-[#06C0A9] hover:bg-[#05a899] text-white px-8 py-6 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all"
               >
                 Book a Free Tax Consultation
@@ -97,16 +101,11 @@ export const HeroSection = () => {
               <Button
                 size="lg"
                 variant="outline"
-                onClick={() =>
-                  window.open(
-                    "https://calendly.com/jd-growwthpartners/15min?month=2025-11",
-                    "_blank"
-                  )
-                }
+                onClick={() => setContactModalOpen(true)}
                 className="bg-white hover:bg-[#06C0A9] text-[#06C0A9] border-2 border-[#06C0A9] hover:text-white px-8 py-6 text-lg font-semibold rounded-lg transition-all"
               >
                 <Phone className="mr-2 h-5 w-5" />
-                Speak to a Corporate Tax Specialist
+                Speak to a Tax Specialist
               </Button>
             </motion.div>
           </motion.div>

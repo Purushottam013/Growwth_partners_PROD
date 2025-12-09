@@ -11,8 +11,8 @@ const services = [
     items: [
       "Prepare taxable income from financial statements",
       "Identify deductions, offsets and concessions for SMEs",
-      "Review non-deductible items and tax adjustments"
-    ]
+      "Review non-deductible items and tax adjustments",
+    ],
   },
   {
     icon: FileText,
@@ -20,8 +20,8 @@ const services = [
     items: [
       "Prepare and lodge company tax returns through ATO channels",
       "Manage due dates, extensions and correspondence",
-      "Monitor notices and respond to ATO queries"
-    ]
+      "Monitor notices and respond to ATO queries",
+    ],
   },
   {
     icon: TrendingUp,
@@ -29,8 +29,8 @@ const services = [
     items: [
       "Apply small business concessions where eligible",
       "Advise on timing of income and expenses",
-      "Structure guidance to improve long-term outcomes"
-    ]
+      "Structure guidance to improve long-term outcomes",
+    ],
   },
   {
     icon: RefreshCw,
@@ -38,8 +38,8 @@ const services = [
     items: [
       "Reconcile BAS and PAYG instalments with year-end position",
       "Review FBT exposure and documentation",
-      "Ensure consistency across compliance touchpoints"
-    ]
+      "Ensure consistency across compliance touchpoints",
+    ],
   },
   {
     icon: BarChart3,
@@ -47,10 +47,38 @@ const services = [
     items: [
       "Plain-English summaries of tax position and effective tax rate",
       "Schedules and workpapers for audit readiness",
-      "Recommendations to improve next year's business tax compliance in Australia"
-    ]
-  }
+      "Recommendations to improve next year's business tax compliance in Australia",
+    ],
+  },
 ];
+
+const ServiceCard = ({ service, index }: { service: (typeof services)[number]; index: number }) => {
+  const Icon = service.icon;
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      viewport={{ once: true }}
+      className="h-full"
+    >
+      <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 h-full flex flex-col">
+        <div className="w-12 h-12 bg-gradient-to-br from-[#06C0A9] to-teal-600 rounded-lg flex items-center justify-center mb-4">
+          <Icon className="w-6 h-6 text-white" />
+        </div>
+        <h3 className="text-xl font-semibold text-gray-900 mb-4">{service.title}</h3>
+        <ul className="space-y-3 flex-1">
+          {service.items.map((item, itemIndex) => (
+            <li key={itemIndex} className="flex items-start gap-3">
+              <div className="w-1.5 h-1.5 bg-[#06C0A9] rounded-full mt-2.5 flex-shrink-0"></div>
+              <span className="text-gray-600">{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </motion.div>
+  );
+};
 
 export const ServicesSection = () => {
   const navigate = useNavigate();
@@ -74,29 +102,21 @@ export const ServicesSection = () => {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100"
-            >
-              <div className="w-12 h-12 bg-gradient-to-br from-[#06C0A9] to-teal-600 rounded-lg flex items-center justify-center mb-4">
-                <service.icon className="w-6 h-6 text-white" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">{service.title}</h3>
-              <ul className="space-y-3">
-                {service.items.map((item, itemIndex) => (
-                  <li key={itemIndex} className="flex items-start gap-3">
-                    <div className="w-1.5 h-1.5 bg-[#06C0A9] rounded-full mt-2.5 flex-shrink-0"></div>
-                    <span className="text-gray-600">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
+        {/* First row: 3 cards in a grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-10">
+          {services.slice(0, 3).map((service, index) => (
+            <div key={service.title} className="w-full max-w-md mx-auto">
+              <ServiceCard service={service} index={index} />
+            </div>
+          ))}
+        </div>
+
+        {/* Second row: 2 cards centered */}
+        <div className="max-w-4xl mx-auto flex flex-col sm:flex-row justify-center gap-8">
+          {services.slice(3).map((service, index) => (
+            <div key={service.title} className="w-full max-w-md mx-auto">
+              <ServiceCard service={service} index={index + 3} />
+            </div>
           ))}
         </div>
 

@@ -56,7 +56,7 @@ export const WhyChooseSection = () => {
               viewport={{ once: true }}
               className="group"
             >
-              <div className="bg-gradient-to-br from-teal-50 to-emerald-50/50 rounded-xl p-6 h-full border border-[#06C0A9]/10 hover:border-[#06C0A9]/30 hover:shadow-lg transition-all duration-300">
+              <div className="bg-gradient-to-br from-teal-50 to-emerald-50/50 rounded-xl p-6 h-full border border-[#06C0A9]/10 hover:border-[#06C0A9]/30 hover:shadow-lg transition-all duration-300 shadow">
                 <div className="w-14 h-14 bg-[#06C0A9]/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-[#06C0A9]/20 transition-colors">
                   <reason.icon className="w-7 h-7 text-[#06C0A9]" />
                 </div>
