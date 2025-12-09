@@ -336,6 +336,27 @@ export const routes: RouteRecord[] = [
         },
       },
       {
+        path: "uae/guide/part-time-cfo-services-guide",
+        async lazy() {
+          const { default: Component } = await import("./pages/PartTimeCFOGuide");
+          return { Component };
+        },
+      },
+      {
+        path: "uae/guide/business-accounting-guide",
+        async lazy() {
+          const { default: Component } = await import("./pages/BusinessAccountingGuide");
+          return { Component };
+        },
+      },
+      {
+        path: "uae/guide/pitching-to-investors-guide",
+        async lazy() {
+          const { default: Component } = await import("./pages/PitchingToInvestorsGuide");
+          return { Component };
+        },
+      },
+      {
         path: "uae/guide/:slug",
         async lazy() {
           const { default: Component } = await import("./pages/GuideSingle");
@@ -475,6 +496,27 @@ export const routes: RouteRecord[] = [
         path: "au/guide",
         async lazy() {
           const { default: Component } = await import("./pages/Guide");
+          return { Component };
+        },
+      },
+      {
+        path: "au/guide/part-time-cfo-services-guide",
+        async lazy() {
+          const { default: Component } = await import("./pages/PartTimeCFOGuide");
+          return { Component };
+        },
+      },
+      {
+        path: "au/guide/business-accounting-guide",
+        async lazy() {
+          const { default: Component } = await import("./pages/BusinessAccountingGuide");
+          return { Component };
+        },
+      },
+      {
+        path: "au/guide/pitching-to-investors-guide",
+        async lazy() {
+          const { default: Component } = await import("./pages/PitchingToInvestorsGuide");
           return { Component };
         },
       },
