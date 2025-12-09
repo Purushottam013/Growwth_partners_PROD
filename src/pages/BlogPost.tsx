@@ -31,18 +31,33 @@ interface BlogPost {
 }
 
 // static JSON is only used here for build-time SEO metadata
-const staticPosts: Omit<BlogPost, "id">[] = (postsData as any[]).map((p) => ({
-  slug: p.slug,
-  title: p.title,
-  excerpt: p.excerpt,
-  content: p.content || "", // Add content property with default empty string
-  heroImage: p.Hero_image,
-  publishDate: p.publishdate,
-  author: p.Author,
-  authorBio: p.authorBio,
-  categories: p.Categories,
-  faqs: p.faqs || [],
-}));
+// static JSON is only used here for build-time SEO metadata
+const staticPosts: Omit<BlogPost, "id">[] = (postsData as any[]).map((p) => {
+  const rawCategories = p.Categories;
+
+  const categories: string[] = Array.isArray(rawCategories)
+    ? rawCategories
+    : typeof rawCategories === "string"
+    ? rawCategories
+        .split(",")
+        .map((c: string) => c.trim())
+        .filter(Boolean)
+    : [];
+
+  return {
+    slug: p.slug,
+    title: p.title,
+    excerpt: p.excerpt,
+    content: p.content || "", // Add content property with default empty string
+    heroImage: p.Hero_image,
+    publishDate: p.publishdate,
+    author: p.Author,
+    authorBio: p.authorBio,
+    categories,
+    faqs: p.faqs || [],
+  };
+});
+
 
 const BlogPostPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -189,7 +204,7 @@ const BlogPostPage: React.FC = () => {
         <SEOhelper
           title={seoPost.title}
           description={seoPost.excerpt}
-          keywords={(seoPost.categories || []).join(", ")}
+          keywords={seoPost.categories?.join(",") || ""}
           canonicalUrl={canonicalUrl}
           ogType="article"
           ogImage={seoPost.heroImage || "/default-og-image.png"}
