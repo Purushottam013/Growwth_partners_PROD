@@ -193,7 +193,9 @@ const BlogPostPage: React.FC = () => {
     };
 
     fetchPost();
+    console.log({seoPost});
   }, [slug]);
+    console.log({seoPost});
 
   return (
     <Layout>
