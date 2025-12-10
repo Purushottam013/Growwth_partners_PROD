@@ -2,20 +2,14 @@
   publish = "dist"
   command = "npm run build"
 
-# 1) (Optional but safe) – explicitly 404 the bad manifest URL so it never loops
-[[redirects]]
-  from = "/static-loader-data-manifest-undefined.json"
-  to = "/static-loader-data-manifest-undefined.json"
-  status = 404
-
-# 2) Normalize trailing slash -> no slash
+# Normalize trailing slash -> no slash
 [[redirects]]
   from = "/:splat/"
   to = "/:splat"
   status = 301
   force = true
 
-# 3) SPA fallback – everything else goes to index.html
+# SPA fallback – for client-side routes
 [[redirects]]
   from = "/*"
   to = "/index.html"
