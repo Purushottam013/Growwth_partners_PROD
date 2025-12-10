@@ -2,6 +2,13 @@
   publish = "dist"
   command = "npm run build"
 
+# 1) (Optional but safe) – explicitly 404 the bad manifest URL so it never loops
+[[redirects]]
+  from = "/static-loader-data-manifest-undefined.json"
+  to = "/static-loader-data-manifest-undefined.json"
+  status = 404  
+
+  
 # SPA routing - preserve 404s for missing files
 [[redirects]]
   from = "/*"
@@ -9,11 +16,14 @@
   status = 200
   force = false
 
+
 # Serve custom 404 page for missing static files
 [[redirects]]
   from = "/*"
   to = "/404.html"
   status = 404
+
+
 
 [[redirects]]
   from = "/*/"
