@@ -181,6 +181,14 @@
     <priority>0.8</priority>
   </url>
 
+  <url>
+    <loc>https://growwthpartners.com/ai-advisory-finance-transformation-singapore</loc>
+    <lastmod>2025-11-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+
   <!-- UAE pages --> 
   <url>
     <loc>https://growwthpartners.com/uae</loc>
@@ -393,6 +401,13 @@
   </url>
     <url>
     <loc>https://growwthpartners.com/au/virtual-cfo-services-australia</loc>
+    <lastmod>2025-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+    <url>
+    <loc>https://growwthpartners.com/au/corporate-tax-filing-australia</loc>
     <lastmod>2025-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
