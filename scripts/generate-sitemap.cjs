@@ -94,6 +94,12 @@ const staticRoutes = [
     changefreq: "weekly",
   },
 
+  {
+    path: "/ai-advisory-finance-transformation-singapore",
+    priority: "0.8",
+    changefreq: "weekly",
+  },
+
   // UAE pages
   { path: "/uae", priority: "1.0", changefreq: "daily" },
   { path: "/uae/about", priority: "0.8", changefreq: "weekly" },
@@ -140,7 +146,7 @@ const staticRoutes = [
     priority: "0.8",
     changefreq: "monthly",
   },
-  { path: "/virtual-cfo-services-uae", priority: "0.8", changefreq: "monthly" },
+  { path: "/uae/virtual-cfo-services-uae", priority: "0.8", changefreq: "monthly" },
 
   // Australia pages
   { path: "/au", priority: "1.0", changefreq: "daily" },
@@ -193,7 +199,12 @@ const staticRoutes = [
     changefreq: "monthly",
   },
   {
-    path: "/virtual-cfo-services-australia",
+    path: "/au/virtual-cfo-services-australia",
+    priority: "0.8",
+    changefreq: "monthly",
+  },
+   {
+    path: "/au/corporate-tax-filing-australia",
     priority: "0.8",
     changefreq: "monthly",
   },
