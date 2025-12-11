@@ -36,7 +36,7 @@ export const WhyChooseSection = () => {
         >
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
             Why Australian Businesses Choose{" "}
-            <span className="bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-teal-500 to-cyan-500 bg-clip-text text-transparent">
               Ryzup.ai
             </span>
           </h2>
@@ -50,9 +50,9 @@ export const WhyChooseSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="group bg-white rounded-2xl p-6 shadow-lg border border-slate-100 hover:shadow-xl hover:border-red-200 transition-all duration-300"
+              className="group bg-white rounded-2xl p-6 shadow-lg border border-slate-100 hover:shadow-xl hover:border-teal-200 transition-all duration-300"
             >
-              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-red-500 to-orange-500 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-teal-500 to-cyan-500 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <reason.icon className="w-7 h-7 text-white" />
               </div>
               <h3 className="text-lg font-semibold text-slate-900 mb-2">{reason.title}</h3>

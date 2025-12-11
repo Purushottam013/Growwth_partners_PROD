@@ -79,7 +79,7 @@ export const WhoItsForSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="bg-white rounded-2xl p-6 border border-gray-200 hover:border-[#06C0A9]/50 hover:shadow-lg transition-all duration-300 group"
+              className="bg-white rounded-2xl p-6 border border-gray-200 hover:border-[#06C0A9]/50 hover:shadow-lg transition-all duration-300 group shadow"
             >
               <div className="w-12 h-12 rounded-xl bg-[#06C0A9] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                 <audience.icon className="w-6 h-6 text-white" />
@@ -125,7 +125,7 @@ export const WhoItsForSection = () => {
                 className="relative"
               >
                 {/* Step Card */}
-                <div className="bg-white rounded-2xl p-6 border border-gray-200 hover:border-[#06C0A9] hover:shadow-xl transition-all duration-300 group relative z-10">
+                <div className="bg-white rounded-2xl p-6 border border-gray-200 hover:border-[#06C0A9] hover:shadow-xl transition-all duration-300 group relative z-10 shadow">
                   {/* Step Number Badge */}
                   <div className="absolute -top-4 left-6">
                     <div className="w-8 h-8 rounded-full bg-[#06C0A9] text-white flex items-center justify-center text-sm font-bold shadow-lg shadow-[#06C0A9]/30">
