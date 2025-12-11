@@ -96,8 +96,12 @@ const EsopValuationSingapore = () => {
   };
 
    function setCanonical(url) {
-    let link = document.querySelector("#canonical-link");
+    let link = document.querySelector("link[rel='canonical']");
+    // console.log(link);
+    //  const link2 = document.querySelector("#canonical-link");
+    // console.log(link2);
     if (!link) {
+      
       link = document.createElement("link");
       link.setAttribute("rel", "canonical");
       document.head.appendChild(link);
