@@ -1,7 +1,7 @@
 import { Layout } from "@/components/Layout";
 import { motion } from "framer-motion";
 import SEOhelper from "@/components/SEOhelper";
-import { useState,useEffect } from "react";
+import { useState } from "react";
 import { ContactModal } from "@/components/ui/contact-modal";
 import { HeroSection } from "@/components/esopValuation/HeroSection";
 import { WhatIsSection } from "@/components/esopValuation/WhatIsSection";
@@ -95,33 +95,13 @@ const EsopValuationSingapore = () => {
     ],
   };
 
-   function setCanonical(url) {
-    let link = document.querySelector("link[rel='canonical']");
-    // console.log(link);
-    //  const link2 = document.querySelector("#canonical-link");
-    // console.log(link2);
-    if (!link) {
-      
-      link = document.createElement("link");
-      link.setAttribute("rel", "canonical");
-      document.head.appendChild(link);
-    }
-    // console.warn("getting %%%%%%%%%%", {url})
-    link.setAttribute("href", url);
-  }
-
-  useEffect(() => {
-    // const canonicalUrl = `https://growwthpartners.com${location.pathname}`;
-    setCanonical('https://growwthpartners.com/esop-valuation-singapore');
-  }, []);
-
   return (
     <Layout>
       <SEOhelper
         title="ESOP Valuation Services Singapore | Independent FMV Reports"
         description="Accurate and independent ESOP valuation services in Singapore. We provide FMV reports, cap table analysis, financial modelling, and annual valuation support."
         keywords="esop valuation singapore, fair market value esop, esop share valuation, startup esop value calculation, independent esop valuation"
-        // canonicalUrl="https://growwthpartners.com/esop-valuation-singapore"
+        canonicalUrl="https://growwthpartners.com/esop-valuation-singapore"
         structuredData={structuredData}
       />
 
