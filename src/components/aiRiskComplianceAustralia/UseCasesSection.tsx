@@ -56,7 +56,7 @@ export const UseCasesSection = () => {
         >
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
             Use{" "}
-            <span className="bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-teal-500 to-cyan-500 bg-clip-text text-transparent">
               Cases
             </span>
           </h2>
@@ -76,7 +76,7 @@ export const UseCasesSection = () => {
               className="bg-white rounded-2xl p-6 shadow-lg border border-slate-100 hover:shadow-xl transition-all duration-300"
             >
               <div className="flex items-start gap-4 mb-6">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-red-500 to-orange-500 flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-teal-500 to-cyan-500 flex items-center justify-center flex-shrink-0">
                   <useCase.icon className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -88,7 +88,7 @@ export const UseCasesSection = () => {
               {/* AI Response Mockup */}
               <div className="bg-slate-900 rounded-xl p-4 border border-slate-700">
                 <div className="flex items-center gap-2 mb-3">
-                  <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-red-500 to-orange-500 flex items-center justify-center">
+                  <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-teal-500 to-cyan-500 flex items-center justify-center">
                     <span className="text-white text-xs font-bold">AI</span>
                   </div>
                   <span className="text-slate-400 text-sm">Ryzup.ai Response</span>

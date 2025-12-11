@@ -6,31 +6,31 @@ const features = [
     icon: Search,
     title: "Smart Error Detection",
     description: "Automatically scan Google Sheets for broken formulas, inconsistent ranges, duplicate logic, and suspicious values. Reduce silent errors that can hide fraud signals and create compliance gaps.",
-    gradient: "from-red-500 to-rose-500",
+    gradient: "from-teal-400 to-cyan-400",
   },
   {
     icon: BarChart3,
     title: "GL, Reconciliation, and Audit Agents",
     description: "Use specialised agents for ledger checks, reconciliations, bookkeeping review, and audit preparation. Flag out-of-pattern postings, compare data across sources, and generate audit-ready schedules.",
-    gradient: "from-orange-500 to-amber-500",
+    gradient: "from-teal-400 to-cyan-400",
   },
   {
     icon: EyeOff,
     title: "Anonymiser for Privacy-Safe AI",
     description: "Mask client names, supplier identifiers, and other sensitive fields while preserving data structure. Run AI analysis responsibly and support AI compliance in Australia without exposing personal or confidential information.",
-    gradient: "from-amber-500 to-yellow-500",
+    gradient: "from-teal-400 to-cyan-300",
   },
   {
     icon: Bell,
     title: "Always-On Monitoring and Alerts",
     description: "Turn recurring checks into automated guardrails. Get notified when numbers drift, rules break, or transactions fall outside expected patterns.",
-    gradient: "from-red-600 to-orange-500",
+    gradient: "from-teal-500 to-cyan-500",
   },
   {
     icon: FileText,
     title: "Decision-Ready Reporting",
     description: "Convert findings into clear summaries and dashboards that help finance, risk, and leadership act quickly.",
-    gradient: "from-rose-500 to-red-500",
+    gradient: "from-teal-500 to-cyan-500",
   },
 ];
 
@@ -46,7 +46,7 @@ export const WhatYouGetSection = () => {
         >
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             What You{" "}
-            <span className="bg-gradient-to-r from-red-400 to-orange-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
               Get
             </span>
           </h2>
@@ -63,7 +63,7 @@ export const WhatYouGetSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className={`group relative bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700/50 hover:border-red-500/30 transition-all duration-300 ${
+              className={`group relative bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700/50 hover:border-cyan-500/30 transition-all duration-300 shadow ${
                 idx === 4 ? "md:col-span-2 lg:col-span-1" : ""
               }`}
             >
