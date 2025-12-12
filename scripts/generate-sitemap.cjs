@@ -218,6 +218,21 @@ const staticRoutes = [
     priority: "0.8",
     changefreq: "monthly",
   },
+   {
+    path: "/au/esop-advisory-australia",
+    priority: "0.8",
+    changefreq: "monthly",
+  },
+   {
+    path: "/au/ai-risk-compliance-australia",
+    priority: "0.8",
+    changefreq: "monthly",
+  },
+   {
+    path: "/au/ai-decision-intelligence-australia",
+    priority: "0.8",
+    changefreq: "monthly",
+  },
 ];
 
 async function generateSitemap() {
