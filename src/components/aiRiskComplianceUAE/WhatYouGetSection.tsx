@@ -155,7 +155,7 @@ const WhatYouGetSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="w-full max-w-md mx-auto group relative bg-white rounded-2xl p-6 border border-gray-100 shadow hover:shadow-xl transition-all duration-300 hover:border-amber-200"
+              className="w-full max-w-md mx-auto group relative bg-white rounded-2xl p-6 border border-amber-200 shadow hover:shadow-xl transition-all duration-300 hover:border-amber-200"
             >
               <div
                 className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${feature.color}
@@ -182,7 +182,7 @@ const WhatYouGetSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: (index + 3) * 0.1 }}
-              className="w-full max-w-md mx-auto group relative bg-white rounded-2xl p-6 border border-gray-100 shadow hover:shadow-xl transition-all duration-300 hover:border-amber-200"
+              className="w-full max-w-md mx-auto group relative bg-white rounded-2xl p-6 border border-amber-200 shadow hover:shadow-xl transition-all duration-300 hover:border-amber-200"
             >
               <div
                 className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${feature.color}

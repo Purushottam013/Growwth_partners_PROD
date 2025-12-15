@@ -43,7 +43,7 @@ const WhyChooseSection = () => {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
           {reasons.map((reason, index) => (
             <motion.div
               key={index}
@@ -51,7 +51,7 @@ const WhyChooseSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="group relative bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:border-amber-200"
+              className="group relative bg-white rounded-2xl p-8 border border-orange-100 shadow hover:shadow-xl transition-all duration-300 hover:border-amber-200"
             >
               <div className="flex items-start gap-4">
                 <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
