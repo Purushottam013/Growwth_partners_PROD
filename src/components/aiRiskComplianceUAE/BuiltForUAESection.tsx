@@ -105,7 +105,7 @@ const BuiltForUAESection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="group relative p-8 bg-white rounded-2xl border border-slate-200/60 shadow-sm hover:shadow-md hover:border-amber-200 hover:-translate-y-0.5 transition-all duration-300"
+                className="group relative p-8 bg-white rounded-2xl border border-slate-200/60 shadow hover:shadow-md hover:border-amber-200 hover:-translate-y-0.5 transition-all duration-300"
               >
                 <div className="flex items-start gap-4">
                   {/* Icon Box */}
@@ -177,7 +177,7 @@ const BuiltForUAESection = () => {
                   </div>
 
                   {/* Card (Compact Height) */}
-                  <div className="bg-white p-6 rounded-2xl border border-slate-200/60 shadow text-center font-semibold hover:shadow-lg hover:-translate-y-1 hover:border-amber-100 transition-all duration-300 ">
+                  <div className="bg-white p-8 rounded-2xl border border-slate-200/60 shadow text-center font-semibold hover:shadow-lg hover:-translate-y-1 hover:border-amber-100 transition-all duration-300 ">
                     <h3 className="text-lg font-bold text-slate-900 mb-2">{step.title}</h3>
                     <p className="text-slate-600 leading-snug text-[13px]">{step.description}</p>
                   </div>

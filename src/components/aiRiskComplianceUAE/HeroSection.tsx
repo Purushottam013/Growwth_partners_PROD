@@ -96,7 +96,7 @@ const HeroSection = () => {
             className="relative lg:h-[600px] flex items-center justify-center perspective-1000"
           >
             {/* Dashboard Image Container with Glass/3D Effect */}
-            <div className="relative w-full max-w-[600px] group">
+            <div className="relative w-full max-w-[580px] group">
               
               {/* Glow Effect Behind */}
               <div className="absolute -inset-1 bg-gradient-to-r from-amber-500 to-orange-500 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200" />
@@ -121,22 +121,6 @@ const HeroSection = () => {
                 {/* Overlay Gradient for depth */}
                 <div className="absolute inset-0 bg-gradient-to-tr from-amber-500/5 to-transparent pointer-events-none" />
               </div>
-
-              {/* Floating Element 1 - Shield */}
-              <motion.div
-                initial={{ opacity: 0, y: 20, x: -20 }}
-                animate={{ opacity: 1, y: 0, x: 0 }}
-                transition={{ delay: 0.8 }}
-                className="absolute -bottom-6 -left-4 md:-left-10 bg-white p-4 rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.15)] border border-amber-100 flex items-center gap-3 animate-float z-20"
-              >
-                <div className="p-2.5 bg-amber-100 rounded-lg text-amber-600">
-                  <Shield className="w-5 h-5" />
-                </div>
-                <div>
-                  <div className="text-[10px] text-gray-500 uppercase font-bold tracking-wider">Protection</div>
-                  <div className="text-base font-bold text-gray-900">24/7</div>
-                </div>
-              </motion.div>
 
               {/* Floating Element 2 - Compliance */}
               <motion.div

@@ -83,7 +83,7 @@ const PricingTableSection = () => {
               <div
                 key={index}
                 className={`p-8 border-b border-gray-100 text-center relative ${
-                  plan.highlight ? "bg-amber-50/30" : ""
+                  plan.highlight ? "bg-amber-50" : ""
                 } ${index !== 2 ? "border-r" : ""}`}
               >
                 {plan.highlight && (
@@ -117,7 +117,7 @@ const PricingTableSection = () => {
                   <div
                     key={`${plan.name}-${rowIndex}`}
                     className={`p-5 flex items-center justify-center text-center border-b border-gray-100 text-sm text-gray-600 ${
-                      plan.highlight ? "bg-amber-50/10 font-medium text-gray-900" : ""
+                      plan.highlight ? "bg-amber-50 font-semibold text-gray-900 border-orange-100" : ""
                     } ${colIndex !== 2 ? "border-r" : ""}`}
                   >
 
