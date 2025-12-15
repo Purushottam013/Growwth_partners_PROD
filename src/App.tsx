@@ -527,6 +527,15 @@ export const routes: RouteRecord[] = [
           return { Component };
         },
       },
+      {
+        path: "uae/corporate-tax-filing-uae",
+        async lazy() {
+          const { default: Component } = await import(
+            "./pages/CorporateTaxFilingUAE"
+          );
+          return { Component };
+        },
+      },
       // Australia Routes
       {
         path: "au",
