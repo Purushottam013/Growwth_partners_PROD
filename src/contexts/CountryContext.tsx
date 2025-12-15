@@ -65,7 +65,7 @@ export const CountryProvider = ({
     // Handle Corporate Tax Filing - has country-specific versions
     if (normalizedPath === "/corporate-tax-filing-singapore" || normalizedPath.startsWith("/corporate-tax-filing")) {
       if (country === "australia") return "/au/corporate-tax-filing-australia";
-      // UAE and Singapore use Singapore version
+      if (country === "uae") return "/uae/corporate-tax-filing-uae";
       return "/corporate-tax-filing-singapore";
     }
 
