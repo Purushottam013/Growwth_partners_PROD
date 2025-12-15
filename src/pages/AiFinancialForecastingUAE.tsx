@@ -42,7 +42,8 @@ const AiFinancialForecastingUAE = () => {
     "@graph": [
       {
         "@type": "FAQPage",
-        "@id": "https://growwthpartners.com/uae/ai-financial-forecasting-uae/#faq",
+        "@id":
+          "https://growwthpartners.com/uae/ai-financial-forecasting-uae/#faq",
         mainEntity: faqs.map((faq) => ({
           "@type": "Question",
           name: faq.question,

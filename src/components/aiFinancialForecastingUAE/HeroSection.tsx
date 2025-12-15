@@ -56,7 +56,7 @@ const HeroSection = () => {
             <div className="flex flex-col sm:flex-row gap-4 pt-2 justify-center lg:justify-start">
               <Button 
                 size="lg" 
-                className="h-14 px-8 text-lg bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white rounded-xl shadow-lg shadow-amber-500/25 hover:shadow-amber-500/40 hover:-translate-y-0.5 transition-all"
+                className="h-14 px-6 text-lg bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white rounded-xl shadow-lg shadow-amber-500/25 hover:shadow-amber-500/40 hover:-translate-y-0.5 transition-all font-bold"
                 onClick={() =>
                 window.open(
                   "https://calendly.com/jd-growwthpartners/15min?month=2025-11",
@@ -66,13 +66,13 @@ const HeroSection = () => {
                 Start Free Consultation
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
-              <a href="https://ryzup.ai" target="_blank" rel="noopener noreferrer">
+              <a href="https://workspace.google.com/u/0/marketplace/app/ryzup_sheets/1047771589087?flow_type=2" target="_blank" rel="noopener noreferrer">
                 <Button 
                   size="lg" 
                   variant="outline" 
-                  className="h-14 px-8 text-lg border-2 border-amber-200 hover:bg-amber-50 text-amber-700 rounded-xl hover:-translate-y-0.5 transition-all"
+                  className="h-14 px-6 text-lg border-2 border-amber-200 hover:bg-amber-50 text-amber-700 rounded-xl hover:-translate-y-0.5 transition-all"
                 >
-                  <Play className="mr-2 w-5 h-5 text-orange-600" />
+                  <Play className="mr-2 w-5 h-5 text-orange-600 hover:text-black" />
                   See a Sample Forecast Pack
                 </Button>
               </a>

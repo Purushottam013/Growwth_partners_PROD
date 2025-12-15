@@ -7,7 +7,7 @@ const CTASection = () => {
   const [contactModalOpen, setContactModalOpen] = useState(false);
 
   return (
-    <section className="py-20 bg-gradient-to-br from-emerald-600 to-teal-700 relative overflow-hidden">
+    <section className="py-20 bg-gradient-to-br from-brand-blue to-blue-700 relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-white/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
@@ -26,8 +26,12 @@ const CTASection = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
             <Button
               size="lg"
-              onClick={() => setContactModalOpen(true)}
-              className="bg-white text-emerald-600 hover:bg-emerald-50 px-8 py-6 text-lg rounded-xl shadow-lg font-bold hover:shadow-xl transition-all duration-300 group hover:scale-105"
+              onClick={() =>
+                window.open(
+                  "https://calendly.com/jd-growwthpartners/15min?month=2025-11",
+                  "_blank"
+                )}
+              className="bg-white text-blue-500 hover:bg-orange-50 px-8 py-6 text-lg rounded-xl shadow-lg font-bold hover:shadow-xl transition-all duration-300 group hover:scale-105"
             >
               Start a Free Forecasting Consultation
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -36,7 +40,7 @@ const CTASection = () => {
               size="lg"
               variant="outline"
               onClick={() => setContactModalOpen(true)}
-              className="border-2 border-white text-white hover:bg-white/10 px-8 py-6 text-lg rounded-xl font-semibold"
+              className="border-2 border-white text-white hover:bg-transparent hover:text-white bg-transparent px-8 py-6 text-lg rounded-xl font-semibold"
             >
               Request a Forecast Walkthrough
             </Button>

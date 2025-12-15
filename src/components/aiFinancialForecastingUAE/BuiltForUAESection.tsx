@@ -1,192 +1,188 @@
 import { motion } from "framer-motion";
-import { 
-  Cloud, 
-  FileText, 
-  Globe, 
-  Rocket,
-  Link,
-  Cpu,
-  GitBranch,
-  Share2,
-  ArrowRight,
-  CheckCircle,
-  Sparkles
-} from "lucide-react";
+import { Check, Plug, Zap, BarChart3 } from "lucide-react";
+
+const features = [
+  "Works with cloud accounting and Google Sheets",
+  "Supports VAT, Corporate Tax and FTA-aligned documentation",
+  "Handles multi-entity and multi-currency groups operating across GCC",
+  "Suits startups, SMEs and scale ups that need fast, credible numbers",
+];
+
+const steps = [
+  {
+    step: "01",
+    title: "Connect",
+    description: "Install RyzUp Sheets and connect accounting sources.",
+    icon: Plug,
+    color: "amber",
+  },
+  {
+    step: "02",
+    title: "Automate",
+    description: "Use the AI assistant, error detector and agents to automate reports.",
+    icon: Zap,
+    color: "orange",
+  },
+  {
+    step: "03",
+    title: "Scale",
+    description: "Extend into forecasting, board packs and multi-entity reporting.",
+    icon: BarChart3,
+    color: "amber",
+  },
+];
 
 const BuiltForUAESection = () => {
-  const features = [
-    { icon: Cloud, text: "Works with cloud accounting and Google Sheets" },
-    { icon: FileText, text: "Supports VAT and Corporate Tax reporting calendars in your planning cadence" },
-    { icon: Globe, text: "Handles multi-entity and multi-currency groups across GCC" },
-    { icon: Rocket, text: "Fits startups, SMEs and scale-ups that need fast, credible forecasts" },
-  ];
-
-  const steps = [
-    {
-      icon: Link,
-      step: "01",
-      title: "Connect",
-      description: "Sync accounting data and key spreadsheets.",
-      color: "from-amber-500 to-orange-500",
-      details: ["Cloud accounting sync", "Google Sheets integration", "Secure data connection"]
-    },
-    {
-      icon: Cpu,
-      step: "02",
-      title: "Model",
-      description: "Ryzup.ai creates predictive models and a baseline forecast.",
-      color: "from-orange-500 to-red-500",
-      details: ["AI-powered analysis", "Baseline forecast", "Revenue predictions"]
-    },
-    {
-      icon: GitBranch,
-      step: "03",
-      title: "Simulate",
-      description: "Build scenarios, compare outcomes and choose an operating plan.",
-      color: "from-yellow-500 to-amber-500",
-      details: ["Multiple scenarios", "What-if analysis", "Risk assessment"]
-    },
-    {
-      icon: Share2,
-      step: "04",
-      title: "Review",
-      description: "Share a clear forecast pack for leadership and investor updates.",
-      color: "from-amber-600 to-yellow-500",
-      details: ["Board-ready reports", "Investor packs", "Auto-updated views"]
-    }
-  ];
-
   return (
-    <section className="py-20 bg-gradient-to-br from-amber-950 via-orange-900 to-yellow-900 relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-80 h-80 bg-orange-500/10 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-yellow-500/5 rounded-full blur-3xl" />
+    <section className="py-24 bg-slate-50 relative overflow-hidden">
+      {/* Ambient Light Background Orbs */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+        <div className="absolute top-[-10%] left-[-10%] w-[600px] h-[600px] bg-amber-100/40 rounded-full blur-[120px]" />
+        <div className="absolute top-[20%] right-[-5%] w-[500px] h-[500px] bg-orange-100/40 rounded-full blur-[100px]" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        {/* Built for UAE */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Built For The{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-400">
-              UAE
-            </span>
-          </h2>
-        </motion.div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-24">
-          {features.map((feature, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:bg-white/15 transition-all group"
-            >
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <feature.icon className="w-6 h-6 text-white" />
-              </div>
-              <p className="text-gray-200">{feature.text}</p>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* How It Works - Redesigned */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <div className="inline-flex items-center gap-2 bg-amber-500/20 rounded-full px-4 py-2 mb-4">
-            <Sparkles className="w-4 h-4 text-amber-400" />
-            <span className="text-sm font-medium text-amber-300">Simple 4-Step Process</span>
-          </div>
-          <h3 className="text-2xl md:text-4xl font-bold text-white mb-4">
-            How It Works
-          </h3>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            From data connection to investor-ready insights in days, not months
-          </p>
-        </motion.div>
-
-        {/* Timeline Steps */}
-        <div className="relative max-w-6xl mx-auto">
-          {/* Vertical Connection Line for Mobile, Horizontal for Desktop */}
-          <div className="hidden lg:block absolute top-24 left-0 right-0 h-1 bg-gradient-to-r from-amber-500/50 via-orange-500/50 to-yellow-500/50 rounded-full" />
+        <div className="max-w-6xl mx-auto">
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {steps.map((step, index) => (
+          {/* --- PART 1: FEATURES SECTION --- */}
+          
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-16 relative"
+          >
+            {/* Floating Badge */}
+            <motion.div 
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-amber-100 shadow-sm text-amber-700 text-[11px] font-bold uppercase tracking-wider mb-5"
+            >
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
+              </span>
+              Regional Focus
+            </motion.div>
+            
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight leading-tight">
+              Built for the{" "}
+              <span className="relative inline-block px-2">
+                 {/* Text Gradient */}
+                <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-600">
+                  UAE
+                </span>
+                {/* Soft highlight behind text */}
+                <span className="absolute inset-0 bg-amber-100/50 -rotate-2 rounded-lg z-0 scale-105" />
+              </span>
+            </h2>
+            <p className="mt-5 text-slate-500 max-w-lg mx-auto text-lg leading-relaxed">
+              Compliance, currency, and tax handling designed specifically for Gulf businesses.
+            </p>
+          </motion.div>
+
+          {/* Enhanced Feature Grid - Light & Clean */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto mb-24"
+          >
+            {features.map((feature, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.15, duration: 0.5 }}
-                className="relative group"
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+                className="group relative p-8 bg-white rounded-2xl border border-slate-200/60 shadow-sm hover:shadow-md hover:border-amber-200 hover:-translate-y-0.5 transition-all duration-300"
               >
-                {/* Step Number Badge */}
-                <div className="flex justify-center mb-6">
-                  <div className={`relative w-20 h-20 rounded-2xl bg-gradient-to-br ${step.color} flex items-center justify-center shadow-xl group-hover:scale-110 transition-all duration-300`}>
-                    <step.icon className="w-9 h-9 text-white" />
-                    {/* Glow Effect */}
-                    <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${step.color} opacity-0 group-hover:opacity-50 blur-xl transition-opacity`} />
-                  </div>
-                </div>
-
-                {/* Step Content Card */}
-                <div className="bg-white/10 backdrop-blur-xl rounded-3xl p-6 border border-white/20 hover:bg-white/15 transition-all relative overflow-hidden">
-                  {/* Step Number */}
-                  <div className="absolute top-4 right-4 text-4xl font-bold text-white/10">
-                    {step.step}
+                <div className="flex items-start gap-4">
+                  {/* Icon Box */}
+                  <div className="w-10 h-10 rounded-xl text-amber-600 border border-amber-100 flex items-center justify-center flex-shrink-0 bg-amber-500 group-hover:text-white group-hover:scale-110 transition-all duration-300">
+                    <Check className="w-5 h-5 text-white" />
                   </div>
                   
-                  <h4 className="text-2xl font-bold text-white mb-3">{step.title}</h4>
-                  <p className="text-gray-300 mb-4">{step.description}</p>
-                  
-                  {/* Details List */}
-                  <ul className="space-y-2">
-                    {step.details.map((detail, i) => (
-                      <li key={i} className="flex items-center gap-2 text-sm text-gray-400">
-                        <CheckCircle className="w-4 h-4 text-amber-400 flex-shrink-0" />
-                        {detail}
-                      </li>
-                    ))}
-                  </ul>
+                  {/* Text */}
+                  <p className="text-slate-700 text-[17px] leading-relaxed pt-1.5 font-semibold group-hover:text-slate-900 transition-colors">
+                    {feature}
+                  </p>
                 </div>
-
-                {/* Arrow to Next Step (hidden on last item and mobile) */}
-                {index < steps.length - 1 && (
-                  <div className="hidden lg:flex absolute top-24 -right-4 w-8 h-8 bg-amber-500 rounded-full items-center justify-center z-10">
-                    <ArrowRight className="w-4 h-4 text-white" />
-                  </div>
-                )}
               </motion.div>
             ))}
-          </div>
-        </div>
+          </motion.div>
 
-        {/* Bottom CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mt-16"
-        >
-          <p className="text-lg text-gray-300">
-            Most teams connect data and see a{" "}
-            <span className="text-amber-400 font-semibold">first forecast within days</span>, 
-            then refine scenarios for board and planning cycles.
-          </p>
-        </motion.div>
+
+          {/* --- PART 2: IMPLEMENTATION STEPS --- */}
+
+                   {/* --- PART 2: IMPLEMENTATION STEPS (Compact Version) --- */}
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+              Your Implementation{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-600">
+                Path
+              </span>
+            </h2>
+            <p className="text-slate-500 mt-2 max-w-lg mx-auto">
+              From connection to full automation in three simple steps.
+            </p>
+          </motion.div>
+
+          {/* Steps Timeline */}
+          <div className="relative">
+            {/* Connecting Line (Desktop) */}
+            <div className="hidden lg:block absolute top-10 left-[16%] right-[16%] h-0.5 bg-slate-200 z-0">
+              <motion.div 
+                initial={{ width: "0%" }}
+                whileInView={{ width: "100%" }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.5, delay: 0.5 }}
+                className="h-full bg-gradient-to-r from-amber-400 to-orange-500" 
+              />
+            </div>
+
+            <div className="grid lg:grid-cols-3 gap-6 relative z-10">
+              {steps.map((step, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.2 }}
+                  className="relative group h-full"
+                >
+                  {/* Step Number Badge (Compact) */}
+                  <div className="w-20 h-20 mx-auto bg-white rounded-full border-4 border-slate-50 shadow-lg flex items-center justify-center mb-6 relative z-10 group-hover:scale-105 transition-transform duration-300">
+                     <div className={`w-16 h-16 rounded-full flex items-center justify-center bg-gradient-to-br ${step.color === 'amber' ? 'from-amber-100 to-amber-50 text-amber-600' : 'from-orange-100 to-orange-50 text-orange-600'}`}>
+                        <step.icon className="w-6 h-6" />
+                     </div>
+                     <div className={`absolute -right-1 -top-1 w-6 h-6 rounded-full bg-slate-800 text-white flex items-center justify-center text-[10px] font-bold border-2 border-white`}>
+                        {step.step}
+                     </div>
+                  </div>
+
+                  {/* Card (Compact Height) */}
+                  <div className="bg-white p-8 rounded-2xl border border-slate-200/60 shadow text-center font-semibold hover:shadow-lg hover:-translate-y-1 hover:border-amber-100 transition-all duration-300 ">
+                    <h3 className="text-lg font-bold text-slate-900 mb-2">{step.title}</h3>
+                    <p className="text-slate-600 leading-snug text-[13.5px]">{step.description}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+
+        </div>
       </div>
     </section>
   );
