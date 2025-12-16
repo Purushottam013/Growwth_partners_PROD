@@ -81,7 +81,7 @@ const WhatYouGetSection = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="group bg-gradient-to-r from-gray-50 to-white rounded-2xl p-6 md:p-8 border border-gray-100 hover:shadow-lg transition-all duration-300"
+              className="group bg-gradient-to-r from-orange-50 to-orange-50 rounded-2xl p-6 md:p-8 border border-gray-100 shadow hover:shadow-lg transition-all duration-300"
             >
               <div className="flex flex-col md:flex-row gap-6">
                 <div className="flex-shrink-0">
@@ -115,21 +115,6 @@ const WhatYouGetSection = () => {
           ))}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mt-12"
-        >
-          <Button
-            size="lg"
-            onClick={() => setContactModalOpen(true)}
-            className="bg-brand-blue hover:bg-brand-blue/90 text-white px-8 py-6 text-lg rounded-xl shadow-lg font-semibold group"
-          >
-            Request a Systems and Payments Review
-            <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </Button>
-        </motion.div>
       </div>
 
       <ContactModal open={contactModalOpen} onOpenChange={setContactModalOpen} />
