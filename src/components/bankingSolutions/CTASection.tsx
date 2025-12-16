@@ -31,7 +31,7 @@ const CTASection = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               size="lg"
-              onClick={() => setContactModalOpen(true)}
+              onClick={() => window.open('https://calendly.com/jd-growwthpartners/15min?month=2025-11', '_blank')}
               className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-6 text-lg rounded-xl shadow-lg font-bold hover:shadow-xl transition-all duration-300 group hover:scale-105"
             >
               Book a Free Banking Setup Consult
@@ -41,7 +41,7 @@ const CTASection = () => {
               size="lg"
               variant="outline"
               onClick={() => setContactModalOpen(true)}
-              className="border-2 border-white/80 text-white bg-transparent hover:bg-white/10 px-8 py-6 text-lg rounded-xl font-bold transition-all duration-300 group hover:scale-105"
+              className="border-2 border-white/80 text-white bg-transparent hover:bg-transparent hover:text-white px-8 py-6 text-lg rounded-xl font-bold transition-all duration-300 group"
             >
               <Calendar className="mr-2 w-5 h-5" />
               Get a Banking Requirements Checklist

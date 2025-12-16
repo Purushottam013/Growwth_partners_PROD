@@ -1,7 +1,13 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Calendar, Building2, CreditCard, TrendingUp } from "lucide-react";
+import {
+  ArrowRight,
+  Calendar,
+  Building2,
+  CreditCard,
+  TrendingUp,
+} from "lucide-react";
 import { ContactModal } from "@/components/ui/contact-modal";
 
 const HeroSection = () => {
@@ -12,7 +18,10 @@ const HeroSection = () => {
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 left-10 w-72 h-72 bg-brand-orange/20 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+        <div
+          className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse"
+          style={{ animationDelay: "1s" }}
+        />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-brand-orange/10 to-blue-500/10 rounded-full blur-3xl" />
       </div>
 
@@ -29,7 +38,9 @@ const HeroSection = () => {
           >
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6">
               <Building2 className="w-4 h-4 text-brand-orange" />
-              <span className="text-white/90 text-sm font-medium">Business Banking Solutions</span>
+              <span className="text-white/90 text-sm font-medium">
+                Business Banking Solutions
+              </span>
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
@@ -41,13 +52,21 @@ const HeroSection = () => {
             </h1>
 
             <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed max-w-xl">
-              Growwth Partners helps founders pick the right bank, set up accounts, streamline payments, and automate reconciliation. Get practical business banking solutions that reduce friction from day one.
+              Growwth Partners helps founders pick the right bank, set up
+              accounts, streamline payments, and automate reconciliation. Get
+              practical business banking solutions that reduce friction from day
+              one.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-10">
               <Button
                 size="lg"
-                onClick={() => setContactModalOpen(true)}
+                onClick={() =>
+                  window.open(
+                    "https://calendly.com/jd-growwthpartners/15min?month=2025-11",
+                    "_blank"
+                  )
+                }
                 className="bg-brand-orange hover:bg-brand-orange/90 text-white px-8 py-6 text-lg rounded-xl shadow-lg font-semibold hover:shadow-xl transition-all duration-300 group"
               >
                 Book a Free Banking Setup Consult
@@ -57,7 +76,7 @@ const HeroSection = () => {
                 size="lg"
                 variant="outline"
                 onClick={() => setContactModalOpen(true)}
-                className="border-2 border-white/30 text-white bg-white/5 hover:bg-white/10 px-8 py-6 text-lg rounded-xl font-semibold transition-all duration-300"
+                className="border-2 border-white/30 text-white bg-white/5  px-8 py-6 text-lg rounded-xl font-semibold transition-all duration-300"
               >
                 <Calendar className="mr-2 w-5 h-5" />
                 Get a Banking Checklist
@@ -86,7 +105,9 @@ const HeroSection = () => {
                   </div>
                   <div>
                     <p className="text-white font-semibold">Bank Selection</p>
-                    <p className="text-gray-400 text-sm">Multi-currency ready</p>
+                    <p className="text-gray-400 text-sm">
+                      Multi-currency ready
+                    </p>
                   </div>
                 </div>
                 <div className="h-2 bg-white/10 rounded-full overflow-hidden">
@@ -110,8 +131,12 @@ const HeroSection = () => {
                   </div>
                 </div>
                 <div className="flex gap-2 mt-2">
-                  <span className="px-2 py-1 bg-green-500/20 text-green-400 text-xs rounded-full">Stripe</span>
-                  <span className="px-2 py-1 bg-blue-500/20 text-blue-400 text-xs rounded-full">PayPal</span>
+                  <span className="px-2 py-1 bg-green-500/20 text-green-400 text-xs rounded-full">
+                    Stripe
+                  </span>
+                  <span className="px-2 py-1 bg-blue-500/20 text-blue-400 text-xs rounded-full">
+                    PayPal
+                  </span>
                 </div>
               </motion.div>
 
@@ -126,19 +151,28 @@ const HeroSection = () => {
                     <TrendingUp className="w-6 h-6 text-blue-400" />
                   </div>
                   <div>
-                    <p className="text-white font-semibold">Auto Reconciliation</p>
-                    <p className="text-gray-400 text-sm">Books always accurate</p>
+                    <p className="text-white font-semibold">
+                      Auto Reconciliation
+                    </p>
+                    <p className="text-gray-400 text-sm">
+                      Books always accurate
+                    </p>
                   </div>
                 </div>
                 <p className="text-3xl font-bold text-white">98%</p>
-                <p className="text-gray-400 text-sm">Auto-matched transactions</p>
+                <p className="text-gray-400 text-sm">
+                  Auto-matched transactions
+                </p>
               </motion.div>
             </div>
           </motion.div>
         </div>
       </div>
 
-      <ContactModal open={contactModalOpen} onOpenChange={setContactModalOpen} />
+      <ContactModal
+        open={contactModalOpen}
+        onOpenChange={setContactModalOpen}
+      />
     </section>
   );
 };
