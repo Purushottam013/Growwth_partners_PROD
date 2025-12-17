@@ -226,6 +226,15 @@ export const routes: RouteRecord[] = [
         },
       },
       {
+        path: "incorporation",
+        async lazy() {
+          const { default: Component } = await import(
+            "./pages/Incorporation"
+          );
+          return { Component };
+        },
+      },
+      {
         path: "privacy-policy",
         async lazy() {
           const { default: Component } = await import("./pages/PrivacyPolicy");
@@ -626,6 +635,15 @@ export const routes: RouteRecord[] = [
           return { Component };
         },
       },
+      {
+        path: "uae/incorporation",
+        async lazy() {
+          const { default: Component } = await import(
+            "./pages/Incorporation"
+          );
+          return { Component };
+        },
+      },
       // Australia Routes
       {
         path: "au",
@@ -819,6 +837,15 @@ export const routes: RouteRecord[] = [
         async lazy() {
           const { default: Component } = await import(
             "./pages/EcommerceAccounting"
+          );
+          return { Component };
+        },
+      },
+      {
+        path: "au/incorporation",
+        async lazy() {
+          const { default: Component } = await import(
+            "./pages/Incorporation"
           );
           return { Component };
         },
