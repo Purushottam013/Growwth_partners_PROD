@@ -65,7 +65,7 @@ export const RequirementsSection = () => {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {requirements.map((req, index) => (
             <motion.div
               key={req.title}
@@ -75,8 +75,8 @@ export const RequirementsSection = () => {
               transition={{ delay: index * 0.05 }}
               className="relative group"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-amber-400 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity blur-xl" />
-              <div className="relative bg-white p-6 rounded-2xl border border-orange-100 hover:border-orange-300 transition-all h-full">
+              <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-amber-400 rounded-2xl shadow opacity-0 group-hover:opacity-40 transition-opacity blur-xl" />
+              <div className="relative bg-white p-8 rounded-2xl border border-orange-100 shadow hover:border-orange-200 transition-all h-full">
                 <div className="w-12 h-12 bg-gradient-to-r from-orange-100 to-amber-100 rounded-xl flex items-center justify-center mb-4">
                   <req.icon className="w-6 h-6 text-orange-600" />
                 </div>
@@ -87,7 +87,7 @@ export const RequirementsSection = () => {
           ))}
         </div>
 
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -101,7 +101,7 @@ export const RequirementsSection = () => {
             Request a Custom Eligibility Review
             <ArrowRight className="ml-2 w-5 h-5" />
           </Button>
-        </motion.div>
+        </motion.div> */}
       </div>
 
       <ContactModal open={contactModalOpen} onOpenChange={setContactModalOpen} />

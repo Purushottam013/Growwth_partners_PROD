@@ -1,47 +1,67 @@
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Globe } from "lucide-react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { ArrowRight, ShoppingCart, TrendingUp, Shield } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { ContactModal } from "@/components/ui/contact-modal";
 
-export const CTASection = () => {
-  const [contactModalOpen, setContactModalOpen] = useState(false);
+const CTASection: React.FC = () => {
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl" />
-      </div>
+    <section className="py-24 bg-gradient-to-br from-brand-orange via-orange-500 to-amber-500 relative overflow-hidden">
+      {/* Background decorations */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:50px_50px]" />
+      <motion.div
+        className="absolute top-10 left-10 w-64 h-64 bg-white/10 rounded-full blur-3xl"
+        animate={{ scale: [1, 1.2, 1] }}
+        transition={{ duration: 8, repeat: Infinity }}
+      />
+      <motion.div
+        className="absolute bottom-10 right-10 w-80 h-80 bg-white/10 rounded-full blur-3xl"
+        animate={{ scale: [1.2, 1, 1.2] }}
+        transition={{ duration: 10, repeat: Infinity }}
+      />
 
       <div className="container mx-auto px-4 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="max-w-4xl mx-auto text-center"
-        >
-          <div className="w-20 h-20 mx-auto bg-gradient-to-r from-orange-500 to-amber-500 rounded-2xl flex items-center justify-center mb-8">
-            <Globe className="w-10 h-10 text-white" />
-          </div>
+        <div className="max-w-4xl mx-auto text-center">
+          {/* Icons row */}
+        
 
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-            Launch in a{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-400">
-              World-Class Jurisdiction
-            </span>
-          </h2>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6"
+          >
+            Launch in a World-Class Jurisdiction
+          </motion.h2>
 
-          <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-xl text-white/90 mb-10 max-w-3xl mx-auto"
+          >
             With clarity and speed. Choose a partner that makes Singapore business setup for foreigners seamless — from ACRA to banking to visas.
-          </p>
+          </motion.p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center"
+          >
             <Button
               size="lg"
-              className="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white shadow-lg shadow-orange-500/25"
-              onClick={() => setContactModalOpen(true)}
+              className="bg-white text-brand-orange hover:bg-white/90 px-8 py-6 text-lg rounded-xl shadow-lg font-semibold transition-all hover:scale-105"
+              onClick={() =>
+                window.open(
+                  "https://calendly.com/jd-growwthpartners/15min?month=2025-11",
+                  "_blank"
+                )
+              }
             >
               Book a Free Incorporation Consult
               <ArrowRight className="ml-2 w-5 h-5" />
@@ -49,16 +69,21 @@ export const CTASection = () => {
             <Button
               size="lg"
               variant="outline"
-              className="border-white/30 text-white hover:bg-white/10"
-              onClick={() => setContactModalOpen(true)}
+              className="border-white text-white bg-transparent hover:bg-transparent px-8 py-6 text-lg shadow-md rounded-xl backdrop-blur"
+              onClick={() => setIsContactModalOpen(true)}
             >
               Get a Requirements Checklist
             </Button>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </div>
 
-      <ContactModal open={contactModalOpen} onOpenChange={setContactModalOpen} />
+      <ContactModal
+        open={isContactModalOpen}
+        onOpenChange={setIsContactModalOpen}
+      />
     </section>
   );
 };
+
+export default CTASection;

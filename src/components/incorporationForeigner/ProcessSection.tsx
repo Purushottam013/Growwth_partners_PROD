@@ -115,7 +115,7 @@ export const ProcessSection = () => {
         >
           <Button
             size="lg"
-            className="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white"
+            className="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white  px-10 py-6 text-lg rounded-xl shadow-lg shadow-orange-200 transition-all hover:scale-105"
             onClick={() => setContactModalOpen(true)}
           >
             Get Timeline & Fees

@@ -53,21 +53,21 @@ export const ChecklistSection = () => {
               ))}
             </div>
 
-            <Button
+            {/* <Button
               size="lg"
               className="mt-8 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white"
               onClick={() => setContactModalOpen(true)}
             >
               <Download className="mr-2 w-5 h-5" />
               Download the Full Checklist
-            </Button>
+            </Button> */}
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="relative"
+            className="relative mt-20"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-amber-400 rounded-3xl transform rotate-3 opacity-20" />
             <div className="relative bg-white rounded-3xl shadow-2xl p-8 border border-orange-100">
