@@ -33,6 +33,7 @@ export const WhyChooseSection = () => {
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -50,20 +51,45 @@ export const WhyChooseSection = () => {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {reasons.map((reason, index) => (
+        {/* First row – 3 cards */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto mb-10">
+          {reasons.slice(0, 3).map((reason, index) => (
             <motion.div
               key={reason.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="group p-6 bg-gradient-to-br from-orange-50/50 to-amber-50/50 rounded-2xl border border-orange-100 hover:shadow-lg hover:shadow-orange-100/50 transition-all duration-300"
+              className="group p-6 bg-gradient-to-br from-orange-50/50 to-amber-50/50 rounded-2xl border border-orange-100 shadow hover:shadow-lg hover:shadow-orange-100/50 transition-all duration-300"
             >
               <div className="w-14 h-14 bg-gradient-to-r from-orange-500 to-amber-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <reason.icon className="w-7 h-7 text-white" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">{reason.title}</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                {reason.title}
+              </h3>
+              <p className="text-gray-600">{reason.description}</p>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Second row – 2 cards centered */}
+        <div className="flex flex-col sm:flex-row justify-center gap-10 max-w-6xl mx-auto">
+          {reasons.slice(3).map((reason, index) => (
+            <motion.div
+              key={reason.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: (index + 3) * 0.1 }}
+              className="group w-full max-w-md p-8 bg-gradient-to-br from-orange-50/50 to-amber-50/50 shadow rounded-2xl border border-orange-100 hover:shadow-lg hover:shadow-orange-100/50 transition-all duration-300"
+            >
+              <div className="w-14 h-14 bg-gradient-to-r from-orange-500 to-amber-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <reason.icon className="w-7 h-7 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                {reason.title}
+              </h3>
               <p className="text-gray-600">{reason.description}</p>
             </motion.div>
           ))}

@@ -44,8 +44,12 @@ export const HeroSection = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white shadow-lg shadow-orange-500/25"
-                onClick={() => setContactModalOpen(true)}
+                className="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white text-lg shadow-lg shadow-orange-500/25 transition-all hover:scale-105"
+                onClick={() =>
+                  window.open(
+                    "https://calendly.com/jd-growwthpartners/15min?month=2025-11",
+                    "_blank"
+                  )}
               >
                 Book a Free Incorporation Consult
                 <ArrowRight className="ml-2 w-5 h-5" />
@@ -53,7 +57,7 @@ export const HeroSection = () => {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-orange-300 text-orange-700 hover:bg-orange-50"
+                className="border-orange-300 text-orange-700 hover:bg-orange-50 shadow-lg text-lg border-2"
                 onClick={() => setContactModalOpen(true)}
               >
                 Get a Requirements Checklist

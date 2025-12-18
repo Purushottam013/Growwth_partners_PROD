@@ -53,7 +53,7 @@ export const WhoWeHelpSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="group text-center p-8 bg-gradient-to-br from-orange-50/50 to-amber-50/50 rounded-2xl border border-orange-100 hover:shadow-xl hover:shadow-orange-100/50 transition-all"
+              className="group text-center p-8 bg-gradient-to-br from-orange-50/50 to-amber-50/50 shadow rounded-2xl border border-orange-100 hover:shadow-xl hover:shadow-orange-100/50 transition-all"
             >
               <div className="w-16 h-16 mx-auto bg-gradient-to-r from-orange-500 to-amber-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <audience.icon className="w-8 h-8 text-white" />

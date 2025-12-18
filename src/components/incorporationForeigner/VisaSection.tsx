@@ -74,7 +74,7 @@ export const VisaSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-r from-orange-50 to-amber-50 rounded-2xl p-6 flex items-start gap-4 max-w-3xl mx-auto"
+          className="bg-gradient-to-r from-orange-50 to-amber-50 rounded-2xl p-6 flex items-start gap-4 max-w-3xl shadow-md mx-auto"
         >
           <Info className="w-6 h-6 text-orange-600 flex-shrink-0 mt-0.5" />
           <p className="text-gray-700">
@@ -82,21 +82,6 @@ export const VisaSection = () => {
           </p>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mt-10"
-        >
-          <Button
-            size="lg"
-            className="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white"
-            onClick={() => setContactModalOpen(true)}
-          >
-            Plan Your EP/EntrePass Path
-            <ArrowRight className="ml-2 w-5 h-5" />
-          </Button>
-        </motion.div>
       </div>
 
       <ContactModal open={contactModalOpen} onOpenChange={setContactModalOpen} />
