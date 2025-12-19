@@ -257,6 +257,14 @@ export const Footer = () => {
               </li>
               <li>
                 <Link 
+                  to={getCountryUrl("/fintech-finance")} 
+                  className="hover:text-brand-orange transition-colors"
+                >
+                  Fintech Finance Services
+                </Link>
+              </li>
+              <li>
+                <Link 
                   to={getCountryUrl("/cash-flow")} 
                   className="hover:text-brand-orange transition-colors"
                 >
