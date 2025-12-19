@@ -262,6 +262,33 @@ export const routes: RouteRecord[] = [
         },
       },
       {
+        path: "fintech-finance",
+        async lazy() {
+          const { default: Component } = await import(
+            "./pages/FintechFinance"
+          );
+          return { Component };
+        },
+      },
+      {
+        path: "uae/fintech-finance",
+        async lazy() {
+          const { default: Component } = await import(
+            "./pages/FintechFinance"
+          );
+          return { Component };
+        },
+      },
+      {
+        path: "au/fintech-finance",
+        async lazy() {
+          const { default: Component } = await import(
+            "./pages/FintechFinance"
+          );
+          return { Component };
+        },
+      },
+      {
         path: "privacy-policy",
         async lazy() {
           const { default: Component } = await import("./pages/PrivacyPolicy");
