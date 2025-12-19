@@ -56,7 +56,7 @@ const ChallengesSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-8xl mx-auto">
           {challenges.map((challenge, index) => (
             <motion.div
               key={index}
@@ -64,7 +64,7 @@ const ChallengesSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative p-6 bg-white rounded-2xl border border-slate-200 hover:border-red-200 hover:shadow-xl transition-all duration-300 overflow-hidden"
+              className="group relative p-6 bg-white rounded-2xl border border-slate-200 hover:border-red-200 shadow hover:shadow-xl transition-all duration-300 overflow-hidden"
             >
               <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-red-100/50 to-orange-100/30 rounded-bl-full -z-0" />
               <div className="relative z-10">

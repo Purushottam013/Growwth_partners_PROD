@@ -88,7 +88,7 @@ const HowWeDeliverSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group bg-gradient-to-br from-slate-50 to-orange-50/30 rounded-2xl p-6 border border-slate-100 hover:border-orange-200 hover:shadow-xl hover:shadow-orange-100/50 transition-all duration-300"
+              className="group bg-gradient-to-br from-slate-50 to-orange-50/30 rounded-2xl p-6 border border-slate-100 shadow hover:border-orange-200 hover:shadow-xl hover:shadow-orange-100/50 transition-all duration-300"
             >
               <div className="flex items-center gap-4 mb-4">
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center group-hover:scale-110 transition-transform">

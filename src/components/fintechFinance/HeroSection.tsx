@@ -1,11 +1,8 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
-import { ContactModal } from "@/components/ui/contact-modal";
 import { ArrowRight, Shield, TrendingUp, FileCheck } from "lucide-react";
 
 const HeroSection = () => {
-  const [contactModalOpen, setContactModalOpen] = useState(false);
 
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-orange-900">
@@ -20,12 +17,12 @@ const HeroSection = () => {
       </div>
 
       <div className="container mx-auto px-4 py-20 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-6xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 bg-orange-500/20 border border-orange-500/30 rounded-full px-4 py-2 mb-6"
+            className="inline-flex items-center gap-2 bg-orange-500/20 border border-orange-500/30 rounded-full px-4 py-2 mb-6 mt-4"
           >
             <Shield className="w-4 h-4 text-orange-400" />
             <span className="text-orange-300 text-sm font-medium">Regulatory-Ready Financial Control</span>
@@ -35,7 +32,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight"
           >
             Fintech Finance Services{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-400">
@@ -47,7 +44,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xl md:text-2xl text-orange-200 font-medium mb-4"
+            className="text-xl md:text-2xl text-orange-200 font-medium mb-8"
           >
             Regulatory-Ready Financial Control, Risk Visibility & Scalable Finance for Fintechs
           </motion.p>
@@ -56,7 +53,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-lg text-slate-300 mb-8 max-w-3xl mx-auto"
+            className="text-lg text-slate-300 mb-12 max-w-6xl mx-auto"
           >
             Fintech companies operate at the intersection of finance, technology, and regulation. Growwth Partners' Fintech Finance services provide CFO-led financial leadership, regulatory-ready reporting, and scalable finance systems—helping fintech companies grow responsibly and earn trust from regulators, investors, and partners.
           </motion.p>
@@ -69,7 +66,7 @@ const HeroSection = () => {
           >
             <Button
               size="lg"
-              onClick={() => setContactModalOpen(true)}
+              onClick={() => window.open('https://calendly.com/jd-growwthpartners/15min?month=2025-11', '_blank')}
               className="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white px-8 py-6 text-lg rounded-xl shadow-lg shadow-orange-500/25"
             >
               Speak to a Fintech Finance Expert
@@ -101,7 +98,6 @@ const HeroSection = () => {
         </div>
       </div>
 
-      <ContactModal open={contactModalOpen} onOpenChange={setContactModalOpen} />
     </section>
   );
 };
