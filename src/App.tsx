@@ -289,6 +289,33 @@ export const routes: RouteRecord[] = [
         },
       },
       {
+        path: "tech-business-finance",
+        async lazy() {
+          const { default: Component } = await import(
+            "./pages/TechBusinessFinance"
+          );
+          return { Component };
+        },
+      },
+      {
+        path: "uae/tech-business-finance",
+        async lazy() {
+          const { default: Component } = await import(
+            "./pages/TechBusinessFinance"
+          );
+          return { Component };
+        },
+      },
+      {
+        path: "au/tech-business-finance",
+        async lazy() {
+          const { default: Component } = await import(
+            "./pages/TechBusinessFinance"
+          );
+          return { Component };
+        },
+      },
+      {
         path: "privacy-policy",
         async lazy() {
           const { default: Component } = await import("./pages/PrivacyPolicy");
