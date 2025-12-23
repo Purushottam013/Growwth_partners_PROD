@@ -273,6 +273,14 @@ export const Footer = () => {
               </li>
               <li>
                 <Link 
+                  to={getCountryUrl("/saas-finance")} 
+                  className="hover:text-brand-orange transition-colors"
+                >
+                  SaaS Finance Services
+                </Link>
+              </li>
+              <li>
+                <Link 
                   to={getCountryUrl("/cash-flow")} 
                   className="hover:text-brand-orange transition-colors"
                 >
