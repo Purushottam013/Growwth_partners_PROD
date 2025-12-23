@@ -316,6 +316,27 @@ export const routes: RouteRecord[] = [
         },
       },
       {
+        path: "saas-finance",
+        async lazy() {
+          const { default: Component } = await import("./pages/SaasFinance");
+          return { Component };
+        },
+      },
+      {
+        path: "uae/saas-finance",
+        async lazy() {
+          const { default: Component } = await import("./pages/SaasFinance");
+          return { Component };
+        },
+      },
+      {
+        path: "au/saas-finance",
+        async lazy() {
+          const { default: Component } = await import("./pages/SaasFinance");
+          return { Component };
+        },
+      },
+      {
         path: "privacy-policy",
         async lazy() {
           const { default: Component } = await import("./pages/PrivacyPolicy");
