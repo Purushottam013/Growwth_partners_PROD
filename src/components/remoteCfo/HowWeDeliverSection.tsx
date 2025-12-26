@@ -77,7 +77,7 @@ const HowWeDeliverSection = () => {
   return (
     <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-8xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -108,7 +108,6 @@ const HowWeDeliverSection = () => {
                   <div className={`lg:w-1/3 p-6 bg-gradient-to-br ${service.color} text-white flex items-center gap-4`}>
                     <span className="text-4xl font-bold opacity-50">{service.number}</span>
                     <div>
-                      <service.icon className="w-8 h-8 mb-2" />
                       <h3 className="text-xl font-bold">{service.title}</h3>
                     </div>
                   </div>
@@ -119,7 +118,7 @@ const HowWeDeliverSection = () => {
                       {service.items.map((item, idx) => (
                         <div
                           key={idx}
-                          className="flex items-start gap-3 p-3 bg-gray-50 rounded-xl"
+                          className="flex items-start gap-3 p-3 bg-gray-50 rounded-xl shadow"
                         >
                           <item.icon className="w-5 h-5 text-brand-orange flex-shrink-0 mt-0.5" />
                           <span className="text-sm text-gray-700">{item.text}</span>

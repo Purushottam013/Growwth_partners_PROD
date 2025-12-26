@@ -2,10 +2,8 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Users, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { ContactModal } from '@/components/ui/contact-modal';
 
 const HeroSection = () => {
-  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   return (
     <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-gradient-to-br from-orange-50 via-amber-50 to-orange-100">
@@ -40,14 +38,13 @@ const HeroSection = () => {
             </p>
 
             <p className="text-lg text-gray-600 leading-relaxed">
-              Growwth Partners' Remote CFO & Finance Team services in Singapore give you a fully functional finance department—CFO, analysts, bookkeeping, payroll, and AI-enabled workflows—delivered remotely with clear accountability and measurable outcomes.
-            </p>
+A fully functional remote finance department: CFO expertise, payroll, and AI workflows with total accountability for your Singapore business            </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 size="lg"
                 className="bg-brand-orange hover:bg-brand-orange/90 text-white px-8 py-6 text-lg rounded-xl shadow-lg shadow-orange-200/50"
-                onClick={() => setIsContactModalOpen(true)}
+                onClick={() => window.open('https://calendly.com/jd-growwthpartners/15min?month=2025-11', '_blank')}
               >
                 Build Your Remote Finance Team
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -77,7 +74,7 @@ const HeroSection = () => {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
-                      className="bg-gradient-to-br from-orange-50 to-amber-50 rounded-2xl p-6 text-center border border-orange-100"
+                      className="bg-gradient-to-br from-orange-50 to-amber-50 rounded-2xl p-6 text-center border-2 shadow-sm border-orange-100"
                     >
                       <div className="text-2xl font-bold text-brand-orange mb-1">{stat.value}</div>
                       <div className="text-sm text-gray-600">{stat.label}</div>
@@ -90,10 +87,6 @@ const HeroSection = () => {
         </div>
       </div>
 
-      <ContactModal 
-        open={isContactModalOpen} 
-        onOpenChange={setIsContactModalOpen} 
-      />
     </section>
   );
 };

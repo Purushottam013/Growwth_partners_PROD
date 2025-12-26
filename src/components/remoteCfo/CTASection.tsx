@@ -2,10 +2,8 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { ContactModal } from '@/components/ui/contact-modal';
 
 const CTASection = () => {
-  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   return (
     <section className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
@@ -17,10 +15,7 @@ const CTASection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 bg-brand-orange/20 px-4 py-2 rounded-full mb-6">
-              <Users className="w-5 h-5 text-brand-orange" />
-              <span className="text-brand-orange font-medium">Complete Finance Solution</span>
-            </div>
+           
 
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
               Build a Scalable Finance Department—
@@ -34,7 +29,7 @@ const CTASection = () => {
             <Button
               size="lg"
               className="bg-brand-orange hover:bg-brand-orange/90 text-white px-10 py-6 text-lg rounded-xl shadow-lg shadow-orange-500/25"
-              onClick={() => setIsContactModalOpen(true)}
+              onClick={() => window.open('https://calendly.com/jd-growwthpartners/15min?month=2025-11', '_blank')}
             >
               Schedule a Remote Finance Team Consultation
               <ArrowRight className="ml-2 h-5 w-5" />
@@ -43,10 +38,6 @@ const CTASection = () => {
         </div>
       </div>
 
-      <ContactModal 
-        open={isContactModalOpen} 
-        onOpenChange={setIsContactModalOpen} 
-      />
     </section>
   );
 };
