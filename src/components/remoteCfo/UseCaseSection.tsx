@@ -32,7 +32,7 @@ const UseCaseSection = () => {
   return (
     <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -86,7 +86,7 @@ const UseCaseSection = () => {
 
                 {/* Arrow */}
                 <div className="hidden lg:flex items-center justify-center">
-                  <ArrowRight className="w-8 h-8 text-gray-300" />
+                  <ArrowRight className="w-12 h-12 text-gray-900" />
                 </div>
 
                 {/* Solution */}
@@ -131,7 +131,7 @@ const UseCaseSection = () => {
                   {outcomes.map((outcome, index) => (
                     <div
                       key={index}
-                      className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-4 text-center border border-green-100"
+                      className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-4 shadow text-center border border-green-100"
                     >
                       <div className="text-2xl font-bold text-green-600 mb-1">{outcome.metric}</div>
                       <div className="text-sm text-gray-600">{outcome.label}</div>

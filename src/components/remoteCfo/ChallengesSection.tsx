@@ -36,7 +36,7 @@ const ChallengesSection = () => {
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-8xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -74,7 +74,7 @@ const ChallengesSection = () => {
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.4, delay: index * 0.1 }}
-                      className="flex items-start gap-3 p-3 bg-red-50 rounded-xl"
+                      className="flex items-start gap-3 p-3 bg-red-50 rounded-xl shadow"
                     >
                       <challenge.icon className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
                       <span className="text-gray-700">{challenge.text}</span>
@@ -108,7 +108,7 @@ const ChallengesSection = () => {
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.4, delay: index * 0.1 }}
-                      className="flex items-start gap-3 p-3 bg-green-50 rounded-xl"
+                      className="flex items-start gap-3 p-3 bg-green-50 rounded-xl shadow"
                     >
                       <benefit.icon className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
                       <span className="text-gray-700">{benefit.text}</span>
@@ -125,7 +125,7 @@ const ChallengesSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="bg-gradient-to-r from-brand-orange to-amber-500 rounded-2xl p-8 text-center"
+            className="bg-gradient-to-r from-brand-orange to-amber-500 rounded-2xl p-8 text-center mx-auto max-w-4xl"
           >
             <div className="flex items-center justify-center gap-3 mb-4">
               <Zap className="w-8 h-8 text-white" />

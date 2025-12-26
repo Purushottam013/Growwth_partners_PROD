@@ -130,33 +130,38 @@ const staticRoutes = [
     priority: "0.8",
     changefreq: "weekly",
   },
-   {
+  {
     path: "/tech-business-finance",
     priority: "0.8",
     changefreq: "weekly",
   },
-   {
+  {
     path: "/saas-finance",
     priority: "0.8",
     changefreq: "weekly",
   },
-     {
+  {
     path: "/ai-cfo-services",
     priority: "0.8",
     changefreq: "weekly",
   },
-     {
+  {
     path: "/outsourced-cfo-services",
     priority: "0.8",
     changefreq: "weekly",
   },
-       {
+  {
     path: "/sme-cfo-services",
     priority: "0.8",
     changefreq: "weekly",
   },
-       {
+  {
     path: "/startup-cfo-services",
+    priority: "0.8",
+    changefreq: "weekly",
+  },
+  {
+    path: "/remote-cfo-finance-team",
     priority: "0.8",
     changefreq: "weekly",
   },
@@ -207,12 +212,23 @@ const staticRoutes = [
     priority: "0.8",
     changefreq: "monthly",
   },
-  { path: "/uae/virtual-cfo-services-uae", priority: "0.8", changefreq: "monthly" },
+  {
+    path: "/uae/virtual-cfo-services-uae",
+    priority: "0.8",
+    changefreq: "monthly",
+  },
 
-  { path: "/uae/corporate-tax-filing-uae", priority: "0.8", changefreq: "monthly" },
+  {
+    path: "/uae/corporate-tax-filing-uae",
+    priority: "0.8",
+    changefreq: "monthly",
+  },
   { path: "/uae/esop-advisory-uae", priority: "0.8", changefreq: "monthly" },
-  { path: "/uae/ai-finance-workflow-uae", priority: "0.8", changefreq: "monthly" },
-
+  {
+    path: "/uae/ai-finance-workflow-uae",
+    priority: "0.8",
+    changefreq: "monthly",
+  },
 
   // Australia pages
   { path: "/au", priority: "1.0", changefreq: "daily" },
@@ -269,12 +285,12 @@ const staticRoutes = [
     priority: "0.8",
     changefreq: "monthly",
   },
-   {
+  {
     path: "/au/corporate-tax-filing-australia",
     priority: "0.8",
     changefreq: "monthly",
   },
-   {
+  {
     path: "/au/ai-finance-workflow-australia",
     priority: "0.8",
     changefreq: "monthly",
@@ -284,17 +300,17 @@ const staticRoutes = [
     priority: "0.8",
     changefreq: "monthly",
   },
-   {
+  {
     path: "/au/esop-advisory-australia",
     priority: "0.8",
     changefreq: "monthly",
   },
-   {
+  {
     path: "/au/ai-risk-compliance-australia",
     priority: "0.8",
     changefreq: "monthly",
   },
-   {
+  {
     path: "/au/ai-decision-intelligence-australia",
     priority: "0.8",
     changefreq: "monthly",
