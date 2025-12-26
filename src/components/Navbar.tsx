@@ -40,6 +40,7 @@ const navItems = [
       { title: "Outsourced CFO Services", path: "/outsourced-cfo-services" },
       { title: "Startup CFO Services", path: "/startup-cfo-services" },
       { title: "SME CFO Services", path: "/sme-cfo-services" },
+      { title: "Remote CFO & Finance Team", path: "/remote-cfo-finance-team" },
     ],
   },
   {
