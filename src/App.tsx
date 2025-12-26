@@ -421,6 +421,27 @@ export const routes: RouteRecord[] = [
         },
       },
       {
+        path: "remote-cfo-finance-team",
+        async lazy() {
+          const { default: Component } = await import("./pages/RemoteCfoServices");
+          return { Component };
+        },
+      },
+      {
+        path: "uae/remote-cfo-finance-team",
+        async lazy() {
+          const { default: Component } = await import("./pages/RemoteCfoServices");
+          return { Component };
+        },
+      },
+      {
+        path: "au/remote-cfo-finance-team",
+        async lazy() {
+          const { default: Component } = await import("./pages/RemoteCfoServices");
+          return { Component };
+        },
+      },
+      {
         path: "privacy-policy",
         async lazy() {
           const { default: Component } = await import("./pages/PrivacyPolicy");
