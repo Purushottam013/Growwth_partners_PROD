@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-brand-orange/20 pt-16 md:pt-20">
+    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-brand-orange/20 py-20 md:py-20">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 left-10 w-72 h-72 bg-brand-orange/10 rounded-full blur-3xl animate-pulse" />
@@ -46,7 +46,9 @@ const HeroSection = () => {
             </p>
 
             <p className="text-gray-400 text-lg mb-8 max-w-xl">
-              A fully integrated, cloud-based finance function—combining experienced professionals, structured processes, and AI-enabled tools—delivering accurate reporting and real-time visibility.
+              A fully integrated, cloud-based finance function—combining
+              experienced professionals, structured processes, and AI-enabled
+              tools—delivering accurate reporting and real-time visibility.
             </p>
 
             <motion.div
@@ -56,14 +58,17 @@ const HeroSection = () => {
               className="flex flex-wrap gap-4"
             >
               <Button
-                asChild
-                size="lg"
+              size="lg"
+                onClick={() =>
+                  window.open(
+                    "https://calendly.com/jd-growwthpartners/15min?month=2025-11",
+                    "_blank"
+                  )
+                }
                 className="bg-brand-orange hover:bg-brand-orange/90 text-white px-8 py-6 text-lg group"
               >
-                <Link to="/contact">
-                  Build Your Virtual Finance Team
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
+                Build Your Virtual Finance Team
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </motion.div>
           </motion.div>
@@ -81,7 +86,7 @@ const HeroSection = () => {
                 alt="Virtual Finance Team working remotely"
                 className="relative rounded-3xl shadow-2xl w-full object-cover aspect-[4/3]"
               />
-              
+
               {/* Floating stats cards */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -100,7 +105,9 @@ const HeroSection = () => {
                 className="absolute -top-6 -right-6 bg-white rounded-2xl p-4 shadow-xl"
               >
                 <div className="text-3xl font-bold text-green-600">100%</div>
-                <div className="text-sm text-gray-600">Real-Time Visibility</div>
+                <div className="text-sm text-gray-600">
+                  Real-Time Visibility
+                </div>
               </motion.div>
             </div>
           </motion.div>

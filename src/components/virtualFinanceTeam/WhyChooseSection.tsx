@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Globe, MapPin, UserCheck, Cpu, HandshakeIcon, CheckCircle } from "lucide-react";
+import images from '/images/why_growwth.jpg'
 
 const reasons = [
   {
@@ -82,7 +83,7 @@ const WhyChooseSection = () => {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-brand-orange/20 to-blue-500/20 rounded-3xl blur-2xl" />
               <img
-                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&h=400&fit=crop"
+                src={images}
                 alt="Professional finance team"
                 className="relative rounded-3xl shadow-2xl w-full object-cover aspect-[4/3]"
               />
