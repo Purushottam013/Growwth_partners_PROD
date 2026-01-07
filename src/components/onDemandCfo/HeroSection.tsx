@@ -3,12 +3,10 @@ import { Button } from "@/components/ui/button";
 import { Clock, Target, Zap, Shield } from "lucide-react";
 
 const HeroSection = () => {
-  const handleCTAClick = () => {
-    window.open("https://calendly.com/gp-jasprit/30min", "_blank");
-  };
+
 
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-orange-900/20">
+    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-orange-900/20 py-20 pt-16">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
@@ -71,7 +69,11 @@ const HeroSection = () => {
             </p>
 
             <Button
-              onClick={handleCTAClick}
+              onClick={() =>
+                  window.open(
+                    "https://calendly.com/jd-growwthpartners/15min?month=2025-11",
+                    "_blank"
+                  )}
               size="lg"
               className="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white px-8 py-6 text-lg rounded-xl shadow-lg shadow-orange-500/25 transition-all duration-300 hover:scale-105"
             >

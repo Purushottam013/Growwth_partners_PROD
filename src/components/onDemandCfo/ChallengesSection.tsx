@@ -36,14 +36,14 @@ const ChallengesSection = () => {
           </h2>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-8 max-w-8xl mx-auto">
           {/* Risks Column */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-br from-red-50 to-orange-50 rounded-3xl p-8 border border-red-100"
+            className="bg-gradient-to-br from-red-50 to-orange-50 rounded-3xl shadow p-8 border border-red-100"
           >
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 rounded-2xl bg-red-500 flex items-center justify-center">
@@ -60,7 +60,7 @@ const ChallengesSection = () => {
               {risks.map((item, index) => (
                 <motion.div
                   key={item.text}
-                  className="flex items-center gap-4 p-4 bg-white/80 rounded-xl"
+                  className="flex items-center gap-4 p-4 bg-white/80 rounded-xl font-bold"
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.1 * index }}
@@ -79,7 +79,7 @@ const ChallengesSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-3xl p-8 border border-emerald-100"
+            className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-3xl p-8 shadow border border-emerald-100"
           >
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 rounded-2xl bg-emerald-500 flex items-center justify-center">
@@ -96,7 +96,7 @@ const ChallengesSection = () => {
               {benefits.map((item, index) => (
                 <motion.div
                   key={item.text}
-                  className="flex items-center gap-4 p-4 bg-white/80 rounded-xl"
+                  className="flex items-center gap-4 p-4 bg-white/80 rounded-xl font-bold"
                   initial={{ opacity: 0, x: 20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.1 * index }}

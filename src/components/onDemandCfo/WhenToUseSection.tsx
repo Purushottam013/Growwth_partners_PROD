@@ -31,12 +31,12 @@ const WhenToUseSection = () => {
           </p>
         </motion.div>
 
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <div className="grid gap-4">
             {scenarios.map((item, index) => (
               <motion.div
                 key={item.text}
-                className="flex items-center gap-5 p-6 bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-md hover:border-orange-200 transition-all duration-300"
+                className="flex items-center gap-5 p-6 bg-white/80 rounded-2xl shadow border border-slate-100 hover:shadow-md hover:border-orange-200 transition-all duration-300"
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.1 * index }}
