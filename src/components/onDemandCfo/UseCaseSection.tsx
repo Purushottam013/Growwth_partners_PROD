@@ -45,7 +45,7 @@ const UseCaseSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="max-w-5xl mx-auto"
+          className="max-w-8xl mx-auto"
         >
           {/* Header */}
           <div className="bg-gradient-to-r from-slate-900 to-slate-800 rounded-t-3xl p-8 text-white">
@@ -69,10 +69,10 @@ const UseCaseSection = () => {
           </div>
 
           {/* Content Grid */}
-          <div className="bg-white rounded-b-3xl border border-t-0 border-slate-200 overflow-hidden">
+          <div className="bg-white rounded-b-3xl border border-t-0 overflow-hidden">
             <div className="grid md:grid-cols-3">
               {/* Challenges */}
-              <div className="p-8 border-b md:border-b-0 md:border-r border-slate-200">
+              <div className="p-8 border-b md:border-b-0 md:border-r bg-red-50 font-bold">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-10 h-10 rounded-xl bg-red-100 flex items-center justify-center">
                     <AlertTriangle className="w-5 h-5 text-red-500" />
@@ -90,7 +90,7 @@ const UseCaseSection = () => {
               </div>
 
               {/* Solution */}
-              <div className="p-8 border-b md:border-b-0 md:border-r border-slate-200">
+              <div className="p-8 border-b md:border-b-0 md:border-r bg-yellow-50 font-bold">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-10 h-10 rounded-xl bg-orange-100 flex items-center justify-center">
                     <Wrench className="w-5 h-5 text-orange-500" />
@@ -108,7 +108,7 @@ const UseCaseSection = () => {
               </div>
 
               {/* Outcome */}
-              <div className="p-8">
+              <div className="p-8 bg-emerald-50 font-bold">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center">
                     <CheckCircle className="w-5 h-5 text-emerald-500" />

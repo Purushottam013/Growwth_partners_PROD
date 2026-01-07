@@ -1,3 +1,4 @@
+import React from "react";
 import { motion } from "framer-motion";
 import { Users, Globe, Shield, Cpu, Target } from "lucide-react";
 
@@ -6,17 +7,20 @@ const WhyChooseSection = () => {
     {
       icon: Users,
       title: "Diverse Industry Experience",
-      description: "CFOs with experience across startups, SMEs, SaaS, ecommerce, fintech, and tech businesses",
+      description:
+        "CFOs with experience across startups, SMEs, SaaS, ecommerce, fintech, and tech businesses",
     },
     {
       icon: Globe,
       title: "Singapore Market Expertise",
-      description: "Strong understanding of Singapore's financial, tax, and regulatory environment",
+      description:
+        "Strong understanding of Singapore's financial, tax, and regulatory environment",
     },
     {
       icon: Shield,
       title: "High-Pressure Situations",
-      description: "Proven ability to support high-pressure investor and board situations",
+      description:
+        "Proven ability to support high-pressure investor and board situations",
     },
     {
       icon: Cpu,
@@ -48,30 +52,57 @@ const WhyChooseSection = () => {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {reasons.map((item, index) => (
-            <motion.div
-              key={item.title}
-              className={`bg-white rounded-3xl p-8 shadow-sm border border-slate-100 hover:shadow-xl hover:border-orange-200 transition-all duration-300 ${
-                index === 4 ? "lg:col-span-1 md:col-span-2 lg:mx-auto lg:max-w-md" : ""
-              }`}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 * index }}
-              viewport={{ once: true }}
-              whileHover={{ y: -5 }}
-            >
-              <div className="w-16 h-16 mb-6 rounded-2xl bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center shadow-lg shadow-orange-500/20">
-                <item.icon className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">
-                {item.title}
-              </h3>
-              <p className="text-slate-600 leading-relaxed">
-                {item.description}
-              </p>
-            </motion.div>
-          ))}
+        {/* Cards: 3 + 2 centered */}
+        <div className="max-w-8xl mx-auto space-y-6">
+          {/* Row 1 */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {reasons.slice(0, 3).map((item, index) => (
+              <motion.div
+                key={item.title}
+                className="bg-white rounded-3xl p-8 shadow border border-slate-100 hover:shadow-xl hover:border-orange-200 transition-all duration-300"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 * index }}
+                viewport={{ once: true }}
+                whileHover={{ y: -5 }}
+              >
+                <div className="w-16 h-16 mb-6 rounded-2xl bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center shadow-lg shadow-orange-500/20">
+                  <item.icon className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 mb-3">
+                  {item.title}
+                </h3>
+                <p className="text-slate-600 leading-relaxed">{item.description}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Row 2 (centered) */}
+          <div className="flex flex-col md:flex-row justify-center gap-6">
+            {reasons.slice(3).map((item, index) => (
+              <motion.div
+                key={item.title}
+                className="w-full md:max-w-[520px]"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 * (index + 3) }}
+                viewport={{ once: true }}
+                whileHover={{ y: -5 }}
+              >
+                <div className="bg-white rounded-3xl p-8 shadow border border-slate-100 hover:shadow-xl hover:border-orange-200 transition-all duration-300 h-full">
+                  <div className="w-16 h-16 mb-6 rounded-2xl bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center shadow-lg shadow-orange-500/20">
+                    <item.icon className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-3">
+                    {item.title}
+                  </h3>
+                  <p className="text-slate-600 leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -44,14 +44,14 @@ const WhatIsSection = () => {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <p className="text-center text-slate-700 text-lg mb-8">
+          <p className="text-center text-slate-700 font-bold text-lg mb-8">
             Unlike recurring CFO engagements, On-Demand CFO support is:
           </p>
-          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {characteristics.map((item, index) => (
               <motion.div
                 key={item.title}
-                className="bg-slate-50 rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300 border border-slate-100"
+                className="bg-slate-50 rounded-2xl p-6 text-center shadow hover:shadow-lg transition-all duration-300 border border-slate-100"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 * index }}
@@ -81,7 +81,7 @@ const WhatIsSection = () => {
             {engagements.map((item, index) => (
               <motion.div
                 key={item.title}
-                className="bg-gradient-to-br from-slate-50 to-orange-50 rounded-2xl p-6 border border-slate-100 hover:border-orange-200 transition-all duration-300"
+                className="bg-gradient-to-br from-slate-50 to-orange-50 rounded-2xl p-6 border border-orange-200 transition-all duration-300"
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.1 * index }}

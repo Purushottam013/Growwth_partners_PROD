@@ -72,7 +72,7 @@ const HowWeDeliverSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 max-w-7xl mx-auto">
           {deliverables.map((item, index) => (
             <motion.div
               key={item.title}
