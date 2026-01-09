@@ -5,7 +5,7 @@ const WhatIsSection = () => {
   const services = [
     { icon: Shield, text: "End-to-end financial leadership", color: "from-orange-500 to-amber-500" },
     { icon: Users, text: "Oversight of finance teams and systems", color: "from-amber-500 to-yellow-500" },
-    { icon: BarChart3, text: "Board and investor reporting", color: "from-growwth-primary to-orange-500" },
+    { icon: BarChart3, text: "Board and investor reporting", color: "from-orange-400 to-growwth-primary" },
     { icon: Wallet, text: "Cash flow and risk management", color: "from-orange-600 to-growwth-primary" },
     { icon: RefreshCw, text: "Transition planning for long-term CFO replacement", color: "from-amber-500 to-orange-500" }
   ];

@@ -8,56 +8,79 @@ import ChallengesSection from "@/components/interimCfo/ChallengesSection";
 import HowWeDeliverSection from "@/components/interimCfo/HowWeDeliverSection";
 import WhyChooseSection from "@/components/interimCfo/WhyChooseSection";
 import UseCaseSection from "@/components/interimCfo/UseCaseSection";
-import FaqSection from "@/components/interimCfo/FaqSection";
+import { FaqSection } from "@/components/accounting/FaqSection";
 import CTASection from "@/components/interimCfo/CTASection";
+
+const faqs = [
+  {
+    question: "How long does an Interim CFO engagement last?",
+    answer:
+      "Engagements typically range from a few months to one year, depending on business needs and transition complexity. We tailor the duration to ensure proper stabilisation and handover.",
+  },
+  {
+    question: "Is an Interim CFO involved in daily operations?",
+    answer:
+      "Yes. Interim CFOs take full ownership of finance leadership, including team oversight and operational decision-making. Unlike advisory roles, they are hands-on and accountable for results.",
+  },
+  {
+    question: "Can an Interim CFO help during audits or due diligence?",
+    answer:
+      "Yes. Interim CFOs frequently support audits, regulatory reviews, and investor due diligence processes. They bring the expertise and credibility needed to manage these critical situations.",
+  },
+];
 
 const InterimCfoServices = () => {
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Interim CFO Services",
-    "provider": {
-      "@type": "Organization",
-      "name": "Growwth Partners",
-      "url": "https://growwthpartners.com"
-    },
-    "description": "Expert interim CFO support during leadership gaps, restructuring, mergers, or transitions.",
-    "areaServed": {
-      "@type": "Country",
-      "name": "Singapore"
-    },
-    "serviceType": "Interim CFO Services"
-  };
-
-  const faqStructuredData = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
+    "@graph": [
       {
-        "@type": "Question",
-        "name": "How long does an Interim CFO engagement last?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Engagements typically range from a few months to one year, depending on business needs and transition complexity."
-        }
+        "@type": "FAQPage",
+        "@id": "https://growwthpartners.com/outsourced-bookkeeping/#faq",
+        mainEntity: faqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer,
+          },
+        })),
       },
       {
-        "@type": "Question",
-        "name": "Is an Interim CFO involved in daily operations?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. Interim CFOs take full ownership of finance leadership, including team oversight and operational decision-making."
-        }
+        "@type": "Service",
+        "@id": "https://growwthpartners.com/outsourced-bookkeeping/#service",
+        name: "Outsourced Bookkeeping Services Singapore",
+        serviceType: "Bookkeeping Services",
+        description:
+          "Monthly bookkeeping, reconciliations, expense tracking, and closing delivered by an expert team.",
+        provider: {
+          "@id": "https://growwthpartners.com/#organization",
+        },
+        areaServed: ["Singapore", "United Arab Emirates", "Australia"],
       },
       {
-        "@type": "Question",
-        "name": "Can an Interim CFO help during audits or due diligence?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. Interim CFOs frequently support audits, regulatory reviews, and investor due diligence processes."
-        }
-      }
-    ]
+        "@type": "Organization",
+        "@id": "https://growwthpartners.com/#organization",
+        name: "Growwth Partners",
+        url: "https://growwthpartners.com",
+        areaServed: ["Singapore", "United Arab Emirates", "Australia"],
+        contactPoint: [
+          {
+            "@type": "ContactPoint",
+            email: "jd@growwthpartners.com",
+            telephone: "+65 9861 5600",
+            contactType: "business",
+            areaServed: "SG",
+          },
+        ],
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "65 Chulia Street",
+          addressLocality: "Singapore",
+          postalCode: "049513",
+          addressCountry: "SG",
+        },
+      },
+    ],
   };
 
   return (
@@ -77,7 +100,10 @@ const InterimCfoServices = () => {
         <HowWeDeliverSection />
         <WhyChooseSection />
         <UseCaseSection />
-        <FaqSection />
+        <FaqSection
+          faqs={faqs}
+          subtitle="Common questions about our Intrim CFO services"
+        />
         <CTASection />
       </main>
       <Footer />

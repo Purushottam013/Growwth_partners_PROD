@@ -1,10 +1,11 @@
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 import { ArrowRight, Shield, Clock, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const CTASection = () => {
   return (
-    <section className="py-20 lg:py-28 bg-gradient-to-br from-growwth-dark via-slate-900 to-growwth-dark relative overflow-hidden">
+    <section className="py-16 lg:py-20 bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-orange-500/10 rounded-full blur-3xl" />
@@ -17,15 +18,11 @@ const CTASection = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          {/* Icon */}
-          <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-growwth-primary rounded-2xl flex items-center justify-center mx-auto mb-8 shadow-2xl shadow-orange-500/30">
-            <Shield className="w-10 h-10 text-white" />
-          </div>
 
           {/* Heading */}
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
             Need Immediate CFO Leadership to{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-growwth-primary to-amber-400">
+            <span className="text-transparent bg-clip-text bg-white">
               Navigate Change?
             </span>
           </h2>
@@ -37,35 +34,20 @@ const CTASection = () => {
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <Link to="/contact">
-              <Button 
-                size="lg"
-                className="bg-gradient-to-r from-orange-500 to-growwth-primary hover:from-orange-600 hover:to-growwth-primary/90 text-white px-8 py-6 text-lg rounded-full shadow-2xl shadow-orange-500/25 transition-all duration-300 hover:scale-105 group"
-              >
-                Secure Interim CFO Support Today
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </Link>
-          </div>
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Button
+              size="lg"
+              className="bg-white text-orange-600 hover:bg-slate-100 px-10 py-7 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 font-semibold"
+              onClick={() => window.open('https://calendly.com/jd-growwthpartners/15min?month=2025-11', '_blank')}
+            >
+              Secure Intrim CFO Support Today
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </Button>
+          </motion.div>
 
-          {/* Trust Badges */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-gray-100">
-            <div className="flex items-center gap-2">
-              <Clock className="w-5 h-5 text-orange-300" />
-              <span className="font-medium">24-48hr Deployment</span>
-            </div>
-            <div className="hidden sm:block w-1.5 h-1.5 bg-orange-400 rounded-full" />
-            <div className="flex items-center gap-2">
-              <Shield className="w-5 h-5 text-orange-300" />
-              <span className="font-medium">Proven Track Record</span>
-            </div>
-            <div className="hidden sm:block w-1.5 h-1.5 bg-orange-400 rounded-full" />
-            <div className="flex items-center gap-2">
-              <Phone className="w-5 h-5 text-orange-300" />
-              <span className="font-medium">Free Consultation</span>
-            </div>
-          </div>
         </div>
       </div>
     </section>
