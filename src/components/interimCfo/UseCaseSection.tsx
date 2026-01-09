@@ -24,9 +24,9 @@ const UseCaseSection = () => {
   ];
 
   return (
-    <section className="py-20 lg:py-28 bg-gradient-to-b from-white via-orange-50/30 to-white">
+    <section className="py-20 lg:py-28 bg-gradient-to-b from-white via-orange-50 to-orange-50">
       <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-8xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-orange-100 rounded-full mb-6">
@@ -45,7 +45,7 @@ const UseCaseSection = () => {
           {/* Case Study Card */}
           <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100">
             {/* Client Info Header */}
-            <div className="bg-gradient-to-r from-orange-500 to-growwth-primary p-6 lg:p-8">
+            <div className="bg-gradient-to-r from-orange-500 to-orange-200 p-6 lg:p-8">
               <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                 <div>
                   <div className="text-orange-100 text-sm font-medium mb-1">Client Type</div>

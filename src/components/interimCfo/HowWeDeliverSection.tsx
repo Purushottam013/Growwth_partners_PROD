@@ -62,7 +62,7 @@ const HowWeDeliverSection = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 font-bold">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-orange-100 rounded-full mb-6">
               <Zap className="w-4 h-4 text-orange-600" />
               <span className="text-orange-700 text-sm font-semibold">Our Approach</span>
@@ -70,7 +70,7 @@ const HowWeDeliverSection = () => {
 
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-growwth-dark mb-6">
               How Growwth Partners Delivers{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-growwth-primary">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-brand-orange">
                 Interim CFO Value
               </span>
             </h2>
@@ -82,7 +82,7 @@ const HowWeDeliverSection = () => {
           </div>
 
           {/* Delivery Areas */}
-          <div className="space-y-6">
+          <div className="space-y-6 font-bold">
             {deliveryAreas.map((area, index) => (
               <div 
                 key={index}

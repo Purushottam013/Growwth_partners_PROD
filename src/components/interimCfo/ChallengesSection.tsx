@@ -23,7 +23,7 @@ const ChallengesSection = () => {
   return (
     <section className="py-20 lg:py-28 bg-white">
       <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-8xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
             {/* Risks Card */}
             <div className="bg-gradient-to-br from-red-50 via-orange-50 to-amber-50 rounded-3xl p-8 lg:p-10 border border-red-100">
