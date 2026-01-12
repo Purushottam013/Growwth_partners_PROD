@@ -375,6 +375,21 @@ const staticRoutes = [
     priority: "0.8",
     changefreq: "weekly",
   },
+  {
+    path: "/startup-finance-services",
+    priority: "0.8",
+    changefreq: "weekly",
+  },
+  {
+    path: "/uae/startup-finance-services",
+    priority: "0.8",
+    changefreq: "weekly",
+  },
+  {
+    path: "/au/startup-finance-services",
+    priority: "0.8",
+    changefreq: "weekly",
+  },
 ];
 
 

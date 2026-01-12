@@ -53,6 +53,7 @@ const navItems = [
       { title: "Virtual Finance Team", path: "/virtual-finance-team" },
       { title: "Outsourced Bookkeeping", path: "/outsourced-bookkeeping" },
       { title: "Outsourced Payroll", path: "/outsourced-payroll" },
+      { title: "Startup Finance Services", path: "/startup-finance-services" },
     ],
   },
   {
