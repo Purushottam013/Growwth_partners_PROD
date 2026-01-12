@@ -38,6 +38,7 @@ const navItems = [
       { title: "Fintech Finance Services", path: "/fintech-finance" },
       { title: "Tech Business Finance", path: "/tech-business-finance" },
       { title: "SaaS Finance Services", path: "/saas-finance" },
+      { title: "Crypto & Web3 Finance", path: "/crypto-web3-finance" },
       { title: "On-Demand CFO Services", path: "/on-demand-cfo-services" },
       { title: "Part-Time CFO Services", path: "/part-time-cfo-services" },
       { title: "Fractional CFO Services", path: "/fractional-cfo-services" },
@@ -52,6 +53,7 @@ const navItems = [
       { title: "Virtual Finance Team", path: "/virtual-finance-team" },
       { title: "Outsourced Bookkeeping", path: "/outsourced-bookkeeping" },
       { title: "Outsourced Payroll", path: "/outsourced-payroll" },
+      { title: "Startup Finance Services", path: "/startup-finance-services" },
     ],
   },
   {

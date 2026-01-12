@@ -343,6 +343,48 @@ export const routes: RouteRecord[] = [
         },
       },
       {
+        path: "crypto-web3-finance",
+        async lazy() {
+          const { default: Component } = await import("./pages/CryptoWeb3Finance");
+          return { Component };
+        },
+      },
+      {
+        path: "uae/crypto-web3-finance",
+        async lazy() {
+          const { default: Component } = await import("./pages/CryptoWeb3Finance");
+          return { Component };
+        },
+      },
+      {
+        path: "au/crypto-web3-finance",
+        async lazy() {
+          const { default: Component } = await import("./pages/CryptoWeb3Finance");
+          return { Component };
+        },
+      },
+      {
+        path: "startup-finance-services",
+        async lazy() {
+          const { default: Component } = await import("./pages/StartupFinanceServices");
+          return { Component };
+        },
+      },
+      {
+        path: "uae/startup-finance-services",
+        async lazy() {
+          const { default: Component } = await import("./pages/StartupFinanceServices");
+          return { Component };
+        },
+      },
+      {
+        path: "au/startup-finance-services",
+        async lazy() {
+          const { default: Component } = await import("./pages/StartupFinanceServices");
+          return { Component };
+        },
+      },
+      {
         path: "au/saas-finance",
         async lazy() {
           const { default: Component } = await import("./pages/SaasFinance");
