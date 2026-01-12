@@ -347,6 +347,12 @@
   <changefreq>weekly</changefreq>
   <priority>0.8</priority>
 </url>
+<url>
+  <loc>https://growwthpartners.com/startup-finance-services</loc>
+  <lastmod>2026-01-12</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.8</priority>
+</url>
 
   <!-- UAE pages -->
   <url>
@@ -465,6 +471,12 @@
   <url>
     <loc>https://growwthpartners.com/uae/interim-cfo-services</loc>
     <lastmod>2026-01-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://growwthpartners.com/uae/startup-finance-services</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -612,6 +624,12 @@
   <url>
     <loc>https://growwthpartners.com/au/interim-cfo-services</loc>
     <lastmod>2026-01-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://growwthpartners.com/au/startup-finance-services</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
