@@ -19,13 +19,13 @@ const navItems = [
   },
   {
     title: "Services",
-    path: "/services",
-    dropdown: false,
-  },
-  {
-    title: "Services1",
     // path: "/services",
     dropdown: "mega-menu", // Special type for mega menu
+  },
+  {
+    title: "Contact Us",
+    path: "/contact-us",
+    dropdown: false,
   },
   {
     title: "AI in Finance",
