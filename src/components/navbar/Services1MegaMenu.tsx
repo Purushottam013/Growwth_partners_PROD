@@ -78,8 +78,8 @@ export const Services1MegaMenu = ({ onNavigate }: Services1MegaMenuProps) => {
             className="hidden lg:flex fixed top-[80px] left-0 right-0 z-50 justify-center px-4"
           >
             <div
-              // ✅ responsive: 860px desktop, but never overflow viewport
-              className="relative w-[860px] max-w-[calc(100vw-2rem)] overflow-hidden rounded-3xl border border-white/40 bg-white/90 backdrop-blur-xl shadow-[0_30px_90px_-35px_rgba(0,0,0,0.35)]"
+              // ✅ responsive: wider desktop so all categories fit, but never overflow viewport
+              className="relative w-[1240px] max-w-[calc(100vw-2rem)] overflow-hidden rounded-3xl border border-white/40 bg-white/90 backdrop-blur-xl shadow-[0_30px_90px_-35px_rgba(0,0,0,0.35)]"
             >
               {/* subtle background accents */}
               <div className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-brand-orange/10 blur-3xl" />
@@ -115,7 +115,7 @@ export const Services1MegaMenu = ({ onNavigate }: Services1MegaMenuProps) => {
                 </div>
 
                 {/* TOP CATEGORIES (tabs) */}
-                <div className="mt-4 flex items-center gap-2 overflow-x-auto pb-1 [scrollbar-width:none]">
+                <div className="mt-4 flex flex-wrap items-center gap-2 pb-1">
                   {services1Categories.map((category) => {
                     const isActive = activeCategory === category.id;
                     const Icon = category.icon;
