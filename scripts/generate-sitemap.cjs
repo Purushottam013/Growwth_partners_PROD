@@ -233,6 +233,16 @@ const staticRoutes = [
     priority: "0.8",
     changefreq: "weekly",
   },
+  {
+    path: "/trading-distribution-finance",
+    priority: "0.8",
+    changefreq: "weekly",
+  },
+  {
+    path: "/professional-services-finance",
+    priority: "0.8",
+    changefreq: "weekly",
+  },
 
   // UAE pages
   { path: "/uae", priority: "1.0", changefreq: "daily" },
