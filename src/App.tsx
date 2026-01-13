@@ -44,6 +44,27 @@ export const routes: RouteRecord[] = [
         element: <Index />,
       },
       {
+        path: "services",
+        async lazy() {
+          const { default: Component } = await import("./pages/Services");
+          return { Component };
+        },
+      },
+      {
+        path: "uae/services",
+        async lazy() {
+          const { default: Component } = await import("./pages/Services");
+          return { Component };
+        },
+      },
+      {
+        path: "au/services",
+        async lazy() {
+          const { default: Component } = await import("./pages/Services");
+          return { Component };
+        },
+      },
+      {
         path: "about",
         async lazy() {
           const { default: Component } = await import("./pages/About");
