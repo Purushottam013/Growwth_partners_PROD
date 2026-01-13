@@ -87,6 +87,7 @@ export const services1Categories: ServiceCategory[] = [
       { title: "Part-Time Finance Team", path: "/part-time-finance-team", icon: Clock },
       { title: "Virtual Finance Team", path: "/virtual-finance-team", icon: Monitor },
       { title: "Startup Finance Services", path: "/startup-finance-services", icon: Rocket },
+      { title: "SME Finance Services", path: "/sme-finance-services", icon: Building },
     ],
   },
   {

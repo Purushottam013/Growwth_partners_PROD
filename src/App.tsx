@@ -515,6 +515,27 @@ export const routes: RouteRecord[] = [
         },
       },
       {
+        path: "sme-finance-services",
+        async lazy() {
+          const { default: Component } = await import("./pages/SmeFinanceServices");
+          return { Component };
+        },
+      },
+      {
+        path: "uae/sme-finance-services",
+        async lazy() {
+          const { default: Component } = await import("./pages/SmeFinanceServices");
+          return { Component };
+        },
+      },
+      {
+        path: "au/sme-finance-services",
+        async lazy() {
+          const { default: Component } = await import("./pages/SmeFinanceServices");
+          return { Component };
+        },
+      },
+      {
         path: "remote-cfo-finance-team",
         async lazy() {
           const { default: Component } = await import(
