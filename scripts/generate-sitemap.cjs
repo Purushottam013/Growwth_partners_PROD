@@ -14,6 +14,7 @@ require("dotenv").config();
 const staticRoutes = [
   // Singapore pages (base)
   { path: "/", priority: "1.0", changefreq: "daily" },
+  { path: "/services", priority: "0.9", changefreq: "weekly" },
   { path: "/about", priority: "0.8", changefreq: "weekly" },
   { path: "/blog", priority: "0.7", changefreq: "daily" },
   { path: "/contact-us", priority: "0.8", changefreq: "weekly" },

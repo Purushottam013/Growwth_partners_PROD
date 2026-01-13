@@ -18,7 +18,7 @@ const navItems = [
   },
   {
     title: "Services",
-    path: "/accounting",
+    path: "/services",
     dropdown: true,
     items: [
       { title: "Accounting Services", path: "/accounting" },
