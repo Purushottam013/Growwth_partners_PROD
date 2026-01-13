@@ -44,6 +44,27 @@ export const routes: RouteRecord[] = [
         element: <Index />,
       },
       {
+        path: "services",
+        async lazy() {
+          const { default: Component } = await import("./pages/Services");
+          return { Component };
+        },
+      },
+      {
+        path: "uae/services",
+        async lazy() {
+          const { default: Component } = await import("./pages/Services");
+          return { Component };
+        },
+      },
+      {
+        path: "au/services",
+        async lazy() {
+          const { default: Component } = await import("./pages/Services");
+          return { Component };
+        },
+      },
+      {
         path: "about",
         async lazy() {
           const { default: Component } = await import("./pages/About");
@@ -490,6 +511,53 @@ export const routes: RouteRecord[] = [
         path: "au/sme-cfo-services",
         async lazy() {
           const { default: Component } = await import("./pages/SmeCfoServices");
+          return { Component };
+        },
+      },
+
+
+
+            {
+        path: "family-office-finance-services",
+        async lazy() {
+          const { default: Component } = await import("./pages/FamilyOfficeFinanceServices");
+          return { Component };
+        },
+      },
+      {
+        path: "uae/family-office-finance-services",
+        async lazy() {
+          const { default: Component } = await import("./pages/FamilyOfficeFinanceServices");
+          return { Component };
+        },
+      },
+      {
+        path: "au/family-office-finance-services",
+        async lazy() {
+          const { default: Component } = await import("./pages/FamilyOfficeFinanceServices");
+          return { Component };
+        },
+      },
+
+
+      {
+        path: "sme-finance-services",
+        async lazy() {
+          const { default: Component } = await import("./pages/SmeFinanceServices");
+          return { Component };
+        },
+      },
+      {
+        path: "uae/sme-finance-services",
+        async lazy() {
+          const { default: Component } = await import("./pages/SmeFinanceServices");
+          return { Component };
+        },
+      },
+      {
+        path: "au/sme-finance-services",
+        async lazy() {
+          const { default: Component } = await import("./pages/SmeFinanceServices");
           return { Component };
         },
       },

@@ -5,6 +5,7 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ContactModal } from "@/components/ui/contact-modal";
 import { CountrySwitcher } from "@/components/CountrySwitcher";
+import { Services1MegaMenu, MobileServices1Menu } from "@/components/navbar/Services1MegaMenu";
 
 // Import the company logo
 import companyLogo from "/lovable-uploads/5f2bc1cf-2bab-424d-8245-eb52af504603.png";
@@ -18,43 +19,8 @@ const navItems = [
   },
   {
     title: "Services",
-    path: "/accounting",
-    dropdown: true,
-    items: [
-      { title: "Accounting Services", path: "/accounting" },
-      { title: "Bookkeeping", path: "/bookkeeping" },
-      { title: "Payroll", path: "/payroll" },
-      { title: "Taxation & Compliance", path: "/taxation" },
-      { title: "Part Time CFO", path: "/part-time-cfo" },
-      { title: "Cash Flow Modelling", path: "/cash-flow" },
-      { title: "Incorporation Services", path: "/incorporation" },
-      { title: "Incorporation for Foreigners", path: "/incorporation/foreigner" },
-      { title: "ESOP Advisory Services", path: "/esop-advisory-singapore" },
-      { title: "ESOP Valuation Services", path: "/esop-valuation-singapore" },
-      { title: "Banking Solutions", path: "/simplified-banking-solutions" },
-      { title: "Tech Startup Accounting", path: "/accounting-for-tech-start-ups-companies" },
-      { title: "Ecommerce Accounting", path: "/ecommerce-accounting-services" },
-      { title: "Ecommerce Finance Services", path: "/ecommerce-finance-services" },
-      { title: "Fintech Finance Services", path: "/fintech-finance" },
-      { title: "Tech Business Finance", path: "/tech-business-finance" },
-      { title: "SaaS Finance Services", path: "/saas-finance" },
-      { title: "Crypto & Web3 Finance", path: "/crypto-web3-finance" },
-      { title: "On-Demand CFO Services", path: "/on-demand-cfo-services" },
-      { title: "Part-Time CFO Services", path: "/part-time-cfo-services" },
-      { title: "Fractional CFO Services", path: "/fractional-cfo-services" },
-      { title: "Virtual CFO Services", path: "/virtual-cfo-services" },
-      { title: "Interim CFO Services", path: "/interim-cfo-services" },
-      { title: "Outsourced CFO Services", path: "/outsourced-cfo-services" },
-      { title: "Startup CFO Services", path: "/startup-cfo-services" },
-      { title: "SME CFO Services", path: "/sme-cfo-services" },
-      { title: "Remote CFO & Finance Team", path: "/remote-cfo-finance-team" },
-      { title: "Fractional Finance Team", path: "/fractional-finance-team" },
-      { title: "Part-Time Finance Team", path: "/part-time-finance-team" },
-      { title: "Virtual Finance Team", path: "/virtual-finance-team" },
-      { title: "Outsourced Bookkeeping", path: "/outsourced-bookkeeping" },
-      { title: "Outsourced Payroll", path: "/outsourced-payroll" },
-      { title: "Startup Finance Services", path: "/startup-finance-services" },
-    ],
+    // path: "/services",
+    dropdown: "mega-menu", // Special type for mega menu
   },
   {
     title: "Contact Us",
@@ -146,8 +112,8 @@ export const Navbar = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-md">
-      <div className="container-custom py-3">
+    <header className="sticky top-0 z-50 bg-white shadow-md overflow-visible">
+  <div className="container-custom py-3 overflow-visible">
         <div className="flex items-center justify-between">
           {/* Logo - with navigation */}
           <div className="flex items-center">
@@ -160,7 +126,9 @@ export const Navbar = () => {
           <nav className="hidden lg:flex items-center space-x-2">
             {navItems.map((item) => (
               <div key={item.title} className="relative group">
-                {item.dropdown ? (
+                {item.dropdown === "mega-menu" ? (
+                  <Services1MegaMenu onNavigate={closeMobileMenu} />
+                ) : item.dropdown ? (
                   <div className="flex flex-col">
                     <button
                       type="button"
@@ -232,7 +200,13 @@ export const Navbar = () => {
           <nav className="lg:hidden mt-4 border-t pt-4">
             {navItems.map((item) => (
               <div key={item.title} className="py-1">
-                {item.dropdown ? (
+                {item.dropdown === "mega-menu" ? (
+                  <MobileServices1Menu
+                    isOpen={openDropdown === "Services1"}
+                    onToggle={() => toggleDropdown("Services1")}
+                    onNavigate={closeMobileMenu}
+                  />
+                ) : item.dropdown ? (
                   <div>
                     <button
                       onClick={() => toggleDropdown(item.title)}
