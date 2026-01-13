@@ -50,7 +50,7 @@ export const Services1MegaMenu = ({ onNavigate }: Services1MegaMenuProps) => {
         onClick={() => setIsOpen(!isOpen)}
       >
         <span className="relative">
-          Services1
+          Services
           <span
             className={cn(
               "absolute -bottom-0.5 left-0 h-0.5 bg-gradient-to-r from-brand-orange to-orange-400 transition-all duration-300",
