@@ -66,7 +66,7 @@ export const Services1MegaMenu = ({ onNavigate }: Services1MegaMenuProps) => {
         />
       </button>
 
-      {/* Desktop Mega Menu (Centered in page) */}
+      {/* Desktop Mega Menu (Centered in viewport) */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -74,8 +74,7 @@ export const Services1MegaMenu = ({ onNavigate }: Services1MegaMenuProps) => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.98 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            // ✅ Center relative to viewport width (not to trigger)
-            className="absolute top-full pt-3 z-50 left-1/2 -translate-x-1/2"
+            className="hidden lg:block fixed top-[80px] left-1/2 -translate-x-1/2 z-50"
           >
             <div
               // ✅ reduced size: 860 (from 920+), smaller padding inside
