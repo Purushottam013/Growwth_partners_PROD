@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 const teamMembers = [{
   name: "Bijal Shah",
   role: "Senior Manager, CFO Advisory Services",
-  image: "/lovable-uploads/b5d27231-58dd-4eac-b4d3-abd1dd4ffdba.png",
+  image: "/lovable-uploads/Bijal_shah.jpg",
   description: "A Chartered Accountant with 15+ years of experience, specializes in corporate finance, strategic financial management, and operational excellence. She excels in optimizing financial structures, driving profitability, and ensuring regulatory compliance. She is also proficient in ERP systems like SAP and Oracle."
 }, {
   name: "Preeti",
