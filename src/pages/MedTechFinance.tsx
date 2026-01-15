@@ -8,6 +8,7 @@ import WhyChooseSection from "@/components/medtechFinance/WhyChooseSection";
 import UseCaseSection from "@/components/medtechFinance/UseCaseSection";
 import { FaqSection } from "@/components/accounting/FaqSection";
 import CTASection from "@/components/medtechFinance/CTASection";
+import { Layout } from "@/components/Layout";
 
 const faqs = [
   {
@@ -82,7 +83,7 @@ const structuredData = {
 
 const MedTechFinance = () => {
   return (
-    <>
+    <Layout>
       <SEOhelper
         title="MedTech Finance Services Singapore | Forecasting & Compliance"
         description="Finance services for MedTech including modelling, compliance reporting, and cost tracking"
@@ -90,7 +91,7 @@ const MedTechFinance = () => {
         canonicalUrl="https://growwthpartners.com/medtech-finance"
         structuredData={structuredData}
       />
-      <main className="overflow-hidden">
+     
         <HeroSection />
         <WhatIsSection />
         <WhoShouldUseSection />
@@ -103,8 +104,8 @@ const MedTechFinance = () => {
           subtitle="Common questions about our Intrim CFO services"
         />
         <CTASection />
-      </main>
-    </>
+    
+    </Layout>
   );
 };
 
