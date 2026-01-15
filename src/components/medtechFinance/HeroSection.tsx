@@ -1,14 +1,10 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, HeartPulse, Shield, Activity } from "lucide-react";
-import { useState } from "react";
-import { ContactModal } from "@/components/ui/contact-modal";
 
 const HeroSection = () => {
-  const [contactModalOpen, setContactModalOpen] = useState(false);
-
   return (
-    <section className="relative min-h-[90vh] flex items-center bg-gradient-to-br from-slate-900 via-slate-800 to-brand-orange/20 overflow-hidden">
+    <section className="relative min-h-[90vh] py-20 flex items-center bg-gradient-to-br from-slate-900 via-slate-800 to-brand-orange/20 overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-72 h-72 bg-orange-500/10 rounded-full blur-3xl animate-pulse" />
@@ -18,9 +14,12 @@ const HeroSection = () => {
 
       {/* Medical grid pattern */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f97316' fill-opacity='0.4'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-        }} />
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f97316' fill-opacity='0.4'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          }}
+        />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -38,10 +37,12 @@ const HeroSection = () => {
               className="inline-flex items-center gap-2 px-4 py-2 bg-orange-500/20 border border-orange-500/30 rounded-full"
             >
               <HeartPulse className="w-4 h-4 text-orange-400" />
-              <span className="text-orange-300 text-sm font-medium">Finance for Regulated, High-Compliance MedTech Growth</span>
+              <span className="text-orange-300 text-sm font-medium">
+                Finance for Regulated, High-Compliance MedTech Growth
+              </span>
             </motion.div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
               MedTech & Healthcare Finance Services in{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
                 Singapore
@@ -49,11 +50,8 @@ const HeroSection = () => {
             </h1>
 
             <p className="text-xl text-slate-300 leading-relaxed max-w-xl">
-              Compliance-Ready Financial Control, Cost Visibility & Sustainable Growth for Healthcare Businesses
-            </p>
-
-            <p className="text-lg text-slate-400 leading-relaxed max-w-xl">
-              Growwth Partners' MedTech & Healthcare Finance services in Singapore provide CFO-led financial leadership, regulatory-ready reporting, and scalable finance systems—helping healthcare businesses grow responsibly while maintaining compliance and financial clarity.
+              Compliance-Ready Financial Control, Cost Visibility & Sustainable
+              Growth for Healthcare Businesses
             </p>
 
             <motion.div
@@ -62,10 +60,15 @@ const HeroSection = () => {
               transition={{ delay: 0.6 }}
               className="flex flex-wrap gap-4"
             >
-              <Button 
-                size="lg" 
-                className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-6 text-lg rounded-xl shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 transition-all duration-300"
-                onClick={() => setContactModalOpen(true)}
+              <Button
+                size="lg"
+                className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-6 text-lg rounded-3xl shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 transition-all hover:scale-105 duration-300 mt-6"
+                onClick={() =>
+                  window.open(
+                    "https://calendly.com/jd-growwthpartners/15min?month=2025-11",
+                    "_blank"
+                  )
+                }
               >
                 Speak to a Healthcare Finance Expert
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -85,22 +88,38 @@ const HeroSection = () => {
                 <div className="grid grid-cols-2 gap-6">
                   <div className="bg-slate-800/60 rounded-2xl p-6 border border-orange-500/10">
                     <HeartPulse className="w-10 h-10 text-orange-400 mb-4" />
-                    <h3 className="text-white font-semibold mb-2">Regulatory Compliance</h3>
-                    <p className="text-slate-400 text-sm">Audit-ready financial systems</p>
+                    <h3 className="text-white font-semibold mb-2">
+                      Regulatory Compliance
+                    </h3>
+                    <p className="text-slate-400 text-sm">
+                      Audit-ready financial systems
+                    </p>
                   </div>
                   <div className="bg-slate-800/60 rounded-2xl p-6 border border-orange-500/10">
                     <Shield className="w-10 h-10 text-orange-400 mb-4" />
-                    <h3 className="text-white font-semibold mb-2">Financial Governance</h3>
-                    <p className="text-slate-400 text-sm">Risk management & controls</p>
+                    <h3 className="text-white font-semibold mb-2">
+                      Financial Governance
+                    </h3>
+                    <p className="text-slate-400 text-sm">
+                      Risk management & controls
+                    </p>
                   </div>
                   <div className="bg-slate-800/60 rounded-2xl p-6 border border-orange-500/10">
                     <Activity className="w-10 h-10 text-orange-400 mb-4" />
-                    <h3 className="text-white font-semibold mb-2">Cost Visibility</h3>
-                    <p className="text-slate-400 text-sm">R&D and operational tracking</p>
+                    <h3 className="text-white font-semibold mb-2">
+                      Cost Visibility
+                    </h3>
+                    <p className="text-slate-400 text-sm">
+                      R&D and operational tracking
+                    </p>
                   </div>
                   <div className="bg-gradient-to-br from-orange-500/20 to-orange-600/20 rounded-2xl p-6 border border-orange-500/30">
-                    <div className="text-3xl font-bold text-orange-400 mb-2">CFO-Led</div>
-                    <p className="text-slate-300 text-sm">Strategic healthcare finance leadership</p>
+                    <div className="text-3xl font-bold text-orange-400 mb-2">
+                      CFO-Led
+                    </div>
+                    <p className="text-slate-300 text-sm">
+                      Strategic healthcare finance leadership
+                    </p>
                   </div>
                 </div>
               </div>
@@ -108,7 +127,11 @@ const HeroSection = () => {
               {/* Floating elements */}
               <motion.div
                 animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
                 className="absolute -top-6 -right-6 bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl p-4 shadow-xl"
               >
                 <HeartPulse className="w-8 h-8 text-white" />
@@ -117,11 +140,6 @@ const HeroSection = () => {
           </motion.div>
         </div>
       </div>
-
-      <ContactModal 
-        open={contactModalOpen} 
-        onOpenChange={setContactModalOpen}
-      />
     </section>
   );
 };

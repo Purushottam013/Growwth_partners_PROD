@@ -42,7 +42,7 @@ const WhoShouldUseSection = () => {
           </h2>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-12 max-w-8xl mx-auto">
           {/* Ideal For Column */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}

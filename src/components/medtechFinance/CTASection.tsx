@@ -29,7 +29,8 @@ const CTASection = () => {
               transition={{ delay: 0.2, duration: 0.6 }}
               className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-gray-900"
             >
-              Build Compliant, Investor-Ready Financials for Your Healthcare Business
+              Build Compliant, Investor-Ready Financials for Your Healthcare
+              Business
             </motion.h2>
             <motion.p
               initial={{ opacity: 0 }}
@@ -38,7 +39,8 @@ const CTASection = () => {
               transition={{ delay: 0.4, duration: 0.6 }}
               className="text-xl text-gray-700 mb-10"
             >
-              Get expert healthcare finance leadership to support your compliance, growth, and funding goals.
+              Get expert healthcare finance leadership to support your
+              compliance, growth, and funding goals.
             </motion.p>
 
             <motion.div
@@ -48,7 +50,12 @@ const CTASection = () => {
               transition={{ delay: 0.6, duration: 0.6 }}
             >
               <Button
-                onClick={() => setContactModalOpen(true)}
+                onClick={() =>
+                  window.open(
+                    "https://calendly.com/jd-growwthpartners/15min?month=2025-11",
+                    "_blank"
+                  )
+                }
                 className="bg-brand-orange hover:bg-brand-orange/90 text-white rounded-full px-8 py-6 text-lg font-medium group transition-all hover:scale-105"
               >
                 👉 Schedule a Healthcare Finance Consultation
@@ -59,8 +66,8 @@ const CTASection = () => {
         </div>
       </div>
 
-      <ContactModal 
-        open={contactModalOpen} 
+      <ContactModal
+        open={contactModalOpen}
         onOpenChange={setContactModalOpen}
       />
     </section>
