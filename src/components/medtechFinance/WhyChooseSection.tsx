@@ -50,7 +50,7 @@ const WhyChooseSection = () => {
         </motion.div>
 
         {/* 3 + 2 centered */}
-        <div className="max-w-6xl mx-auto space-y-6">
+        <div className="max-w-8xl mx-auto space-y-6">
           {/* Row 1 */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {reasons.slice(0, 3).map((reason, index) => (
