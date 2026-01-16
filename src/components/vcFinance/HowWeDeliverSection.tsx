@@ -78,9 +78,9 @@ const HowWeDeliverSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="py-20 md:py-28 bg-gradient-to-b from-slate-950 via-blue-950 to-slate-900">
+    <section ref={ref} className="py-20 md:py-28 bg-gradient-to-b from-slate-950 via-gray-500 to-slate-900">
       <div className="container mx-auto px-4 sm:px-6">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-8xl mx-auto">
           {/* Section Header */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -88,14 +88,14 @@ const HowWeDeliverSection = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="inline-block px-4 py-1.5 rounded-full bg-blue-500/20 text-blue-300 text-sm font-medium mb-4">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-orange-500/20 text-orange-300 text-sm font-medium mb-4">
               Our Approach
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
               How Growwth Partners Delivers{" "}
-              <span className="text-blue-400">Fund Finance Value</span>
+              <span className="text-orange-400">Fund Finance Value</span>
             </h2>
-            <p className="text-lg text-blue-100/80 max-w-3xl mx-auto">
+            <p className="text-lg text-orange-100/80 max-w-3xl mx-auto">
               Our Venture Capital & Fund Finance services are designed to deliver control, transparency, and institutional credibility.
             </p>
           </motion.div>
@@ -108,16 +108,16 @@ const HowWeDeliverSection = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group relative p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-blue-500/50 hover:bg-white/10 transition-all duration-300"
+                className="group relative p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-orange-500/50 hover:bg-white/10 transition-all duration-300"
               >
                 {/* Number badge */}
-                <div className="absolute -top-3 -right-3 w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center shadow-lg">
+                <div className="absolute -top-3 -right-3 w-12 h-12 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center shadow-lg">
                   <span className="text-white font-bold text-sm">{area.number}</span>
                 </div>
 
                 {/* Icon */}
-                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500/20 to-indigo-600/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <area.icon className="w-7 h-7 text-blue-400" />
+                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-orange-500/20 to-orange-600/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <area.icon className="w-7 h-7 text-orange-400" />
                 </div>
 
                 {/* Title */}
@@ -126,8 +126,8 @@ const HowWeDeliverSection = () => {
                 {/* Items */}
                 <ul className="space-y-2">
                   {area.items.map((item, itemIndex) => (
-                    <li key={itemIndex} className="flex items-start gap-2 text-blue-100/80 text-sm">
-                      <span className="w-1.5 h-1.5 rounded-full bg-blue-400 mt-2 flex-shrink-0" />
+                    <li key={itemIndex} className="flex items-start gap-2 text-orange-100/80 text-sm">
+                      <span className="w-1.5 h-1.5 rounded-full bg-orange-400 mt-2 flex-shrink-0" />
                       {item}
                     </li>
                   ))}

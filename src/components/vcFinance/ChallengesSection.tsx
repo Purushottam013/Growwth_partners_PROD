@@ -50,7 +50,7 @@ const ChallengesSection = () => {
           >
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6">
               Common Financial Challenges in{" "}
-              <span className="text-blue-600 dark:text-blue-400">VC & Fund Management</span>
+              <span className="text-orange-600 dark:text-orange-400">VC & Fund Management</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               Without dedicated fund finance expertise, funds often face significant operational and credibility challenges.
@@ -95,10 +95,10 @@ const ChallengesSection = () => {
               initial={{ opacity: 0, x: 30 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="p-8 rounded-3xl bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950/30 dark:to-indigo-950/30 border border-blue-200 dark:border-blue-800/50"
+              className="p-8 rounded-3xl bg-gradient-to-br from-green-50 to-green-50 dark:from-green-950/30 dark:to-green-950/30 border border-green-200 dark:border-green-800/50"
             >
               <h3 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-3">
-                <CheckCircle2 className="w-7 h-7 text-blue-600" />
+                <CheckCircle2 className="w-7 h-7 text-green-600" />
                 What You Get With Our Services
               </h3>
               <div className="space-y-4">
@@ -110,15 +110,15 @@ const ChallengesSection = () => {
                     transition={{ duration: 0.4, delay: 0.4 + index * 0.08 }}
                     className="flex items-center gap-3 p-3 rounded-xl bg-white/80 dark:bg-slate-800/80"
                   >
-                    <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center flex-shrink-0">
+                    <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center flex-shrink-0">
                       <benefit.icon className="w-4 h-4 text-white" />
                     </div>
                     <span className="text-foreground font-medium">{benefit.text}</span>
                   </motion.div>
                 ))}
               </div>
-              <div className="mt-6 p-4 rounded-xl bg-blue-100 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-800">
-                <p className="text-blue-800 dark:text-blue-200 font-medium text-sm">
+              <div className="mt-6 p-4 rounded-xl bg-green-100 dark:bg-green-900/30 border border-blue-200 dark:green-blue-800">
+                <p className="text-green-800 dark:text-green-200 font-medium text-sm">
                   All delivered with institutional precision and confidentiality.
                 </p>
               </div>
