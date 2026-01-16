@@ -17,7 +17,7 @@ const UseCaseSection = () => {
   return (
     <section ref={ref} className="py-20 md:py-28 bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-800">
       <div className="container mx-auto px-4 sm:px-6">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-8xl mx-auto">
           {/* Section Header */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -25,7 +25,7 @@ const UseCaseSection = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="inline-block px-4 py-1.5 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-sm font-medium mb-4">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-orange-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-sm font-medium mb-4">
               Case Study
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground">
@@ -40,10 +40,10 @@ const UseCaseSection = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-3xl blur-xl opacity-20" />
+            <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-orange-600 rounded-3xl blur-xl opacity-20" />
             <div className="relative bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-2xl">
               {/* Header */}
-              <div className="p-6 md:p-8 bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
+              <div className="p-6 md:p-8 bg-gradient-to-r from-orange-600 to-orange-700 text-white">
                 <div className="flex items-center gap-4">
                   <div className="w-16 h-16 rounded-2xl bg-white/20 flex items-center justify-center">
                     <Building2 className="w-8 h-8 text-white" />

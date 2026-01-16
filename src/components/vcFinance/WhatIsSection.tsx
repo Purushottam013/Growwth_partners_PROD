@@ -1,112 +1,133 @@
 import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
-import { useRef } from "react";
 import { 
-  Calculator, 
-  DollarSign, 
-  FileText, 
-  TrendingUp, 
-  PieChart,
-  Shield
+  Users, 
+  BarChart3, 
+  Wallet, 
+  Target, 
+  FileText,
+  BookOpen
 } from "lucide-react";
 
 const features = [
   {
-    icon: Calculator,
-    title: "Fund Accounting & NAV Reporting",
-    description: "Accurate NAV calculation and portfolio valuation tracking"
+    icon: Users,
+    title: "Subscription, cohort, and contract-based revenue tracking",
   },
   {
-    icon: DollarSign,
-    title: "Capital Call & Distribution Management",
-    description: "Precise tracking of capital flows and waterfall calculations"
+    icon: BarChart3,
+    title: "Cost visibility across content, instructors, and platforms",
+  },
+  {
+    icon: Wallet,
+    title: "Cash flow and runway management",
+  },
+  {
+    icon: Target,
+    title: "Unit economics for learners, institutions, and cohorts",
   },
   {
     icon: FileText,
-    title: "LP Reporting & Compliance",
-    description: "Investor-grade quarterly and annual reporting standards"
+    title: "Investor and board-ready financial reporting",
   },
-  {
-    icon: TrendingUp,
-    title: "Portfolio Valuation & Performance",
-    description: "Fair value assessment with IRR, TVPI, DPI analysis"
-  },
-  {
-    icon: PieChart,
-    title: "Financial Governance",
-    description: "Fund-level controls, documentation, and audit readiness"
-  },
-  {
-    icon: Shield,
-    title: "Institutional Standards",
-    description: "Precision, transparency, and investor-grade reporting"
-  }
 ];
 
 const WhatIsSection = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
   return (
-    <section ref={ref} className="py-20 md:py-28 bg-gradient-to-b from-background to-slate-50/50 dark:to-slate-900/50">
-      <div className="container mx-auto px-4 sm:px-6">
-        <div className="max-w-6xl mx-auto">
-          {/* Section Header */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <span className="inline-block px-4 py-1.5 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-sm font-medium mb-4">
-              AEO-Optimised Definition
-            </span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6">
-              What Are Venture Capital &{" "}
-              <span className="text-blue-600 dark:text-blue-400">Fund Finance Services?</span>
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Venture Capital & Fund Finance services deliver specialised financial leadership and execution tailored to investment funds and asset managers.
-            </p>
-          </motion.div>
+    <section className="py-20 bg-white">
+      <div className="container mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-4xl mx-auto text-center mb-16"
+        >
+          <span className="text-brand-orange font-semibold text-sm uppercase tracking-wider">
+            Understanding the Service
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-4 mb-6">
+            What Are EdTech Finance <span className="text-brand-orange"> Services? </span>
+          </h2>
+          <p className="text-lg text-gray-600 leading-relaxed">
+            EdTech Finance services deliver specialised financial management designed for education technology and digital learning business models.
+          </p>
+        </motion.div>
 
-          {/* Features Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-            {features.map((feature, index) => (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="max-w-6xl mx-auto mb-12"
+        >
+          <p className="text-center text-gray-700 text-lg font-bold">
+            These services focus on:
+          </p>
+        </motion.div>
+
+        {/* Features grid */}
+        <div className="max-w-7xl mx-auto mb-16 space-y-6">
+          {/* Row 1 */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {features.slice(0, 3).map((feature, index) => (
               <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                key={feature.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group p-6 rounded-2xl bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 hover:border-blue-300 dark:hover:border-blue-600 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-300"
+                className="bg-gradient-to-br from-gray-50 to-white p-6 rounded-2xl border border-gray-100 hover:shadow-lg transition-all duration-300 group shadow"
               >
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <feature.icon className="w-6 h-6 text-white" />
+                <div className="w-14 h-14 bg-brand-orange/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-brand-orange/20 transition-colors">
+                  <feature.icon className="w-7 h-7 text-brand-orange" />
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">{feature.title}</h3>
-                <p className="text-muted-foreground text-sm">{feature.description}</p>
+                <p className="text-gray-700 font-bold">{feature.title}</p>
               </motion.div>
             ))}
           </div>
 
-          {/* Key Distinction */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="relative p-8 rounded-3xl bg-gradient-to-br from-blue-600 to-indigo-700 text-white overflow-hidden"
-          >
-            <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-            <div className="relative z-10">
-              <h3 className="text-xl sm:text-2xl font-bold mb-4">
-                Unlike Operating Companies, Fund Finance Requires:
-              </h3>
-              <p className="text-blue-100 text-lg leading-relaxed">
-                Precision, transparency, and investor-grade reporting standards. Fund finance focuses on NAV accuracy, LP communications, capital flow management, and regulatory compliance—distinct from operational P&L management.
-              </p>
-            </div>
-          </motion.div>
+          {/* Row 2 (centered) */}
+          <div className="flex flex-col md:flex-row justify-center gap-6">
+            {features.slice(3).map((feature, i) => {
+              const index = i + 3;
+              return (
+                <motion.div
+                  key={feature.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="w-full md:max-w-[520px]"
+                >
+                  <div className="bg-gradient-to-br from-gray-50 to-white p-6 rounded-2xl border border-gray-100 hover:shadow-lg transition-all duration-300 group shadow h-full">
+                    <div className="w-14 h-14 bg-brand-orange/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-brand-orange/20 transition-colors">
+                      <feature.icon className="w-7 h-7 text-brand-orange" />
+                    </div>
+                    <p className="text-gray-700 font-bold">{feature.title}</p>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="bg-gradient-to-r from-slate-900 to-slate-800 shadow rounded-3xl p-8 md:p-12 text-center"
+        >
+          <div className="flex justify-center mb-6">
+            <div className="w-16 h-16 bg-brand-orange/20 rounded-full flex items-center justify-center">
+              <BookOpen className="w-8 h-8 text-brand-orange" />
+            </div>
+          </div>
+          <p className="text-xl text-white max-w-3xl mx-auto leading-relaxed">
+            Unlike generic tech finance, EdTech finance requires{" "}
+            <span className="text-brand-orange font-semibold">deep understanding of education delivery models, pricing sensitivity, and long-term customer value</span>.
+          </p>
+        </motion.div>
       </div>
     </section>
   );
